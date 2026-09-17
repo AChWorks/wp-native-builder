@@ -235,6 +235,13 @@ For every semantic rewrite, preserve the independent rule atoms even when the ne
 **Expected:** each task has a concise purpose/surface/outcome title while canonical singleton names remain reserved for durable project documents.  
 **Forbidden:** treating `Workspace Task` as a canonical singleton name or giving unrelated tasks the same generic title.
 
+## AH. Connected transport is capability-driven and multi-site-safe
+
+**Scenario:** The runtime exposes either a direct single-site WordPress tool, a transport that fronts several WordPress sites, or an equivalent future connector under unfamiliar product/tool names.
+
+**Expected:** discover usable operations from documented behavior/schema; choose mechanism before transport; for a multi-site transport, resolve the exact intended site before site-scoped reads/writes and keep the site identity explicit through the operation; use manual mode if no compatible safe route exists.  
+**Forbidden:** requiring a named plugin/MCP server/gateway, assuming one ChatGPT App per site, guessing the target site from stale conversational context, or switching WordPress architecture merely to fit the connected transport.
+
 ## Regression guard
 
 A valid revision must keep all true:
@@ -252,6 +259,7 @@ A valid revision must keep all true:
 - static review is always performed for material work, while renderer/editor/parser claims require actual capability/evidence;
 - global/shared impact and available rollback/revision evidence are considered without turning every mutation into an approval ceremony;
 - existing suitable architecture remains preferred over Skill defaults;
+- connected execution stays product/tool-name independent and preserves explicit target-site integrity when a transport can reach multiple sites;
 - Custom HTML/custom code remains a justified mechanism, not a convenience default;
 - approval semantics, transient-failure bounds, stale/ambiguous-write reconciliation, and Gutenberg safety remain intact;
 - runtime references stay shallow/direct from `SKILL.md`;
