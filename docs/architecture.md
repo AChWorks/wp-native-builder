@@ -52,7 +52,7 @@ Every implementation makes two independent decisions:
 1. **Owner/mechanism** — WordPress Core, Site Editor/template part, theme, builder, plugin, Pattern, form/commerce/data model, scoped frontend code, or custom extension.
 2. **Transport** — an actually exposed connected capability that can safely operate the selected owner.
 
-A connector does not become the architecture merely because it exposes an operation.
+A connector does not become the architecture merely because it exposes an operation. Transport selection is capability-based and product-neutral. If one transport fronts multiple WordPress sites, resolve the exact target site identity before site-scoped operations and keep it explicit through the operation.
 
 ## Review architecture
 
@@ -71,7 +71,7 @@ Global/template/shared work inspects reuse/impact before mutation and captures c
 
 Workspace is optional and capability-driven. When it is relevant to substantial/multi-step work, including a new project, it stores future-useful durable context, resumes progressively, reuses canonical singleton documents before create, guards overwrite-sensitive writes with Workspace-owned expected identity, and never replaces live WordPress as current-state authority. The exact Workspace resume/retrieval procedure is owned only by `references/workspace-memory.md`.
 
-Task delivery retains the current Bridge-compatible enum: `not_applicable`, `draft_preview`, `live`. `not_applicable` means no draft/live state is currently established; intended later publication is represented by task goal/acceptance/targets/notes rather than a new lifecycle value.
+Task delivery retains the current runtime-neutral enum: `not_applicable`, `draft_preview`, `live`. `not_applicable` means no draft/live state is currently established; intended later publication is represented by task goal/acceptance/targets/notes rather than a new lifecycle value.
 
 ## Packaging boundary
 
