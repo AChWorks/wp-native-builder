@@ -102,20 +102,22 @@ The Skill works without a WordPress connector and provides exact stack-aware imp
 
 ## Connected mode
 
-For direct WordPress execution, use a compatible WordPress MCP/Abilities path. The companion [wp-native-builder-bridge](https://github.com/ach1992/wp-native-builder-bridge) can provide the current Builder/Workspace surfaces.
+Connected execution can use any compatible runtime that exposes sufficient WordPress capabilities. The Skill does not require or assume a specific plugin, connector, MCP server, gateway, tool name, or one-App-per-site topology.
 
 Connected work:
 
-1. inspects only relevant current architecture, targets, and capabilities;
-2. chooses site mechanism before execution transport;
-3. prefers narrow reversible/draft/preview changes while iterating;
-4. guards overwrite-sensitive writes with current identity when supported;
-5. re-reads/reconciles stale or ambiguous state;
-6. verifies writes when practical;
-7. treats one plausible transport failure as transient until bounded evidence says otherwise;
-8. falls back to useful manual/preparation work when no safe connected route exists.
+1. discovers capabilities by documented behavior/schema rather than product or tool name;
+2. inspects only relevant current architecture, targets, and capabilities;
+3. chooses site mechanism before execution transport;
+4. resolves the exact target site before site-scoped operations when one transport can reach multiple sites, and keeps that target explicit;
+5. prefers narrow reversible/draft/preview changes while iterating;
+6. guards overwrite-sensitive writes with current identity when supported;
+7. re-reads/reconciles stale or ambiguous state;
+8. verifies writes when practical;
+9. treats one plausible transport failure as transient until bounded evidence says otherwise;
+10. falls back to useful manual/preparation work when no safe connected route exists.
 
-The Skill is not limited to Bridge-owned abilities. Native WordPress/theme/plugin abilities may be better transports for the selected mechanism.
+The Skill selects among currently exposed capabilities by behavior and fit, not vendor/product/tool names. Native WordPress/theme/plugin capabilities may be better transports for the selected mechanism than generic transport operations.
 
 ## Persistent Workspace
 
