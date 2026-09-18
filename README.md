@@ -109,13 +109,14 @@ Connected work:
 1. discovers capabilities by documented behavior/schema rather than product or tool name;
 2. inspects only relevant current architecture, targets, and capabilities;
 3. chooses site mechanism before execution transport;
-4. resolves the exact target site before site-scoped operations when one transport can reach multiple sites, and keeps that target explicit;
-5. prefers narrow reversible/draft/preview changes while iterating;
-6. guards overwrite-sensitive writes with current identity when supported;
-7. re-reads/reconciles stale or ambiguous state;
-8. verifies writes when practical;
-9. treats one plausible transport failure as transient until bounded evidence says otherwise;
-10. falls back to useful manual/preparation work when no safe connected route exists.
+4. on a multi-site transport, uses fleet-level discovery only to identify available site identities; if the current request or authoritative active task/project context does not unambiguously identify one site, asks the user which site before any site-scoped inspection/read/write;
+5. never guesses from the last-used site or nearby conversation, and keeps the resolved site identity explicit through all site-scoped operations;
+6. prefers narrow reversible/draft/preview changes while iterating;
+7. guards overwrite-sensitive writes with current identity when supported;
+8. re-reads/reconciles stale or ambiguous state;
+9. verifies writes when practical;
+10. treats one plausible transport failure as transient until bounded evidence says otherwise;
+11. falls back to useful manual/preparation work when no safe connected route exists.
 
 The Skill selects among currently exposed capabilities by behavior and fit, not vendor/product/tool names. Native WordPress/theme/plugin capabilities may be better transports for the selected mechanism than generic transport operations.
 
