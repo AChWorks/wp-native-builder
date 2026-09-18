@@ -52,7 +52,7 @@ Every implementation makes two independent decisions:
 1. **Owner/mechanism** — WordPress Core, Site Editor/template part, theme, builder, plugin, Pattern, form/commerce/data model, scoped frontend code, or custom extension.
 2. **Transport** — an actually exposed connected capability that can safely operate the selected owner.
 
-A connector does not become the architecture merely because it exposes an operation. Transport selection is capability-based and product-neutral. If one transport fronts multiple WordPress sites, resolve the exact target site identity before site-scoped operations and keep it explicit through the operation.
+A connector does not become the architecture merely because it exposes an operation. Transport selection is capability-based and product-neutral. If one transport fronts multiple WordPress sites, fleet-level discovery may identify site identities, but site-scoped capability use is fail-closed until one exact target is unambiguously established; never infer it from a last-used site or conversational proximity, and keep the resolved identity explicit through the operation.
 
 ## Review architecture
 
