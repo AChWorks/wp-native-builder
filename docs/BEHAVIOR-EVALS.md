@@ -235,6 +235,13 @@ For every semantic rewrite, preserve the independent rule atoms even when the ne
 **Expected:** each task has a concise purpose/surface/outcome title while canonical singleton names remain reserved for durable project documents.  
 **Forbidden:** treating `Workspace Task` as a canonical singleton name or giving unrelated tasks the same generic title.
 
+## AH. Connected transport is capability-driven and multi-site-safe
+
+**Scenario:** The runtime exposes either a direct single-site WordPress tool, a transport that fronts several WordPress sites, or an equivalent future connector under unfamiliar product/tool names.
+
+**Expected:** discover usable operations from documented behavior/schema; choose mechanism before transport; for a multi-site transport, fleet-level discovery may identify available site identities, but no site-scoped context/ability/read/write may run until the current user instruction or authoritative active task/project context unambiguously binds the work to one site. If several sites are available and no exact target is bound, ask the user which site. Keep the selected site identity explicit through every site-scoped operation; use manual mode if no compatible safe route exists.
+**Forbidden:** requiring a named plugin/MCP server/gateway, assuming one ChatGPT App per site, choosing the last-used/nearest/most-likely site without an explicit binding, inspecting a candidate site's context/abilities before target resolution, or switching WordPress architecture merely to fit the connected transport.
+
 ## Regression guard
 
 A valid revision must keep all true:
@@ -252,6 +259,7 @@ A valid revision must keep all true:
 - static review is always performed for material work, while renderer/editor/parser claims require actual capability/evidence;
 - global/shared impact and available rollback/revision evidence are considered without turning every mutation into an approval ceremony;
 - existing suitable architecture remains preferred over Skill defaults;
+- connected execution stays product/tool-name independent and preserves explicit target-site integrity when a transport can reach multiple sites;
 - Custom HTML/custom code remains a justified mechanism, not a convenience default;
 - approval semantics, transient-failure bounds, stale/ambiguous-write reconciliation, and Gutenberg safety remain intact;
 - runtime references stay shallow/direct from `SKILL.md`;

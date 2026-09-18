@@ -2,7 +2,7 @@
 
 **Status:** Canonical durable product specification  
 **Repository:** `ach1992/wp-native-builder`  
-**Companion runtime:** `ach1992/wp-native-builder-bridge`
+**Specific runtime dependency:** None; connected execution is optional and capability-driven.
 
 This file defines the stable product intent and non-negotiable behavior of **WP Native Builder**. It is repository-level product truth for the Skill itself. It is **not** a per-site `Project Foundation`, worklog, backlog, session handoff, release log, or mirror of runtime instructions. Operational detail belongs to `SKILL.md`, its direct runtime references, and the maintained architecture/evaluation docs.
 
@@ -39,6 +39,7 @@ The Skill is not a CMS, page builder, connector architecture, or general project
 16. **Live state owns live questions.** Stored project context never proves a current WordPress object/configuration is unchanged.
 17. **Bounded transient-failure recovery.** One plausible timeout/unavailable transport failure is not enough to declare a logical capability permanently unavailable; blind retry loops are forbidden.
 18. **No duplicate truth owners.** One canonical owner should exist for each durable kind of project truth; derived documents specialize rather than mirror each other.
+19. **Transport independence and target integrity.** The Skill must not require or hard-code a specific plugin, connector, MCP server, gateway, tool name, or one-App-per-site topology. Discover compatible capabilities from current runtime behavior/schema. On a multi-site transport, never infer a site from last-used/conversational context: require an unambiguous current target or an authoritative task/project binding, otherwise ask the user which site before any site-scoped capability is used; keep the resolved target explicit throughout execution.
 
 ## 3. Request classes and Project Foundation
 
@@ -124,7 +125,7 @@ Without connected capabilities, provide exact stack-aware implementation guidanc
 
 ### Connected
 
-Connected execution must inspect only decision-relevant current architecture/targets/capabilities, choose mechanism before transport, prefer narrow reversible/draft/preview mutations during iteration, guard overwrite-sensitive writes with current identity when supported, re-read stale/ambiguous state before retry, and verify resulting state when practical.
+Connected execution must discover capabilities by documented behavior/schema rather than product or tool name, inspect only decision-relevant current architecture/targets/capabilities, choose mechanism before transport, and preserve exact target-site integrity. On a multi-site transport, fleet-level discovery may identify candidate site identities, but no site-scoped capability may be used until one target is unambiguously supplied by the current user instruction or authoritative active task/project context; otherwise ask the user which site. Keep the resolved target explicit, prefer narrow reversible/draft/preview mutations during iteration, guard overwrite-sensitive writes with current identity when supported, re-read stale/ambiguous state before retry, and verify resulting state when practical.
 
 Capability/permission never proves user approval or successful execution.
 
@@ -217,7 +218,7 @@ A release-quality revision must preserve these outcomes:
 - naming/ownership remain understandable to future humans;
 - connected mode reconciles stale/ambiguous writes and bounded transient route failure;
 - live WordPress remains authoritative for current site state;
-- manual mode remains useful without Bridge/Workspace and never claims unavailable persistence;
+- manual mode remains useful without connected or persistent capabilities and never claims unavailable persistence;
 - consequential-action classification remains explicit enough to avoid both blanket confirmation and missed gates;
 - public `skill.zip` contains exactly the intended runtime files from the tagged/integrated revision.
 

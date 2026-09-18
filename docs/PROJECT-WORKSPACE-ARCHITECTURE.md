@@ -29,7 +29,7 @@ It must:
 | **Workspace Tasks** | unresolved execution, dependency/blocker, review, and delivery state |
 | **Live WordPress** | actual current pages/posts/products/media/settings/theme/plugin/templates and other site objects/configuration |
 
-The companion `wp-native-builder-bridge` may implement the storage/API/admin surface. The Skill remains capability-driven and uses only behavior actually exposed by the current runtime.
+Any compatible runtime or connector may implement the storage/API/admin surface. The Skill remains capability-driven, assumes no named provider, and uses only behavior actually exposed by the current runtime.
 
 ## 3. Canonical documents
 
@@ -65,7 +65,7 @@ Tasks exist only when work benefits from explicit continuation, acceptance, depe
 
 Useful descriptive fields include title, goal, acceptance, dependencies/blocker, target references, and short durable notes.
 
-State dimensions remain Bridge-compatible and independent:
+State dimensions remain runtime-neutral and independent:
 
 | Dimension | Values |
 |---|---|
@@ -158,7 +158,7 @@ A release-quality implementation demonstrates:
 - selective task/document fetch;
 - guarded Workspace writes using current Workspace-owned identity;
 - stale/ambiguous write reconciliation;
-- Bridge-compatible task enums without unnecessary new lifecycle states;
+- runtime-neutral task enums without unnecessary new lifecycle states;
 - bounded transient-route recovery;
 - manual fallback without false persistence claims;
 - no chat/secret/live-content duplication introduced by Workspace behavior.

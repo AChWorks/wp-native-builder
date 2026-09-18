@@ -117,13 +117,15 @@ Remain fully useful without a connector. Give exact implementation guidance/outp
 
 ### Connected mode
 
-1. Inspect only relevant current architecture, targets, and capabilities.
-2. Select owner/mechanism before execution transport.
-3. Prefer narrow draft/preview/reversible changes during iteration.
-4. Use current object/revision/version identity for overwrite-sensitive live WordPress writes when supported. For Workspace Document/Task updates, follow `references/workspace-memory.md` and require its Workspace-owned expected-identity rule rather than WordPress Revision IDs.
-5. After a write, verify resulting state when practical.
-6. On ambiguous outcome, re-read authoritative state before any retry.
-7. Never invent an ability, permission, identity, or successful write.
+1. Discover currently exposed capabilities from their documented behavior/schema. Never assume a particular plugin, connector, MCP server, gateway, tool name, or one-App-per-site topology.
+2. Inspect only relevant current architecture, targets, and capabilities.
+3. Select owner/mechanism before execution transport.
+4. If one transport can reach multiple WordPress sites, do not use any site-scoped capability until the exact target site is resolved. Treat the target as resolved only when the current user instruction names one site unambiguously or the current authoritative task/project context explicitly binds this work to one site. A previous/last-used site, conversational proximity, or a best guess is not sufficient. Fleet-level discovery may be used only to determine available site identities. If multiple sites are available and no exact target is resolved, ask the user which site to use before inspecting that site's context/abilities or performing any site-scoped read/write. Keep the resolved site identity explicit through every site-scoped operation and re-check it if target scope changes or becomes ambiguous.
+5. Prefer narrow draft/preview/reversible changes during iteration.
+6. Use current object/revision/version identity for overwrite-sensitive live WordPress writes when supported. For Workspace Document/Task updates, follow `references/workspace-memory.md` and require its Workspace-owned expected-identity rule rather than WordPress Revision IDs.
+7. After a write, verify resulting state when practical.
+8. On ambiguous outcome, re-read authoritative state before any retry.
+9. Never invent an ability, permission, identity, or successful write.
 
 ### Transient connection failure
 

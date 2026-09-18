@@ -79,7 +79,7 @@ MECHANISM = site owner of behavior
 TRANSPORT = currently exposed ability/tool that safely operates that owner
 ```
 
-Native/plugin/theme abilities may be preferable to Bridge-owned operations. If the correct mechanism has no safe connected write path, preserve the mechanism decision and continue with safe preparation/manual implementation rather than switching architecture merely to fit the connector.
+Native/plugin/theme abilities may be preferable to transport-specific operations. If the correct mechanism has no safe connected write path, preserve the mechanism decision and continue with safe preparation/manual implementation rather than switching architecture merely to fit the connector.
 
 ## 6. Existing-site impact
 
