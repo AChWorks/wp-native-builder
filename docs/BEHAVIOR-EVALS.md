@@ -239,8 +239,8 @@ For every semantic rewrite, preserve the independent rule atoms even when the ne
 
 **Scenario:** The runtime exposes either a direct single-site WordPress tool, a transport that fronts several WordPress sites, or an equivalent future connector under unfamiliar product/tool names.
 
-**Expected:** discover usable operations from documented behavior/schema; choose mechanism before transport; for a multi-site transport, resolve the exact intended site before site-scoped reads/writes and keep the site identity explicit through the operation; use manual mode if no compatible safe route exists.  
-**Forbidden:** requiring a named plugin/MCP server/gateway, assuming one ChatGPT App per site, guessing the target site from stale conversational context, or switching WordPress architecture merely to fit the connected transport.
+**Expected:** discover usable operations from documented behavior/schema; choose mechanism before transport; for a multi-site transport, fleet-level discovery may identify available site identities, but no site-scoped context/ability/read/write may run until the current user instruction or authoritative active task/project context unambiguously binds the work to one site. If several sites are available and no exact target is bound, ask the user which site. Keep the selected site identity explicit through every site-scoped operation; use manual mode if no compatible safe route exists.  
+**Forbidden:** requiring a named plugin/MCP server/gateway, assuming one ChatGPT App per site, choosing the last-used/nearest/most-likely site without an explicit binding, inspecting a candidate site's context/abilities before target resolution, or switching WordPress architecture merely to fit the connected transport.
 
 ## Regression guard
 
