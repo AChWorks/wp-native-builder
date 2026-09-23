@@ -1,0 +1,34 @@
+schemaVersion: achworks.dev/v1alpha1
+kind: Component
+
+metadata:
+  name: wp-native-builder
+  title: WP Native Builder
+  description: ChatGPT Skill for stack-adaptive WordPress planning, native-first implementation, review, Gutenberg safety, and project continuity.
+
+spec:
+  type: ai-engineering-skill
+  lifecycle: active
+  ownership: AChWorks
+
+  capabilities:
+    provides:
+      - wordpress-site-planning
+      - wordpress-native-implementation
+      - gutenberg-safety
+      - wordpress-site-review
+      - workspace-project-continuity
+    consumes:
+      - wordpress
+
+  documentation:
+    path: docs/
+
+  source:
+    repository: AChWorks/wp-native-builder
+    url: https://github.com/AChWorks/wp-native-builder
+
+  extensions:
+    achworks:
+      ecosystemPlatform: AChWorks/platform
+      applicationFoundationConsumption: none-currently

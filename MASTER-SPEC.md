@@ -1,7 +1,7 @@
 # WP Native Builder — Product Specification
 
 **Status:** Canonical durable product specification  
-**Repository:** `ach1992/wp-native-builder`  
+**Repository:** `AChWorks/wp-native-builder`  
 **Specific runtime dependency:** None; connected execution is optional and capability-driven.
 
 This file defines the stable product intent and non-negotiable behavior of **WP Native Builder**. It is repository-level product truth for the Skill itself. It is **not** a per-site `Project Foundation`, worklog, backlog, session handoff, release log, or mirror of runtime instructions. Operational detail belongs to `SKILL.md`, its direct runtime references, and the maintained architecture/evaluation docs.
