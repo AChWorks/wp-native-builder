@@ -8,7 +8,7 @@ It is **stack-adaptive** and **WordPress-native-first**: it works with the site 
 
 WP Native Builder helps ChatGPT:
 
-- keep small bounded edits fast while establishing one Project Foundation for substantial multi-step site work;
+- keep small bounded edits fast while establishing one Project Brief for substantial multi-step site work;
 - ask novice-friendly staged questions until material project gaps are actually resolved;
 - reuse canonical project artifacts instead of creating duplicate “master” documents;
 - understand the relevant current WordPress architecture before changing it;
@@ -63,7 +63,7 @@ Routing is additive: one request may need project-workflow, ownership, Gutenberg
 ```text
 REQUEST
   -> recover/discover relevant truth
-  -> establish Project Foundation when required
+  -> establish Project Brief when required
   -> choose owner/mechanism
   -> choose an actually exposed execution transport
   -> build narrowly
@@ -76,11 +76,11 @@ REQUEST
 
 Preferred defaults such as Astra/Astra Pro, Gutenberg, Gravity Forms, and Code Snippets Pro are fallbacks for unspecified/new projects, never migration targets for an existing suitable stack.
 
-## Project Foundation and canonical artifacts
+## Project Brief and canonical artifacts
 
-A foundation-required project keeps one canonical Project Foundation containing stable project-level intent. When the Skill creates related artifacts, the canonical default names are:
+A project that requires a Project Brief keeps one canonical Project Brief containing stable project-level intent. When the Skill creates related artifacts, the canonical default names are:
 
-- `Project Foundation`
+- `Project Brief`
 - `Site Architecture Profile`
 - `Information Architecture`
 - `Design Direction`
@@ -88,7 +88,7 @@ A foundation-required project keeps one canonical Project Foundation containing 
 
 Existing equivalent artifacts are reused rather than duplicated merely to match those names.
 
-Once ready, Project Foundation leaves the routine hot path. Current work normally uses the nearest authoritative task/document/live WordPress state.
+Once ready, Project Brief leaves the routine hot path. Current work normally uses the nearest authoritative task/document/live WordPress state.
 
 ## Gutenberg safety
 

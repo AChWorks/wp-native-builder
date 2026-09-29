@@ -1,6 +1,6 @@
 ---
 name: wp-native-builder
-description: Stack-adaptive WordPress site planning, design, implementation, review, troubleshooting, and project continuity. Use for new builds, redesigns, Gutenberg/Site Editor/theme/builder/plugin work, WooCommerce presentation, forms, CPT/ACF, visual references, connected WordPress execution, or cross-chat resume when persistent Workspace capabilities exist. Establish project-level foundations only for substantial multi-step work; preserve suitable existing ownership and visual language; choose the smallest supported WordPress-native mechanism before custom code; validate Gutenberg-sensitive changes; and advance safe reversible work before genuine consequential approval boundaries. Do not use for generic WordPress facts unrelated to site-building or implementation.
+description: Stack-adaptive WordPress site planning, design, implementation, review, troubleshooting, and project continuity. Use for new builds, redesigns, Gutenberg/Site Editor/theme/builder/plugin work, WooCommerce presentation, forms, CPT/ACF, visual references, connected WordPress execution, or cross-chat resume when persistent Workspace capabilities exist. Establish project-level briefs only for substantial multi-step work; preserve suitable existing ownership and visual language; choose the smallest supported WordPress-native mechanism before custom code; validate Gutenberg-sensitive changes; and advance safe reversible work before genuine consequential approval boundaries. Do not use for generic WordPress facts unrelated to site-building or implementation.
 ---
 
 # WP Native Builder
@@ -14,7 +14,7 @@ Classify the current request:
 | Situation | Action |
 |---|---|
 | Small bounded change that can be understood, implemented, and verified now | Use the fast path. Do not create project artifacts by ritual. |
-| New site, substantial redesign, multi-page/multi-surface build, or work whose architecture/content/design decisions will drive later tasks | Read `references/project-workflow.md` and complete its Project Foundation phase before material design/build. |
+| New site, substantial redesign, multi-page/multi-surface build, or work whose architecture/content/design decisions will drive later tasks | Read `references/project-workflow.md` and complete its Project Brief phase before material design/build. |
 | Persistent Workspace capabilities are relevant to a substantial/multi-step project, whether starting new work or resuming existing work | Also read `references/workspace-memory.md` for persistence, progressive resume, duplicate avoidance, and guarded Workspace writes. |
 | Ownership/mechanism is non-obvious or global/reusable/theme/builder/plugin/data-model behavior is involved | Read `references/implementation-decisions.md`. |
 | Gutenberg/Core blocks, Patterns, raw `post_content`, serialized block markup, or an invalid-block symptom is involved | Read `references/gutenberg-safety.md`. |
@@ -22,14 +22,14 @@ Classify the current request:
 
 Routing is additive, not exclusive. Apply every matching row and load each required direct reference at most once.
 
-A large visual request is not automatically a multi-step project. Use Project Foundation only when durable project-level decisions are needed to avoid material rework or support later continuation.
+A large visual request is not automatically a multi-step project. Use Project Brief only when durable project-level decisions are needed to avoid material rework or support later continuation.
 
 ## 2. Core control loop
 
 ```text
 ROUTE
   -> RECOVER/DISCOVER RELEVANT TRUTH
-  -> ESTABLISH PROJECT FOUNDATION IF REQUIRED
+  -> ESTABLISH PROJECT BRIEF IF REQUIRED
   -> RESOLVE MATERIAL UNKNOWNS
   -> CHOOSE OWNER/MECHANISM
   -> BUILD NARROWLY
@@ -41,20 +41,20 @@ ROUTE
   -> CONTINUE NEXT USEFUL WORK
 ```
 
-Skip phases that do not apply. Do not skip Project Foundation when the project-workflow reference says it is required. Always perform a static pre-user self-review of the chosen mechanism/content/change; add rendered, editor, parser, or live checks when those capabilities exist.
+Skip phases that do not apply. Do not skip Project Brief when the project-workflow reference says it is required. Always perform a static pre-user self-review of the chosen mechanism/content/change; add rendered, editor, parser, or live checks when those capabilities exist.
 
 ## 3. Source authority
 
 Use each source only for the truth it owns:
 
 1. Current explicit user instruction controls the requested outcome/change.
-2. Canonical Project Foundation controls accepted durable project-level intent, goals, audiences, scope, constraints, non-goals, and success criteria.
+2. Canonical Project Brief controls accepted durable project-level intent, goals, audiences, scope, constraints, non-goals, and success criteria.
 3. Derived project documents control their specialized durable domain, such as Site Architecture Profile, Information Architecture, Design Direction, or Content/Data Model.
 4. Current Workspace tasks control unresolved execution/review/delivery state when persistent Workspace exists.
 5. Verified live WordPress state controls what pages, templates, content, plugins, theme/builder configuration, and other site objects currently exist.
 6. Skill defaults fill only unresolved choices.
 
-Do not use a project document as proof that a live WordPress object has not changed. Do not repeatedly reload Project Foundation when nearer current sources already answer the current question.
+Do not use a project document as proof that a live WordPress object has not changed. Do not repeatedly reload Project Brief when nearer current sources already answer the current question.
 
 ## 4. Ask / Infer / Defer
 
@@ -64,7 +64,7 @@ For ordinary bounded work:
 - **Infer/choose** ordinary professional reversible details such as spacing rhythm, radii, responsive values, minor decoration, and implementation details that do not change accepted behavior.
 - **Defer** polish that can be refined after a useful first draft without invalidating the mechanism or structure.
 
-For a required Project Foundation intake, the usual “few questions” guidance does **not** permit under-discovery. Use compact staged batches, explain unfamiliar choices in plain language, and continue until every material foundation domain is known, explicitly delegated, safely inferred, or marked not applicable. Do not make a novice user know WordPress terminology in order to answer correctly.
+For a required Project Brief intake, the usual “few questions” guidance does **not** permit under-discovery. Use compact staged batches, explain unfamiliar choices in plain language, and continue until every material Project Brief domain is known, explicitly delegated, safely inferred, or marked not applicable. Do not make a novice user know WordPress terminology in order to answer correctly.
 
 If the user says “you decide,” treat that as delegation for ordinary reversible professional choices. It does not authorize guessing material product/business/brand/architecture decisions that would meaningfully change the project.
 
@@ -113,7 +113,7 @@ Core rules:
 
 ### Manual mode
 
-Remain fully useful without a connector. Give exact implementation guidance/output for the actual stack and maintain the same mechanism/ownership decisions. Foundation readiness depends on the project class, not on persistence availability: for foundation-required work, establish the same Project Foundation context in the current session even when no durable location exists. Persist it and derived project artifacts in a user-supplied durable project location when one exists; otherwise do not claim cross-chat durability and be explicit that later recovery may require the user to resupply context.
+Remain fully useful without a connector. Give exact implementation guidance/output for the actual stack and maintain the same mechanism/ownership decisions. Project Brief readiness depends on the project class, not on persistence availability: for work that requires a Project Brief, establish the same Project Brief context in the current session even when no durable location exists. Persist it and derived project artifacts in a user-supplied durable project location when one exists; otherwise do not claim cross-chat durability and be explicit that later recovery may require the user to resupply context.
 
 ### Connected mode
 

@@ -11,7 +11,7 @@ Persistent Workspace support must let a fresh connected chat continue useful Wor
 It must:
 
 - preserve only future-useful durable project context;
-- support one canonical Project Foundation when the project requires it;
+- support one canonical Project Brief when the project requires it;
 - recover progressively instead of dumping all stored material;
 - keep one-off work lightweight;
 - prevent duplicate canonical documents where possible;
@@ -24,7 +24,7 @@ It must:
 | Layer | Owns |
 |---|---|
 | **WP Native Builder Skill** | project semantics, source authority, intake/readiness, mechanism selection, approval and review behavior |
-| **Project Foundation** | accepted durable project-level purpose, audience, scope/non-goals, constraints, success criteria |
+| **Project Brief** | accepted durable project-level purpose, audience, scope/non-goals, constraints, success criteria |
 | **Derived Workspace Documents** | specialized durable architecture/design/IA/content-data context |
 | **Workspace Tasks** | unresolved execution, dependency/blocker, review, and delivery state |
 | **Live WordPress** | actual current pages/posts/products/media/settings/theme/plugin/templates and other site objects/configuration |
@@ -35,7 +35,7 @@ Any compatible runtime or connector may implement the storage/API/admin surface.
 
 When WP Native Builder creates singleton project documents, the default canonical names are:
 
-- `Project Foundation`
+- `Project Brief`
 - `Site Architecture Profile`
 - `Information Architecture`
 - `Design Direction`
@@ -53,11 +53,11 @@ DISCOVER -> REUSE/UPDATE -> CREATE ONLY IF ABSENT -> VERIFY
 
 Search/list enough decision-relevant Workspace state to identify semantic equivalents. If a stable document `key` is supported, use a stable purpose key after confirming an equivalent object does not already exist. Do not assume key uniqueness unless the runtime schema/storage guarantees it. An incomplete/truncated listing is not proof of absence.
 
-## 4. Project Foundation
+## 4. Project Brief
 
-Foundation content/coverage semantics are owned by `references/project-workflow.md`, not redefined here. Workspace's responsibility is only to persist/retrieve the canonical document safely when a suitable capability exists.
+Project Brief content/coverage semantics are owned by `references/project-workflow.md`, not redefined here. Workspace's responsibility is only to persist/retrieve the canonical document safely when a suitable capability exists. Existing Workspace artifacts titled `Project Foundation` or keyed `project-foundation` remain valid legacy equivalents and are reused rather than normalized by rename or duplicated.
 
-After Foundation readiness it remains discoverable but is not automatically loaded on every resume.
+After Project Brief readiness it remains discoverable but is not automatically loaded on every resume.
 
 ## 5. Tasks
 
@@ -87,8 +87,8 @@ On fresh/resumed connected work:
 2. request compact orientation before broad rediscovery/questioning;
 3. orient from project identity/current focus, active/review-blocked work, blockers, and references to potentially useful documents;
 4. fetch only task/document details needed for the next decision/action;
-5. do not automatically load Project Foundation when a nearer source is sufficient;
-6. load Foundation only for project-level change/contradiction/recovery/completion need;
+5. do not automatically load Project Brief when a nearer source is sufficient;
+6. load Project Brief only for project-level change/contradiction/recovery/completion need;
 7. verify live WordPress state before current-state-dependent/overwrite-sensitive site mutation;
 8. continue useful work instead of stopping at a recovery summary.
 
@@ -153,8 +153,8 @@ Workspace is an enhancement, not a prerequisite. Without a suitable persistence 
 A release-quality implementation demonstrates:
 
 - canonical documents are reused rather than duplicated;
-- Foundation semantics remain owned by project workflow rather than duplicated into Workspace policy;
-- nearest-source resume without automatic full Foundation load;
+- Project Brief semantics remain owned by project workflow rather than duplicated into Workspace policy;
+- nearest-source resume without automatic full Project Brief load;
 - selective task/document fetch;
 - guarded Workspace writes using current Workspace-owned identity;
 - stale/ambiguous write reconciliation;

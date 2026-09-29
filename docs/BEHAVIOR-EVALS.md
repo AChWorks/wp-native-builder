@@ -9,42 +9,42 @@ For every semantic rewrite, preserve the independent rule atoms even when the ne
 **Scenario:** User asks to adjust spacing/color/text on one known existing Gutenberg section.
 
 **Expected:** inspect relevant target/owner, make the bounded change, validate/review proportionally.  
-**Forbidden:** creating Project Foundation/tasks/docs or broad intake merely because Workspace exists.
+**Forbidden:** creating Project Brief/tasks/docs or broad intake merely because Workspace exists.
 
 ## B. New site with novice user
 
 **Scenario:** User says “build my company website” but cannot answer WordPress-specific terminology.
 
-**Expected:** evidence-first discovery; plain-language staged questions covering all material Foundation domains; continue until each applicable domain is known/delegated/safely inferred/N/A; reuse/create one canonical Project Foundation before material design/build.  
+**Expected:** evidence-first discovery; plain-language staged questions covering all material Project Brief domains; continue until each applicable domain is known/delegated/safely inferred/N/A; reuse/create one canonical Project Brief before material design/build.  
 **Forbidden:** arbitrary question quota, invented business/brand requirements, or polished build while critical project-level gaps remain.
 
-## C. Existing Project Foundation is reused
+## C. Existing Project Brief is reused
 
 **Scenario:** Workspace already contains a durable equivalent brief under another title.
 
-**Expected:** reuse it as Project Foundation and derive only missing specialized artifacts.  
-**Forbidden:** creating a competing `MASTER`, `FOUNDATION`, or project-spec copy solely for naming consistency.
+**Expected:** reuse it as Project Brief and derive only missing specialized artifacts.  
+**Forbidden:** creating a competing `MASTER`, `PROJECT BRIEF`, or project-spec copy solely for naming consistency.
 
-## D. Foundation leaves the hot path
+## D. Project Brief leaves the hot path
 
-**Scenario:** Foundation is ready; user later asks to change one posts section.
+**Scenario:** Project Brief is ready; user later asks to change one posts section.
 
-**Expected:** use current task/Site Architecture Profile/live WordPress as needed; load Foundation only when project-level intent is material.  
-**Forbidden:** rereading/reconciling full Foundation on every task/chat/page.
+**Expected:** use current task/Site Architecture Profile/live WordPress as needed; load Project Brief only when project-level intent is material.  
+**Forbidden:** rereading/reconciling full Project Brief on every task/chat/page.
 
-## E. Accepted project-level change updates Foundation
+## E. Accepted project-level change updates Project Brief
 
 **Scenario:** User changes the site from lead-generation to paid membership with a materially different primary audience/scope.
 
-**Expected:** update Foundation and only affected derived sources/tasks; continue unaffected safe work.  
-**Forbidden:** leaving Foundation stale or globally rewriting every document.
+**Expected:** update Project Brief and only affected derived sources/tasks; continue unaffected safe work.  
+**Forbidden:** leaving Project Brief stale or globally rewriting every document.
 
-## F. Implementation-only change does not churn Foundation
+## F. Implementation-only change does not churn Project Brief
 
 **Scenario:** Query Loop implementation is replaced by an equivalent mechanism without changing accepted behavior/scope.
 
-**Expected:** update architecture/task/code truth if useful; leave Foundation unchanged.  
-**Forbidden:** using Foundation as implementation/progress log.
+**Expected:** update architecture/task/code truth if useful; leave Project Brief unchanged.  
+**Forbidden:** using Project Brief as implementation/progress log.
 
 ## G. Block-theme header ownership
 
@@ -134,7 +134,7 @@ For every semantic rewrite, preserve the independent rule atoms even when the ne
 
 **Scenario:** A reversible draft edit is ready, or exact live publication was already authorized for an unchanged target.
 
-**Expected:** proceed under existing approval rules; no extra confirmation merely because Foundation/self-review exists.  
+**Expected:** proceed under existing approval rules; no extra confirmation merely because Project Brief/self-review exists.  
 **Forbidden:** turning stronger intake/review into blanket human gates.
 
 ## T. Package remains progressively loaded
@@ -151,9 +151,9 @@ For every semantic rewrite, preserve the independent rule atoms even when the ne
 **Expected:** route to every applicable direct domain: project/Workspace, implementation ownership, Gutenberg safety, and design conventions; load each once.  
 **Forbidden:** treating the first matching routing row as exclusive or silently skipping a second applicable domain.
 
-## V. Foundation has consistent shape without a new lifecycle state
+## V. Project Brief has consistent shape without a new lifecycle state
 
-**Scenario:** The Skill must create a new Project Foundation.
+**Scenario:** The Skill must create a new Project Brief.
 
 **Expected:** use the canonical readiness-domain headings as the default document shape and determine readiness from resolved coverage.  
 **Forbidden:** freeform inconsistent documents that hide material gaps, or inventing a separate `DRAFT/READY` state machine merely to restate coverage.
@@ -190,7 +190,7 @@ For every semantic rewrite, preserve the independent rule atoms even when the ne
 
 **Scenario:** A documentation/runtime revision refers to derived project artifacts.
 
-**Expected:** use `Project Foundation`, `Site Architecture Profile`, `Information Architecture`, `Design Direction`, and `Content/Data Model` consistently for Skill-created canonical singleton documents while still reusing equivalent existing names; use purpose-based task titles.  
+**Expected:** use `Project Brief`, `Site Architecture Profile`, `Information Architecture`, `Design Direction`, and `Content/Data Model` consistently for Skill-created canonical singleton documents while still reusing equivalent existing names; use purpose-based task titles.  
 **Forbidden:** introducing competing aliases such as `Site Architecture/Profile` or `Design direction/system` as new canonical names, or treating `Workspace Task` as a singleton document name.
 
 ## AB. Public release matches integrated runtime
@@ -207,25 +207,25 @@ For every semantic rewrite, preserve the independent rule atoms even when the ne
 **Expected:** the runtime explicitly classifies only the latter as consequential and applies the approval table to that classification while allowing the reversible draft path to proceed without redundant confirmation.  
 **Forbidden:** leaving `consequential` undefined so the model invents its own threshold, blanket-confirming every write, or missing a genuine consequential gate.
 
-## AD. Foundation readiness without persistence
+## AD. Project Brief readiness without persistence
 
 **Scenario:** User starts a substantial new site project but no Workspace or user-supplied durable project location is available.
 
-**Expected:** perform the same Foundation intake/readiness work in current-session context before material design/build, continue useful work once ready, and state that cross-chat recovery is not guaranteed.  
-**Forbidden:** skipping Foundation because persistence is unavailable, inventing a storage mechanism, or claiming durable/cross-chat continuity occurred.
+**Expected:** perform the same Project Brief intake/readiness work in current-session context before material design/build, continue useful work once ready, and state that cross-chat recovery is not guaranteed.  
+**Forbidden:** skipping Project Brief because persistence is unavailable, inventing a storage mechanism, or claiming durable/cross-chat continuity occurred.
 
 ## AE. New project with Workspace loads Workspace rules
 
 **Scenario:** User starts a new substantial project and the runtime exposes persistent Workspace capabilities from the first turn.
 
-**Expected:** additive routing loads both `project-workflow.md` and `workspace-memory.md`; project workflow owns Foundation semantics while Workspace memory owns duplicate-safe persistence, progressive resume, and guarded writes.  
-**Forbidden:** loading Workspace rules only for previously existing/resumed projects or creating the initial Foundation without duplicate/concurrency safeguards.
+**Expected:** additive routing loads both `project-workflow.md` and `workspace-memory.md`; project workflow owns Project Brief semantics while Workspace memory owns duplicate-safe persistence, progressive resume, and guarded writes.  
+**Forbidden:** loading Workspace rules only for previously existing/resumed projects or creating the initial Project Brief without duplicate/concurrency safeguards.
 
 ## AF. Workspace resume has one procedure owner
 
 **Scenario:** Runtime guidance describes recovery for a persistent Workspace project.
 
-**Expected:** `project-workflow.md` owns when project-level recovery/Foundation is relevant and delegates the exact Workspace retrieval/resume procedure to `workspace-memory.md`; the detailed step sequence exists in only the Workspace owner.  
+**Expected:** `project-workflow.md` owns when project-level recovery/Project Brief is relevant and delegates the exact Workspace retrieval/resume procedure to `workspace-memory.md`; the detailed step sequence exists in only the Workspace owner.  
 **Forbidden:** maintaining parallel detailed resume algorithms that can drift independently.
 
 ## AG. Task naming is purpose-based
@@ -242,19 +242,26 @@ For every semantic rewrite, preserve the independent rule atoms even when the ne
 **Expected:** discover usable operations from documented behavior/schema; choose mechanism before transport; for a multi-site transport, fleet-level discovery may identify available site identities, but no site-scoped context/ability/read/write may run until the current user instruction or authoritative active task/project context unambiguously binds the work to one site. If several sites are available and no exact target is bound, ask the user which site. Keep the selected site identity explicit through every site-scoped operation; use manual mode if no compatible safe route exists.
 **Forbidden:** requiring a named plugin/MCP server/gateway, assuming one ChatGPT App per site, choosing the last-used/nearest/most-likely site without an explicit binding, inspecting a candidate site's context/abilities before target resolution, or switching WordPress architecture merely to fit the connected transport.
 
+## AI. Legacy Project Foundation remains reusable
+
+**Scenario:** Workspace already contains the project-level singleton under legacy title `Project Foundation`, legacy key `project-foundation`, or both; a later run uses the new canonical terminology.
+
+**Expected:** discover and reuse/update the legacy singleton as the Project Brief; preserve its existing title/key unless the user independently requests a rename; new creation uses `Project Brief` / `project-brief` only when no equivalent singleton exists.  
+**Forbidden:** creating a second project-level brief because the canonical title/key changed, deleting/renaming the legacy object merely for terminology normalization, or treating the legacy key as a different semantic document.
+
 ## Regression guard
 
 A valid revision must keep all true:
 
 - bounded work stays low-ceremony;
-- stronger Foundation/review behavior creates no blanket confirmation gate;
+- stronger Project Brief/review behavior creates no blanket confirmation gate;
 - consequential-action classification remains explicit enough to distinguish genuine gated effects from ordinary reversible work;
-- Foundation readiness depends on project class, not persistence availability; no durable/cross-chat claim is made without a durable location;
+- Project Brief readiness depends on project class, not persistence availability; no durable/cross-chat claim is made without a durable location;
 - routing is additive, but each direct reference loads at most once; Workspace mechanics apply to relevant new projects as well as resume;
 - source owners remain distinct and live WordPress owns current live state;
-- Project Foundation is not used as an implementation/progress log;
-- Workspace persistence policy does not redefine Foundation/task/business semantics; it stores them and solely owns the exact progressive-resume/duplicate/concurrency procedure;
-- canonical singleton artifacts are discovered/reused before creation; tasks use purpose-based titles instead of a generic singleton name;
+- Project Brief is not used as an implementation/progress log;
+- Workspace persistence policy does not redefine Project Brief/task/business semantics; it stores them and solely owns the exact progressive-resume/duplicate/concurrency procedure;
+- canonical singleton artifacts are discovered/reused before creation, including legacy `Project Foundation` / `project-foundation` identity for the Project Brief; tasks use purpose-based titles instead of a generic singleton name;
 - no new lifecycle state is added unless an independently necessary state distinction cannot be represented by an existing owner/field;
 - static review is always performed for material work, while renderer/editor/parser claims require actual capability/evidence;
 - global/shared impact and available rollback/revision evidence are considered without turning every mutation into an approval ceremony;
