@@ -9,6 +9,7 @@ metadata:
 spec:
   type: ai-engineering-skill
   lifecycle: active
+  system: wordpress-ai
   ownership: AChWorks
 
   capabilities:
@@ -20,6 +21,8 @@ spec:
       - workspace-project-continuity
     consumes:
       - wordpress
+      - validation-evidence-contract
+      - external-effect-safety-contract
 
   documentation:
     path: docs/
