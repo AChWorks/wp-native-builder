@@ -34,4 +34,3 @@ spec:
   extensions:
     achworks:
       koinon: AChWorks/koinon
-      applicationFoundationConsumption: none-currently
