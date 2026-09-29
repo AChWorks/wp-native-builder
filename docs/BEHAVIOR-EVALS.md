@@ -15,35 +15,35 @@ For every semantic rewrite, preserve the independent rule atoms even when the ne
 
 **Scenario:** User says “build my company website” but cannot answer WordPress-specific terminology.
 
-**Expected:** evidence-first discovery; plain-language staged questions covering all material Project Brief domains; continue until each applicable domain is known/delegated/safely inferred/N/A; reuse/create one canonical Project Brief before material design/build.  
+**Expected:** evidence-first discovery; plain-language staged questions covering all material Project Brief domains; continue until each applicable domain is known/delegated/safely inferred/N/A; reuse/create one canonical Project Brief before material design/build.
 **Forbidden:** arbitrary question quota, invented business/brand requirements, or polished build while critical project-level gaps remain.
 
 ## C. Existing Project Brief is reused
 
 **Scenario:** Workspace already contains a durable equivalent brief under another title.
 
-**Expected:** reuse it as Project Brief and derive only missing specialized artifacts.  
+**Expected:** reuse it as Project Brief and derive only missing specialized artifacts.
 **Forbidden:** creating a competing `MASTER`, `PROJECT BRIEF`, or project-spec copy solely for naming consistency.
 
 ## D. Project Brief leaves the hot path
 
 **Scenario:** Project Brief is ready; user later asks to change one posts section.
 
-**Expected:** use current task/Site Architecture Profile/live WordPress as needed; load Project Brief only when project-level intent is material.  
+**Expected:** use current task/Site Architecture Profile/live WordPress as needed; load Project Brief only when project-level intent is material.
 **Forbidden:** rereading/reconciling full Project Brief on every task/chat/page.
 
 ## E. Accepted project-level change updates Project Brief
 
 **Scenario:** User changes the site from lead-generation to paid membership with a materially different primary audience/scope.
 
-**Expected:** update Project Brief and only affected derived sources/tasks; continue unaffected safe work.  
+**Expected:** update Project Brief and only affected derived sources/tasks; continue unaffected safe work.
 **Forbidden:** leaving Project Brief stale or globally rewriting every document.
 
 ## F. Implementation-only change does not churn Project Brief
 
 **Scenario:** Query Loop implementation is replaced by an equivalent mechanism without changing accepted behavior/scope.
 
-**Expected:** update architecture/task/code truth if useful; leave Project Brief unchanged.  
+**Expected:** update architecture/task/code truth if useful; leave Project Brief unchanged.
 **Forbidden:** using Project Brief as implementation/progress log.
 
 ## G. Block-theme header ownership
@@ -134,7 +134,7 @@ For every semantic rewrite, preserve the independent rule atoms even when the ne
 
 **Scenario:** A reversible draft edit is ready, or exact live publication was already authorized for an unchanged target.
 
-**Expected:** proceed under existing approval rules; no extra confirmation merely because Project Brief/self-review exists.  
+**Expected:** proceed under existing approval rules; no extra confirmation merely because Project Brief/self-review exists.
 **Forbidden:** turning stronger intake/review into blanket human gates.
 
 ## T. Package remains progressively loaded
@@ -190,7 +190,7 @@ For every semantic rewrite, preserve the independent rule atoms even when the ne
 
 **Scenario:** A documentation/runtime revision refers to derived project artifacts.
 
-**Expected:** use `Project Brief`, `Site Architecture Profile`, `Information Architecture`, `Design Direction`, and `Content/Data Model` consistently for Skill-created canonical singleton documents while still reusing equivalent existing names; use purpose-based task titles.  
+**Expected:** use `Project Brief`, `Site Architecture Profile`, `Information Architecture`, `Design Direction`, and `Content/Data Model` consistently for Skill-created canonical singleton documents while still reusing equivalent existing names; use purpose-based task titles.
 **Forbidden:** introducing competing aliases such as `Site Architecture/Profile` or `Design direction/system` as new canonical names, or treating `Workspace Task` as a singleton document name.
 
 ## AB. Public release matches integrated runtime
@@ -211,21 +211,21 @@ For every semantic rewrite, preserve the independent rule atoms even when the ne
 
 **Scenario:** User starts a substantial new site project but no Workspace or user-supplied durable project location is available.
 
-**Expected:** perform the same Project Brief intake/readiness work in current-session context before material design/build, continue useful work once ready, and state that cross-chat recovery is not guaranteed.  
+**Expected:** perform the same Project Brief intake/readiness work in current-session context before material design/build, continue useful work once ready, and state that cross-chat recovery is not guaranteed.
 **Forbidden:** skipping Project Brief because persistence is unavailable, inventing a storage mechanism, or claiming durable/cross-chat continuity occurred.
 
 ## AE. New project with Workspace loads Workspace rules
 
 **Scenario:** User starts a new substantial project and the runtime exposes persistent Workspace capabilities from the first turn.
 
-**Expected:** additive routing loads both `project-workflow.md` and `workspace-memory.md`; project workflow owns Project Brief semantics while Workspace memory owns duplicate-safe persistence, progressive resume, and guarded writes.  
+**Expected:** additive routing loads both `project-workflow.md` and `workspace-memory.md`; project workflow owns Project Brief semantics while Workspace memory owns duplicate-safe persistence, progressive resume, and guarded writes.
 **Forbidden:** loading Workspace rules only for previously existing/resumed projects or creating the initial Project Brief without duplicate/concurrency safeguards.
 
 ## AF. Workspace resume has one procedure owner
 
 **Scenario:** Runtime guidance describes recovery for a persistent Workspace project.
 
-**Expected:** `project-workflow.md` owns when project-level recovery/Project Brief is relevant and delegates the exact Workspace retrieval/resume procedure to `workspace-memory.md`; the detailed step sequence exists in only the Workspace owner.  
+**Expected:** `project-workflow.md` owns when project-level recovery/Project Brief is relevant and delegates the exact Workspace retrieval/resume procedure to `workspace-memory.md`; the detailed step sequence exists in only the Workspace owner.
 **Forbidden:** maintaining parallel detailed resume algorithms that can drift independently.
 
 ## AG. Task naming is purpose-based
@@ -246,7 +246,7 @@ For every semantic rewrite, preserve the independent rule atoms even when the ne
 
 **Scenario:** Workspace already contains the project-level singleton under legacy title `Project Foundation`, legacy key `project-foundation`, or both; a later run uses the new canonical terminology.
 
-**Expected:** discover and reuse/update the legacy singleton as the Project Brief; preserve its existing title/key unless the user independently requests a rename; new creation uses `Project Brief` / `project-brief` only when no equivalent singleton exists.  
+**Expected:** discover and reuse/update the legacy singleton as the Project Brief; preserve its existing title/key unless the user independently requests a rename; new creation uses `Project Brief` / `project-brief` only when no equivalent singleton exists.
 **Forbidden:** creating a second project-level brief because the canonical title/key changed, deleting/renaming the legacy object merely for terminology normalization, or treating the legacy key as a different semantic document.
 
 ## Regression guard
