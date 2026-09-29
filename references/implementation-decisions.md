@@ -102,7 +102,7 @@ Prefer forms such as:
 - Template part: `Header — Main`, `Footer — Primary`
 - Pattern: `Home — Hero`, `Global — Trust Bar`
 - Snippet: `Site — Mobile Navigation Enhancement`
-- Workspace doc: `Project Foundation`, `Site Architecture Profile`, `Design Direction`
+- Workspace doc: `Project Brief`, `Site Architecture Profile`, `Design Direction`
 - Task: `Home — Rebuild posts pagination without page reload`
 
 Avoid `Section 1`, `New Pattern`, `Custom CSS 2`, `Untitled`, random IDs, or internal tool labels as the main maintainer-facing name.

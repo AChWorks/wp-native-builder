@@ -24,7 +24,7 @@ wp-native-builder/
 | Runtime source | Owns |
 |---|---|
 | `SKILL.md` | trigger/routing, universal control loop, source authority, universal review/approval/safety invariants |
-| `references/project-workflow.md` | Project Foundation, canonical project artifacts, task semantics, multi-step progression, and project-level recovery triggers |
+| `references/project-workflow.md` | Project Brief, canonical project artifacts, task semantics, multi-step progression, and project-level recovery triggers |
 | `references/implementation-decisions.md` | WordPress owner/mechanism selection, native-vs-custom decisions, placement/naming, shared/global impact and rollback awareness |
 | `references/gutenberg-safety.md` | Gutenberg serialization contract, invalid-block diagnosis, block-specific validation |
 | `references/design-conventions.md` | UI/UX/design judgment, responsive/RTL/accessibility/performance and rendered visual review |
@@ -36,14 +36,14 @@ References may state that another domain also applies, but they do not become a 
 ## Project truth model
 
 ```text
-Project Foundation
+Project Brief
   -> Site Architecture Profile
   -> Information Architecture / Design Direction / Content/Data Model when useful
   -> Workspace Tasks for unresolved execution/review/delivery state
   -> Live WordPress remains authoritative for current site state
 ```
 
-Project Foundation is required only for substantial project classes. Readiness comes from resolved material coverage, not from a separate Foundation lifecycle enum, and does not depend on persistence availability; persistence only determines whether that context survives across chats. Once ready, Foundation leaves the normal hot path.
+Project Brief is required only for substantial project classes. Readiness comes from resolved material coverage, not from a separate Project Brief lifecycle enum, and does not depend on persistence availability; persistence only determines whether that context survives across chats. Once ready, Project Brief leaves the normal hot path.
 
 ## Mechanism-first architecture
 

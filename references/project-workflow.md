@@ -1,17 +1,17 @@
-# Project Foundation and Multi-step Site Workflow
+# Project Brief and Multi-step Site Workflow
 
 Load this reference for a new site, substantial redesign, multi-page/multi-surface build, or any project where durable project-level decisions will materially drive later work or continuation.
 
-**Contents:** [Foundation gate](#1-do-not-design-before-the-project-is-foundation-ready) · [Project Foundation](#2-canonical-project-foundation) · [Readiness](#3-foundation-readiness-coverage) · [Stability](#4-foundation-stability-and-change-control) · [Derived artifacts](#5-derive-specialized-documents-instead-of-overloading-the-foundation) · [Task state](#6-task-state) · [Execution](#7-plan-enough-to-act) · [Recovery](#8-resume-and-recovery) · [Continuity](#9-continuity-reconciliation-before-yielding) · [Launch](#10-complete-site-launch)
+**Contents:** [Project Brief gate](#1-do-not-design-before-the-project-brief-is-ready) · [Project Brief](#2-canonical-project-brief) · [Readiness](#3-project-brief-readiness-coverage) · [Stability](#4-project-brief-stability-and-change-control) · [Derived artifacts](#5-derive-specialized-documents-instead-of-overloading-the-project-brief) · [Task state](#6-task-state) · [Execution](#7-plan-enough-to-act) · [Recovery](#8-resume-and-recovery) · [Continuity](#9-continuity-reconciliation-before-yielding) · [Launch](#10-complete-site-launch)
 
-## 1. Do not design before the project is foundation-ready
+## 1. Do not design before the Project Brief is ready
 
 For this class of work, use:
 
 ```text
 DISCOVER EXISTING STATE
-  -> FOUNDATION INTAKE
-  -> PROJECT FOUNDATION READY
+  -> PROJECT BRIEF INTAKE
+  -> PROJECT BRIEF READY
   -> DERIVE SPECIALIZED PROJECT DOCS / TASKS
   -> PLAN ENOUGH TO ACT
   -> BUILD / VERIFY / REVIEW
@@ -23,9 +23,9 @@ Do not begin material design/build merely because enough information exists to m
 
 Small bounded edits stay on the fast path and do not require this ceremony.
 
-## 2. Canonical Project Foundation
+## 2. Canonical Project Brief
 
-Foundation readiness is required by the project class, not by persistence availability. Establish the same logical **Project Foundation** before material design/build even when no durable location exists. When persistent project storage or another user-supplied durable project location exists, keep one canonical durable Foundation there; otherwise keep the Foundation coherent in the current session and do not claim cross-chat durability. If persistence becomes available later, reconcile into one canonical durable Foundation rather than creating competing copies.
+Project Brief readiness is required by the project class, not by persistence availability. Establish the same logical **Project Brief** before material design/build even when no durable location exists. When persistent project storage or another user-supplied durable project location exists, keep one canonical durable Project Brief there; otherwise keep the Project Brief coherent in the current session and do not claim cross-chat durability. If persistence becomes available later, reconcile into one canonical durable Project Brief rather than creating competing copies.
 
 It owns only stable project-level truth:
 
@@ -43,13 +43,13 @@ It owns only stable project-level truth:
 
 It is **not** a worklog, page-content mirror, active backlog, plugin inventory, current live-site snapshot, or per-task implementation record.
 
-Use one existing equivalent durable project brief/spec if it already owns these facts. Do not create a competing “master” document solely to satisfy naming.
+Use one existing equivalent durable project brief/spec if it already owns these facts. Do not create a competing “master” document solely to satisfy naming. Legacy Workspace artifacts titled `Project Foundation` are valid equivalents: reuse/update them rather than renaming them or creating a second `Project Brief`. When stable document keys are exposed, `workspace-memory.md` owns the corresponding legacy-key compatibility procedure.
 
-## 3. Foundation-readiness coverage
+## 3. Project Brief readiness coverage
 
-Before declaring the Project Foundation ready, resolve every materially applicable domain below as **known**, **user delegated**, **safely inferred**, or **not applicable**:
+Before declaring the Project Brief ready, resolve every materially applicable domain below as **known**, **user delegated**, **safely inferred**, or **not applicable**:
 
-When creating a new Project Foundation document, use these domain labels as the default section headings. Merge adjacent headings only when their meaning remains explicit. Readiness comes from resolved coverage below; do not create a separate Foundation lifecycle/status enum merely to restate that coverage.
+When creating a new Project Brief document, use these domain labels as the default section headings. Merge adjacent headings only when their meaning remains explicit. Readiness comes from resolved coverage below; do not create a separate Project Brief lifecycle/status enum merely to restate that coverage.
 
 | Domain | Examples of material questions |
 |---|---|
@@ -77,21 +77,21 @@ A novice must not need to understand terms such as FSE, template part, CPT, taxo
 - Keep asking across batches until material coverage is complete; do not stop after an arbitrary question quota.
 - Record delegated choices explicitly, e.g. “visual details delegated to builder,” rather than pretending the user supplied them.
 
-## 4. Foundation stability and change control
+## 4. Project Brief stability and change control
 
-After acceptance/readiness, Project Foundation leaves the routine hot path.
+After acceptance/readiness, Project Brief leaves the routine hot path.
 
 Do **not** reread or rewrite it for every page, block, task, chat, or implementation change. Routine work uses the nearest current authoritative source: derived docs, active tasks, live WordPress, code/config, preview/review state.
 
-Reopen/update Project Foundation only when:
+Reopen/update Project Brief only when:
 
 - the user accepts a material change to project purpose, audience, scope, durable constraint, non-goal, or success criteria;
 - current authoritative evidence materially contradicts project-level intent and cannot be reconciled from a nearer source;
 - recovery/completion cannot be resolved safely without it.
 
-A change to Project Foundation is a material project-level change. Explain the impact and consult the user when the change is not already explicitly directed by the user. Implementation-only changes do not churn the foundation.
+A change to Project Brief is a material project-level change. Explain the impact and consult the user when the change is not already explicitly directed by the user. Implementation-only changes do not churn the Project Brief.
 
-## 5. Derive specialized documents instead of overloading the foundation
+## 5. Derive specialized documents instead of overloading the Project Brief
 
 Create only artifacts that pay for themselves. Typical derived artifacts may include:
 
@@ -157,10 +157,10 @@ Do not force this loop onto tiny reversible changes or work the user already exp
 
 ## 7. Plan enough to act
 
-After Foundation readiness, derive only enough sequencing/architecture to prevent rework, then begin the highest-value implementable work.
+After Project Brief readiness, derive only enough sequencing/architecture to prevent rework, then begin the highest-value implementable work.
 
 ```text
-FOUNDATION READY
+PROJECT BRIEF READY
   -> DERIVE/REFRESH RELEVANT ARCHITECTURE + TASK
   -> CHOOSE OWNER/MECHANISM
   -> BUILD
@@ -177,7 +177,7 @@ Do not turn project setup into weeks of speculative documentation.
 
 ## 8. Resume and recovery
 
-Project-level recovery uses the nearest current authoritative sources and reopens Project Foundation only under the stability/change triggers above. When persistent Workspace capabilities are relevant, load `workspace-memory.md` and follow its single canonical progressive-resume procedure; this file does not redefine Workspace retrieval/concurrency mechanics. Re-read live WordPress targets before overwrite-sensitive/current-state-dependent work, then continue the next useful action instead of stopping at a recovery summary.
+Project-level recovery uses the nearest current authoritative sources and reopens Project Brief only under the stability/change triggers above. When persistent Workspace capabilities are relevant, load `workspace-memory.md` and follow its single canonical progressive-resume procedure; this file does not redefine Workspace retrieval/concurrency mechanics. Re-read live WordPress targets before overwrite-sensitive/current-state-dependent work, then continue the next useful action instead of stopping at a recovery summary.
 
 ## 9. Continuity reconciliation before yielding
 
@@ -189,7 +189,7 @@ If no and a durable project location is writable, update the smallest authoritat
 
 Examples:
 
-- project-level scope changed -> Project Foundation;
+- project-level scope changed -> Project Brief;
 - header/footer ownership discovered/changed -> Site Architecture Profile;
 - design system choice accepted -> design doc;
 - task implemented but awaiting user visual review -> task Progress=`done`, Review=`pending`, Delivery=`draft_preview` as applicable;

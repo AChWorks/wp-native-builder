@@ -4,7 +4,7 @@
 **Repository:** `AChWorks/wp-native-builder`  
 **Specific runtime dependency:** None; connected execution is optional and capability-driven.
 
-This file defines the stable product intent and non-negotiable behavior of **WP Native Builder**. It is repository-level product truth for the Skill itself. It is **not** a per-site `Project Foundation`, worklog, backlog, session handoff, release log, or mirror of runtime instructions. Operational detail belongs to `SKILL.md`, its direct runtime references, and the maintained architecture/evaluation docs.
+This file defines the stable product intent and non-negotiable behavior of **WP Native Builder**. It is repository-level product truth for the Skill itself. It is **not** a per-site `Project Brief`, worklog, backlog, session handoff, release log, or mirror of runtime instructions. Operational detail belongs to `SKILL.md`, its direct runtime references, and the maintained architecture/evaluation docs.
 
 ## 1. Product purpose
 
@@ -22,8 +22,8 @@ The Skill is not a CMS, page builder, connector architecture, or general project
 ## 2. Stable product invariants
 
 1. **Proportional process.** Small bounded changes remain fast and do not gain project ceremony merely because Workspace exists.
-2. **Foundation before substantial build.** New sites, substantial redesigns, and genuinely multi-step/multi-surface projects establish sufficient project-level intent before material design/build whether or not persistence is available; persistence determines durability, not Foundation readiness.
-3. **No intake quota.** Foundation discovery continues in compact staged batches until every material domain is known, explicitly delegated, safely inferred, or not applicable.
+2. **Project Brief before substantial build.** New sites, substantial redesigns, and genuinely multi-step/multi-surface projects establish sufficient project-level intent before material design/build whether or not persistence is available; persistence determines durability, not Project Brief readiness.
+3. **No intake quota.** Project Brief discovery continues in compact staged batches until every material domain is known, explicitly delegated, safely inferred, or not applicable.
 4. **Evidence before questions.** Discover decision-relevant live/project facts when possible; ask only unresolved material questions in language the user can answer.
 5. **Stack-adaptive, not stack-forcing.** Existing suitable site architecture, editor, theme, builder, plugin, form, commerce, and data ownership outrank preferred defaults.
 6. **Mechanism first, transport second.** Decide what should own behavior before choosing which connected Ability/tool can operate it.
@@ -41,33 +41,33 @@ The Skill is not a CMS, page builder, connector architecture, or general project
 18. **No duplicate truth owners.** One canonical owner should exist for each durable kind of project truth; derived documents specialize rather than mirror each other.
 19. **Transport independence and target integrity.** The Skill must not require or hard-code a specific plugin, connector, MCP server, gateway, tool name, or one-App-per-site topology. Discover compatible capabilities from current runtime behavior/schema. On a multi-site transport, never infer a site from last-used/conversational context: require an unambiguous current target or an authoritative task/project binding, otherwise ask the user which site before any site-scoped capability is used; keep the resolved target explicit throughout execution.
 
-## 3. Request classes and Project Foundation
+## 3. Request classes and Project Brief
 
 ### 3.1 Fast bounded work
 
-A change that can be understood, implemented, and verified now stays on the fast path. It does not require a Project Foundation, new permanent task, broad site audit, or persistent document by ritual.
+A change that can be understood, implemented, and verified now stays on the fast path. It does not require a Project Brief, new permanent task, broad site audit, or persistent document by ritual.
 
-### 3.2 Foundation-required work
+### 3.2 Work requiring a Project Brief
 
-Use Project Foundation when project-level decisions will materially drive multiple later tasks or continuation, including a new site, substantial redesign/rebrand, multi-page/multi-surface build, or comparable long-lived work.
+Use Project Brief when project-level decisions will materially drive multiple later tasks or continuation, including a new site, substantial redesign/rebrand, multi-page/multi-surface build, or comparable long-lived work.
 
 One visually large page is not automatically a project if current durable context already resolves the material decisions.
 
-### 3.3 Foundation semantics
+### 3.3 Project Brief semantics
 
-A project that needs Project Foundation establishes the same logical project-level brief regardless of whether persistence is available. When a suitable durable location exists, keep **one** canonical durable Project Foundation there and reuse an existing equivalent brief/specification rather than creating a competing “master” document. Without a durable location, keep the Foundation coherent in current-session context and never claim automatic cross-chat recovery.
+A project that needs Project Brief establishes the same logical project-level brief regardless of whether persistence is available. When a suitable durable location exists, keep **one** canonical durable Project Brief there and reuse an existing equivalent brief/specification rather than creating a competing “master” document. Without a durable location, keep the Project Brief coherent in current-session context and never claim automatic cross-chat recovery.
 
-The Foundation owns accepted purpose/outcomes, audience, scope/non-goals, content/primary actions, functional requirements, brand/design constraints, durable technical/quality constraints, governance/delivery expectations, success criteria, and material owner decisions.
+The Project Brief owns accepted purpose/outcomes, audience, scope/non-goals, content/primary actions, functional requirements, brand/design constraints, durable technical/quality constraints, governance/delivery expectations, success criteria, and material owner decisions.
 
-It does **not** own worklogs, active task progress, current plugin inventory, copied page content, live-site snapshots, or implementation history. Foundation readiness is determined from coverage of material domains; the product does not require a separate Foundation lifecycle/status enum.
+It does **not** own worklogs, active task progress, current plugin inventory, copied page content, live-site snapshots, or implementation history. Project Brief readiness is determined from coverage of material domains; the product does not require a separate Project Brief lifecycle/status enum.
 
-After readiness, Foundation leaves the routine hot path. Reopen it only for accepted material project-level change, unresolved contradiction, or recovery/completion need.
+After readiness, Project Brief leaves the routine hot path. Reopen it only for accepted material project-level change, unresolved contradiction, or recovery/completion need.
 
 ## 4. Canonical project sources
 
 Use these canonical names when a singleton project document is created by the Skill:
 
-- `Project Foundation`
+- `Project Brief`
 - `Site Architecture Profile`
 - `Information Architecture`
 - `Design Direction`
@@ -78,7 +78,7 @@ Equivalent existing project artifacts may retain their established names when th
 Source authority remains separated:
 
 1. current explicit user instruction — requested outcome/change;
-2. Project Foundation — accepted durable project-level intent when persisted, or current-session project-level intent when no durable location exists;
+2. Project Brief — accepted durable project-level intent when persisted, or current-session project-level intent when no durable location exists;
 3. derived project documents — their specialized durable domain;
 4. Workspace tasks — unresolved execution/review/delivery state when persistent Workspace exists;
 5. verified live WordPress — current site objects/configuration;
@@ -121,7 +121,7 @@ Static review never substitutes for rendered evidence, and lack of a renderer/va
 
 ### Manual
 
-Without connected capabilities, provide exact stack-aware implementation guidance/output. Foundation-required work still establishes Foundation context; a user-supplied durable location may provide cross-chat continuity, otherwise persistence is not guaranteed.
+Without connected capabilities, provide exact stack-aware implementation guidance/output. Work requiring a Project Brief still establishes the same Project Brief context; a user-supplied durable location may provide cross-chat continuity, otherwise persistence is not guaranteed.
 
 ### Connected
 
@@ -175,7 +175,7 @@ The distributable Skill remains shallow and progressively loaded:
 | Runtime source | Canonical responsibility |
 |---|---|
 | `SKILL.md` | trigger/routing, universal control loop, source authority, universal review/approval/safety invariants |
-| `references/project-workflow.md` | Project Foundation, canonical project artifacts, task semantics, multi-step progression, and project-level recovery triggers |
+| `references/project-workflow.md` | Project Brief, canonical project artifacts, task semantics, multi-step progression, and project-level recovery triggers |
 | `references/implementation-decisions.md` | WordPress surface ownership, native-vs-custom decisions, placement/naming, shared/global impact/rollback awareness |
 | `references/gutenberg-safety.md` | Gutenberg serialization, invalid-block diagnosis, block-specific validation |
 | `references/design-conventions.md` | UI/UX/design judgment and visual review |
@@ -194,7 +194,7 @@ Reference files may point to another domain whose rule also applies, but they mu
 - Forcing Custom HTML/custom code for every section.
 - Recreating GitHub/Jira-style orchestration inside WordPress.
 - Treating every request as a persistent task or every page as a project.
-- Loading Project Foundation on every chat/task/page merely because it exists.
+- Loading Project Brief on every chat/task/page merely because it exists.
 - Storing chat transcripts, hidden reasoning, secrets, or broad live-site/database mirrors in Workspace.
 - Adding vector-memory/RAG or an external persistence service merely for continuity.
 - Blind retry loops.
@@ -206,9 +206,9 @@ A release-quality revision must preserve these outcomes:
 
 - standard Skill validation and packaging pass;
 - small bounded work remains fast;
-- substantial projects resolve material Foundation gaps before major build even when no persistence location is available;
+- substantial projects resolve material Project Brief gaps before major build even when no persistence location is available;
 - novice intake does not require WordPress terminology;
-- one canonical durable Foundation is used when persistence exists, while current-session Foundation semantics remain valid without persistence;
+- one canonical durable Project Brief is used when persistence exists, while current-session Project Brief semantics remain valid without persistence;
 - additive routing can load every applicable direct reference without duplicate loading, including Workspace mechanics for new as well as resumed projects;
 - canonical singleton project documents are reused before new copies are created, while tasks use purpose-based titles;
 - global/template/shared changes inspect impact and preserve practical revision/rollback evidence when available;
