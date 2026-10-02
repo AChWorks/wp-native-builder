@@ -148,8 +148,8 @@ For every semantic rewrite, preserve the independent rule atoms even when the ne
 
 **Scenario:** A resumed connected project asks to redesign a Gutenberg global header from a screenshot.
 
-**Expected:** route to every applicable direct domain: project/Workspace, implementation ownership, Gutenberg safety, and design conventions; load each once.  
-**Forbidden:** treating the first matching routing row as exclusive or silently skipping a second applicable domain.
+**Expected:** route to every applicable direct WordPress domain: project/Workspace, implementation ownership, Gutenberg safety, and design conventions; load each once. When general interface judgment is materially unresolved and Product Interface Designer is available, consult it once for that bounded interface decision, then return control to WP Native Builder.  
+**Forbidden:** treating the first matching routing row as exclusive, silently skipping a second applicable domain, or turning specialist consultation into a competing project/WordPress owner.
 
 ## V. Project Brief has consistent shape without a new lifecycle state
 
@@ -249,6 +249,56 @@ For every semantic rewrite, preserve the independent rule atoms even when the ne
 **Expected:** discover and reuse/update the legacy singleton as the Project Brief; preserve its existing title/key unless the user independently requests a rename; new creation uses `Project Brief` / `project-brief` only when no equivalent singleton exists.
 **Forbidden:** creating a second project-level brief because the canonical title/key changed, deleting/renaming the legacy object merely for terminology normalization, or treating the legacy key as a different semantic document.
 
+
+## AJ. Bounded visual edit does not invoke the specialist
+
+**Scenario:** User asks to change copy, spacing, and one color on an existing Gutenberg section whose design direction and interaction are already settled.
+
+**Expected:** keep the fast path inside WP Native Builder; preserve the established design system, implement the bounded WordPress change, and review proportionally.  
+**Forbidden:** invoking Product Interface Designer merely because the surface is visual or user-facing.
+
+## AK. Material interface redesign gets one bounded specialist decision
+
+**Scenario:** User asks to substantially redesign a screenshot-led WooCommerce category header, including hierarchy, mobile recomposition, RTL behavior, and interaction emphasis.
+
+**Expected:** WP Native Builder keeps project/WordPress authority, passes only decision-relevant interface context, obtains one Product Interface Designer packet with **Intent / Decision / Constraints / Implementation latitude / Evidence / Open assumptions**, then resumes WordPress mechanism selection and implementation.  
+**Forbidden:** asking both Skills to independently design the same surface, copying the specialist rulebook locally, or letting the specialist choose Gutenberg/theme/plugin internals.
+
+## AL. Returned packet is reused instead of re-invoked
+
+**Scenario:** Product Interface Designer has already returned a valid interface packet and WP Native Builder is now selecting blocks, template ownership, CSS placement, and execution transport.
+
+**Expected:** reuse the packet within its implementation latitude until accepted outcome/material assumptions/evidence change; keep WordPress decisions local.  
+**Forbidden:** re-invoking the specialist at each implementation step, tool change, block choice, or transport operation.
+
+## AM. Rendered review does not create a ping-pong loop
+
+**Scenario:** Implementation is rendered and WP Native Builder finds ordinary spacing/alignment defects but no new material interface question.
+
+**Expected:** fix the implementation defects locally and continue to the normal user-review/publication path. Re-consult Product Interface Designer only if rendered evidence materially invalidates the current packet, introduces a new interface decision, or specialist review was explicitly required.  
+**Forbidden:** automatic specialist re-review after every render or bouncing unchanged findings between the two Skills.
+
+## AN. WordPress constraint returns only the interface conflict
+
+**Scenario:** The specialist's desired presentation cannot be represented safely by the current Gutenberg/theme mechanism without invalid serialization or a brittle unsupported override.
+
+**Expected:** WP Native Builder keeps mechanism ownership, identifies the exact implementation constraint, and only returns to Product Interface Designer if a material interface adaptation is required; the specialist returns an adjusted interface decision/latitude, then control returns immediately.  
+**Forbidden:** asking the specialist to select WordPress internals or having WP Native Builder silently override the interface intent without surfacing a material conflict.
+
+## AO. Specialist unavailable keeps standalone behavior useful
+
+**Scenario:** A material interface task occurs but Product Interface Designer is unavailable or cannot be invoked.
+
+**Expected:** use the proportional standalone fallback in `references/design-conventions.md`, state only material evidence limitations, and continue with correct WordPress ownership/verification.  
+**Forbidden:** blocking ordinary WordPress work solely because the optional specialist is absent or pretending specialist review occurred.
+
+## AP. Shared concerns have one decision owner
+
+**Scenario:** A redesign includes accessibility, responsive behavior, RTL, visual review, and performance concerns.
+
+**Expected:** when composed, Product Interface Designer owns user-facing intent/critique while WP Native Builder owns WordPress semantic/mechanism realization, runtime implementation cost, and platform verification.  
+**Forbidden:** parallel mandatory checklists that independently re-decide the same hierarchy, interaction, responsive, or locale presentation.
+
 ## Regression guard
 
 A valid revision must keep all true:
@@ -257,13 +307,15 @@ A valid revision must keep all true:
 - stronger Project Brief/review behavior creates no blanket confirmation gate;
 - consequential-action classification remains explicit enough to distinguish genuine gated effects from ordinary reversible work;
 - Project Brief readiness depends on project class, not persistence availability; no durable/cross-chat claim is made without a durable location;
-- routing is additive, but each direct reference loads at most once; Workspace mechanics apply to relevant new projects as well as resume;
+- routing is additive, but each direct reference loads at most once; Workspace mechanics apply to relevant new projects as well as resume; material interface specialist consultation is conditional rather than automatic;
 - source owners remain distinct and live WordPress owns current live state;
 - Project Brief is not used as an implementation/progress log;
 - Workspace persistence policy does not redefine Project Brief/task/business semantics; it stores them and solely owns the exact progressive-resume/duplicate/concurrency procedure;
 - canonical singleton artifacts are discovered/reused before creation, including legacy `Project Foundation` / `project-foundation` identity for the Project Brief; tasks use purpose-based titles instead of a generic singleton name;
 - no new lifecycle state is added unless an independently necessary state distinction cannot be represented by an existing owner/field;
 - static review is always performed for material work, while renderer/editor/parser claims require actual capability/evidence;
+- composed UI work has one active interface-decision owner and one WordPress mechanism/lifecycle owner; the specialist packet is reused until materially invalidated, and rendered review never creates automatic ping-pong consultation;
+- Product Interface Designer remains optional: bounded/settled UI work stays local and unavailable specialist capability falls back to proportional standalone design guidance without blocking WordPress work;
 - global/shared impact and available rollback/revision evidence are considered without turning every mutation into an approval ceremony;
 - existing suitable architecture remains preferred over Skill defaults;
 - connected execution stays product/tool-name independent and preserves explicit target-site integrity when a transport can reach multiple sites;
