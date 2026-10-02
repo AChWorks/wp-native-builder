@@ -38,8 +38,13 @@ When no interface specialist is active, derive a compact direction from availabl
 1. accepted outcome and hierarchy;
 2. existing approved visual/design-system truth;
 3. target platform, language/direction/locale, and content shape;
-4. layout/density/typography/imagery treatment needed for the task;
-5. only the interaction/responsive/accessibility decisions that materially affect the requested surface.
+4. visual character plus layout/density/typography/color/imagery treatment needed for the task;
+5. only the interaction/responsive/accessibility decisions that materially affect the requested surface;
+6. for substantial new/redesign work, at most one useful distinctive idea that supports the project rather than a gimmick.
+
+Let content importance determine the path through orientation, understanding/trust, and action where relevant; do not force a stock hero/cards/CTA sequence. Avoid unsupported generic-AI habits such as gratuitous gradients, excessive pills/cards, decorative blobs, or identical card rows when the content calls for another composition.
+
+For recurring visual systems, establish only decisions that genuinely recur: container behavior, spacing rhythm, type scale, color roles, radius/border/depth language, imagery treatment, and interaction states.
 
 For targeted modification, preserve established tokens, geometry, typography, spacing conventions, component language, and ownership unless the accepted change targets them.
 
@@ -59,6 +64,7 @@ Apply only dimensions that can change the current implementation:
 - **Responsive implementation:** implement intended recomposition/order/grouping/crop/touch/spacing behavior rather than merely shrinking.
 - **RTL/LTR implementation:** use logical alignment/spacing where practical; verify icon/arrow meaning, control order, mixed-direction content, and theme/plugin assumptions.
 - **Accessibility implementation:** keyboard/focus visibility, meaningful alternatives/labels, semantic controls, and applicable platform behavior.
+- **Motion implementation:** implement only intended purposeful motion and preserve `prefers-reduced-motion` behavior when motion exists.
 - **Performance:** avoid duplicate fonts/icon libraries/frameworks; protect critical/LCP media; lazy-load only non-critical media; prefer CSS/native behavior over unnecessary JS.
 - **Maintainability:** keep edit location and ownership discoverable; centralize shared code only when reuse/lifecycle justifies it.
 
@@ -101,7 +107,7 @@ Always perform a static WordPress-side review before user handoff. Check:
 
 Static review is not rendered proof.
 
-When preview/render is available, inspect actual layout/interaction and correct clear implementation defects before user review. In composed mode, do not use this pass to invent a competing interface direction.
+When preview/render is available, inspect actual layout/interaction and correct clear implementation defects before user review. In standalone mode, also check first-impression clarity, balance, credibility, focal path, and whether the result feels generic/template-like for the project. In composed mode, do not use this pass to invent a competing interface direction.
 
 Request Product Interface Designer re-review only when the current rendered result creates a **material interface question**, invalidates the current interface packet, or specialist review is part of the accepted task. A normal successful implementation pass returns directly to WP Native Builder/user workflow without another specialist invocation.
 
