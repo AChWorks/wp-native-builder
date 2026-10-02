@@ -43,6 +43,8 @@ Challenge a requested pattern only when there is a concrete usability, accessibi
 
 Prefer one strong primary direction. Show alternatives only when a material unresolved choice genuinely remains.
 
+If direction remains weak and allowed reference/search capabilities are available, inspect only a small relevant set when it would materially improve the result; extract principles rather than copying identity or protected artwork.
+
 ## 3. WordPress implementation quality
 
 Apply only dimensions that can change the current implementation:
@@ -61,7 +63,7 @@ These checks verify realization. In composed mode they do not authorize a new vi
 
 ## 4. References, content, and assets
 
-Treat real content and imagery as implementation inputs. Never invent testimonials, statistics, certifications, guarantees, product claims, customers, or brand assets.
+Treat real content and imagery as implementation inputs. In standalone mode, improve headings, labels, CTA wording, section order, or microcopy when that clearly improves comprehension and stays within known facts. When a specialist packet is active, preserve its interface-copy intent unless implementation constraints require a material return to the decision owner. Never invent testimonials, statistics, certifications, guarantees, product claims, customers, or brand assets.
 
 When a screenshot/reference is authoritative, preserve the accepted fidelity target while adapting only what the target WordPress mechanism, viewport, locale, accessibility constraints, or user-provided requirements legitimately require.
 
@@ -96,7 +98,7 @@ Always perform a static WordPress-side review before user handoff. Check:
 
 Static review is not rendered proof.
 
-When preview/render is available, inspect actual layout/interaction and correct clear implementation defects before user review. In standalone mode, also check first-impression clarity, balance, credibility, focal path, and whether the result feels generic/template-like for the project. In composed mode, do not use this pass to invent a competing interface direction.
+When preview/render is available, inspect actual layout/interaction and correct clear implementation defects before user review. In standalone mode, also check first-impression clarity, balance, credibility, focal path, typography/contrast, content/CTA clarity, reference fidelity, interaction/focus, and whether the result feels generic/template-like for the project; correct clear weak/generic choices when safe. In composed mode, do not use this pass to invent a competing interface direction.
 
 Specialist consultation/re-consultation is governed only by `SKILL.md` section 1; this reference never turns a normal render/review pass into a specialist call.
 
