@@ -5,7 +5,7 @@ Load this reference for material UI creation/redesign/review, screenshot/referen
 This file has two modes:
 
 - **Composed mode:** Product Interface Designer owns the active general interface judgment; this reference owns WordPress realization/fidelity checks and must not create a competing art direction.
-- **Standalone mode:** when Product Interface Designer is unavailable or not intentionally consulted, use the proportional fallback guidance here so WP Native Builder remains useful by itself.
+- **Standalone mode:** when no current specialist decision covers the interface question, use the proportional fallback guidance here so WP Native Builder remains useful by itself.
 
 ## 1. Composed mode: preserve one interface-decision owner
 
@@ -20,9 +20,9 @@ This reference never initiates Product Interface Designer consultation or re-con
 
 ## 2. Standalone fallback: establish only enough direction
 
-Use this fallback only when no current specialist decision covers the interface question. It is intentionally compact so composed work does not run a second generic UI/UX checklist.
+Use this fallback only when no current specialist decision covers the interface question. If an accepted `Design Direction` already resolves the current interface choice, reuse it rather than deriving another direction. This fallback is intentionally compact so composed work does not run a second generic UI/UX checklist.
 
-Derive a compact direction from available evidence:
+Derive a compact direction from available evidence only when material direction is still unresolved:
 
 1. accepted outcome and hierarchy;
 2. existing approved visual/design-system truth;
