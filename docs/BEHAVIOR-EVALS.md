@@ -317,8 +317,8 @@ For every semantic rewrite, preserve the independent rule atoms even when the ne
 
 **Scenario:** A multi-step WordPress project reaches its normal preview/review phase after a valid specialist interface decision has already been implemented.
 
-**Expected:** project workflow performs WordPress-side implementation/fidelity review and human review state handling; specialist re-consultation remains governed only by `SKILL.md` section 1.  
-**Forbidden:** invoking Product Interface Designer merely because `project-workflow.md` says visual/rendered review is material.
+**Expected:** the applicable routed review owner performs implementation/fidelity review, while project workflow only manages project Review/Delivery transitions; specialist re-consultation remains governed only by `SKILL.md` section 1.  
+**Forbidden:** duplicating review criteria inside project workflow or invoking Product Interface Designer merely because the project reaches its review phase.
 
 ## Regression guard
 
