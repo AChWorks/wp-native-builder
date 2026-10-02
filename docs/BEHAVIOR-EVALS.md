@@ -275,7 +275,7 @@ For every semantic rewrite, preserve the independent rule atoms even when the ne
 
 **Scenario:** Implementation is rendered and WP Native Builder finds ordinary spacing/alignment defects but no new material interface question.
 
-**Expected:** fix ordinary implementation defects locally and continue to the normal user-review/publication path. Re-consult only when accepted outcome, authoritative product/design truth, target surface/platform/locale, or decision-relevant rendered evidence materially changes the interface question, or specialist review was explicitly required.  
+**Expected:** fix ordinary implementation defects locally and continue to the normal user-review/publication path. Re-consult only when accepted outcome, authoritative product/design truth, or target surface/platform/locale materially changes, rendered evidence raises a material interface/fidelity question that cannot be resolved as a local implementation defect, or specialist review was explicitly required.  
 **Forbidden:** treating block/mechanism/tool changes or ordinary defects as packet invalidation, automatic specialist re-review after every render, or bouncing unchanged findings between the two Skills.
 
 ## AN. WordPress constraint returns only the interface conflict
