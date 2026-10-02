@@ -9,31 +9,20 @@ This file has two modes:
 
 ## 1. Composed mode: preserve one interface-decision owner
 
-When Product Interface Designer is active for the current interface question:
+When a current Product Interface Designer packet covers the interface question:
 
-- treat its current packet as the interface intent contract for the bounded decision;
-- keep WordPress owner/mechanism, Gutenberg safety, theme/plugin/builder lifecycle, execution, publication, and live verification local;
-- implement within the returned **Implementation latitude** instead of re-litigating the visual/UX decision;
-- use current WordPress constraints as implementation feedback, not as a second art direction;
-- return to the specialist only when a WordPress constraint materially prevents the intended experience, a material rendered finding changes the interface question, or specialist review was explicitly required;
-- never bounce ordinary implementation details, Gutenberg serialization choices, plugin/theme API choices, CSS placement, publication, or rollback questions to the specialist.
+- treat it as the resolved interface intent for that bounded decision;
+- implement within its **Implementation latitude** instead of re-litigating hierarchy, visual direction, interaction, responsive/locale, or accessibility-UX intent;
+- keep WordPress owner/mechanism, Gutenberg safety, theme/plugin/builder lifecycle, semantic realization, runtime implementation cost, execution, publication, and live verification local;
+- surface an exact WordPress constraint only when it materially prevents the intended experience; do not silently replace the interface intent with a platform workaround.
 
-Shared concerns split by decision type:
-
-| Concern | Product Interface Designer when active | WP Native Builder |
-|---|---|---|
-| Accessibility | intended user-facing experience/critique | semantic/native WordPress realization and verification |
-| Responsive/adaptive | intended recomposition/priority | implementation in the selected WordPress owner/mechanism |
-| RTL/locale | intended presentation/UX | logical CSS/markup/theme/plugin realization |
-| Visual review | material interface judgment | rendered implementation fidelity and WordPress defects |
-| Performance | obvious interface/perceived-performance constraints | asset/mechanism/runtime implementation cost |
-| Maintainability | may constrain experience continuity | ownership, editability, supported mechanism, code placement |
-
-Do not copy or restate the specialist's generic UI rulebook here.
+This reference never initiates Product Interface Designer consultation or re-consultation. `SKILL.md` section 1 is the sole owner of that protocol. Do not copy or restate the specialist's generic UI rulebook here.
 
 ## 2. Standalone fallback: establish only enough direction
 
-When no interface specialist is active, derive a compact direction from available evidence:
+Use this fallback only when no current specialist decision covers the interface question. It is intentionally compact so composed work does not run a second generic UI/UX checklist.
+
+Derive a compact direction from available evidence:
 
 1. accepted outcome and hierarchy;
 2. existing approved visual/design-system truth;
@@ -109,6 +98,6 @@ Static review is not rendered proof.
 
 When preview/render is available, inspect actual layout/interaction and correct clear implementation defects before user review. In standalone mode, also check first-impression clarity, balance, credibility, focal path, and whether the result feels generic/template-like for the project. In composed mode, do not use this pass to invent a competing interface direction.
 
-Request Product Interface Designer re-review only when the current rendered result creates a **material interface question**, invalidates the current interface packet, or specialist review is part of the accepted task. A normal successful implementation pass returns directly to WP Native Builder/user workflow without another specialist invocation.
+Specialist consultation/re-consultation is governed only by `SKILL.md` section 1; this reference never turns a normal render/review pass into a specialist call.
 
 When Gutenberg is involved, the Gutenberg safety rules also apply; if an editor/preview is available, explicitly look for invalid/recovery warnings before user review.
