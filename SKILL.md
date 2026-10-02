@@ -18,7 +18,7 @@ Classify the current request:
 | Persistent Workspace capabilities are relevant to a substantial/multi-step project, whether starting new work or resuming existing work | Also read `references/workspace-memory.md` for persistence, progressive resume, duplicate avoidance, and guarded Workspace writes. |
 | Ownership/mechanism is non-obvious or global/reusable/theme/builder/plugin/data-model behavior is involved | Read `references/implementation-decisions.md`. |
 | Gutenberg/Core blocks, Patterns, raw `post_content`, serialized block markup, or an invalid-block symptom is involved | Read `references/gutenberg-safety.md`. |
-| Material UI creation/redesign/review, screenshot-led work, or presentation where responsive/RTL/accessibility/interface judgment is material | Read `references/design-conventions.md`; apply the interface-specialist composition rules below when Product Interface Designer is active or available and specialist judgment is actually warranted. |
+| Material UI creation/redesign/review, screenshot-led work, or presentation where responsive/RTL/accessibility/interface judgment is material | Read `references/design-conventions.md`. Reuse any still-valid interface decision already present. Consult Product Interface Designer only when the current interface decision is materially unresolved or the user explicitly requests that consultation; do not probe specialist availability for bounded/settled work. |
 
 Routing is additive, not exclusive. Apply every matching row and load each required direct reference at most once.
 
@@ -27,6 +27,8 @@ A large visual request is not automatically a multi-step project. Use Project Br
 ### Interface-specialist composition
 
 Product Interface Designer is an optional consulted specialist, not a required dependency and not a nested Master or project owner.
+
+Before consulting, reuse a still-valid Product Interface Designer packet already present in the active flow. Also reuse any accepted durable interface conclusion already reconciled into the canonical `Design Direction`; do not invoke the specialist merely to recreate an already-settled decision.
 
 Consult it only when **general interface judgment is both material and unresolved**, such as:
 
@@ -51,8 +53,8 @@ When consultation is warranted:
    - **Evidence**
    - **Open assumptions**
 4. Resume control immediately. Translate the packet into the smallest safe WordPress-native implementation without asking Product Interface Designer to choose WordPress internals.
-5. Reuse that packet while its accepted outcome, material interface assumptions, and relevant evidence remain valid. Do not re-consult merely because implementation starts, a tool changes, or another WordPress step begins.
-6. Consult again after implementation only when material rendered evidence introduces a new interface question, the prior packet is invalidated by meaningful change, or specialist interface review was explicitly part of the accepted work. On re-consult, pass the prior packet plus only the changed evidence/constraint and the exact new interface question; do not resend unrelated project history.
+5. Reuse that packet while the accepted outcome, authoritative product/design truth, target surface/platform/locale, and material evidence that shaped it remain valid. Implementation mechanism, block choice, tool/transport changes, or ordinary implementation defects do not invalidate it.
+6. Consult again only when one of those decision inputs materially changes, new rendered evidence creates a different interface question, or specialist interface review was explicitly part of the accepted work. On re-consult, pass the prior packet plus only the changed evidence/constraint and the exact new interface question; do not resend unrelated project history.
 7. Never bounce unresolved WordPress mechanism/lifecycle questions to Product Interface Designer. Never reinterpret its packet as project, repository, publication, or release authority.
 
 If Product Interface Designer is unavailable or not invoked, `references/design-conventions.md` supplies proportional standalone fallback behavior.
@@ -64,11 +66,10 @@ ROUTE
   -> RECOVER/DISCOVER RELEVANT TRUTH
   -> ESTABLISH PROJECT BRIEF IF REQUIRED
   -> RESOLVE MATERIAL UNKNOWNS
-  -> RESOLVE MATERIAL INTERFACE DECISION IF SPECIALIST CONSULTATION IS WARRANTED
+  -> RESOLVE MATERIAL INTERFACE DECISION WHEN NEEDED
   -> CHOOSE WORDPRESS OWNER/MECHANISM
   -> BUILD NARROWLY
   -> PRE-USER SELF-REVIEW
-  -> SPECIALIST INTERFACE RE-REVIEW ONLY IF MATERIAL/REQUIRED
   -> USER REVIEW WHEN NEEDED
   -> PUBLISH WHEN AUTHORIZED
   -> VERIFY
@@ -87,10 +88,11 @@ Use each source only for the truth it owns:
 3. Derived project documents control their specialized durable domain, such as Site Architecture Profile, Information Architecture, Design Direction, or Content/Data Model.
 4. Current Workspace tasks control unresolved execution/review/delivery state when persistent Workspace exists.
 5. Verified live WordPress state controls what pages, templates, content, plugins, theme/builder configuration, and other site objects currently exist.
-6. A current Product Interface Designer packet, when intentionally consulted, controls only the active interface decision/review within its stated constraints and evidence.
-7. Skill defaults fill only unresolved choices.
+6. Skill defaults fill only unresolved choices.
 
-Do not use a project document as proof that a live WordPress object has not changed. Do not repeatedly reload Project Brief when nearer current sources already answer the current question. Do not persist a specialist packet as a second project truth source; reconcile accepted durable conclusions into the existing canonical artifact only when future work needs them.
+A current Product Interface Designer packet is **not** a new authority layer. It is a bounded derived interface decision constrained by the applicable sources above. Use it as implementation input while those material inputs remain valid; if an upstream accepted requirement, authoritative design/product truth, target context, or decision-relevant evidence materially changes, treat the affected packet as stale. Do not persist the packet as a second project truth source; reconcile only accepted durable conclusions into the existing canonical artifact when future work needs them.
+
+Do not use a project document as proof that a live WordPress object has not changed. Do not repeatedly reload Project Brief when nearer current sources already answer the current question.
 
 ## 4. Ask / Infer / Defer
 
@@ -182,18 +184,17 @@ Do not convert one plausible transport/runtime failure into “capability unavai
 
 For material visual work, load `references/design-conventions.md`.
 
-When Product Interface Designer is active for the current interface question, it owns the material user-facing hierarchy/visual/interaction/responsive/locale/accessibility-UX judgment. WP Native Builder owns the WordPress realization and checks that the implementation preserves the returned intent without introducing WordPress-specific defects.
+`references/design-conventions.md` owns WordPress-side realization quality plus the standalone fallback. Section 1 is the only owner of Product Interface Designer consultation/re-consultation rules.
 
-When no specialist is active, use the standalone fallback guidance in `references/design-conventions.md`. Do not invoke a specialist only to restate an already-settled design decision or to perform ordinary WordPress implementation checks.
+If a current specialist packet already covers the interface question, treat the material interface intent as resolved and do not independently re-decide it. When no specialist decision is active, use the proportional standalone fallback in `references/design-conventions.md`.
 
-Always do a static WordPress-side structure/ownership/implementation review before user handoff. When a preview/render is available, add rendered verification. Request specialist re-review only under the bounded conditions in section 1.
+Always do a static WordPress-side structure/ownership/implementation review before user handoff. When a preview/render is available, add rendered verification. Ordinary implementation findings stay local; they do not by themselves reopen specialist consultation.
 
 ```text
 INTERFACE INTENT
   -> WORDPRESS BUILD
   -> PREVIEW/RENDER WHEN AVAILABLE
   -> WORDPRESS-SIDE SELF-REVIEW + FIX CLEAR IMPLEMENTATION DEFECTS
-  -> SPECIALIST INTERFACE RE-REVIEW ONLY IF MATERIAL/REQUIRED
   -> USER REVIEW IF REQUIRED
   -> REVISE/APPROVE
   -> PUBLISH WHEN AUTHORIZED
