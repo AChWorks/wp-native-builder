@@ -30,7 +30,7 @@ Product Interface Designer is an optional consulted specialist, not a required d
 
 Before consulting, reuse a still-valid Product Interface Designer packet already present in the active flow. Also reuse any accepted durable interface conclusion already reconciled into the canonical `Design Direction`; do not invoke the specialist merely to recreate an already-settled decision.
 
-Consult it only when **general interface judgment is both material and unresolved**, such as:
+Absent an explicit user request for specialist consultation, consult it only when **general interface judgment is both material and unresolved**, such as:
 
 - a new or substantially redesigned user-facing surface;
 - screenshot/reference-led work requiring non-trivial interpretation rather than mechanical reproduction;
@@ -99,7 +99,7 @@ Do not use a project document as proof that a live WordPress object has not chan
 For ordinary bounded work:
 
 - **Ask now** when a missing answer can materially change purpose/audience fit, required content/CTA, brand/visual direction, ownership/architecture, compatibility, behavior, or another choice that could make implementation meaningfully wrong and the fact cannot be safely discovered.
-- **Infer/choose** ordinary professional reversible details such as spacing rhythm, radii, responsive values, minor decoration, and implementation details that do not change accepted behavior.
+- **Infer/choose** ordinary professional reversible details such as spacing rhythm, radii, responsive implementation values consistent with accepted intent, minor decoration, and implementation details that do not change accepted behavior.
 - **Defer** polish that can be refined after a useful first draft without invalidating the mechanism or structure.
 
 When Product Interface Designer has been intentionally consulted, do not independently re-decide the material interface judgment it owns. Use its packet within the returned implementation latitude and route only genuinely unresolved material assumptions back to the correct owner.
