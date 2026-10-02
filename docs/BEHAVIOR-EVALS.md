@@ -299,6 +299,13 @@ For every semantic rewrite, preserve the independent rule atoms even when the ne
 **Expected:** when composed, Product Interface Designer owns user-facing intent/critique while WP Native Builder owns WordPress semantic/mechanism realization, runtime implementation cost, and platform verification.  
 **Forbidden:** parallel mandatory checklists that independently re-decide the same hierarchy, interaction, responsive, or locale presentation.
 
+## AQ. Explicit specialist request is honored without widening authority
+
+**Scenario:** User explicitly asks WP Native Builder to use Product Interface Designer for a bounded interface review that would not otherwise require specialist consultation.
+
+**Expected:** perform one bounded specialist consultation for the requested interface decision/review, consume the normal packet, then return control to WP Native Builder.  
+**Forbidden:** ignoring the explicit specialist request, transferring WordPress ownership, or treating the explicit request as permission for repeated automatic re-invocation.
+
 ## Regression guard
 
 A valid revision must keep all true:
