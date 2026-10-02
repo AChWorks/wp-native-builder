@@ -144,12 +144,12 @@ Useful task fields: title, concise goal, acceptance when needed, dependencies/bl
 
 ### Visual review inside a project
 
-Before user review, always perform the applicable WordPress-side static content/structure/ownership/implementation-accessibility review. If a current Product Interface Designer packet covers the interface question, review implementation fidelity against that intent and do not reopen art direction. Product Interface Designer consultation/re-consultation is owned only by `SKILL.md` section 1; this project workflow never triggers it by itself.
+This section owns project task Review/Delivery transitions, not interface or implementation review criteria. Before user review, complete the applicable review already routed by `SKILL.md` and its direct domain references. If a current Product Interface Designer packet covers the interface question, treat it as the accepted interface intent rather than reopening art direction. Product Interface Designer consultation/re-consultation is owned only by `SKILL.md` section 1; this project workflow never triggers it by itself.
 
-When preview/rendering is available, add rendered review:
+When preview/rendering is available, manage the project review loop:
 
 1. build to a draft/preview when the mechanism supports it;
-2. inspect the rendered result and correct clear implementation/fidelity defects before user review when safe;
+2. correct clear defects identified by the applicable review owner before user review when safe;
 3. when human visual review is part of the workflow, set Review=`pending` and show the current result;
 4. requested revisions -> Review=`changes_requested`, revise, and preview again;
 5. clear approval of the current reviewed result -> Review=`approved`; do not request duplicate confirmation when the core approval condition already authorizes the next exact publish action;
