@@ -44,18 +44,11 @@ An explicit user request to use Product Interface Designer for the current inter
 When consultation is warranted:
 
 1. Keep the accepted outcome, WordPress mechanism/lifecycle/publication authority, project state, and execution control in WP Native Builder.
-2. Pass only decision-relevant context: accepted site/user outcome; authoritative Project Brief/design-system/site/business truth; target WordPress surface plus platform/browser/mobile context when material; active language/direction/locale when material; relevant source/screenshots/renders and evidence limitations; and the explicit boundary that WP Native Builder retains WordPress mechanism/lifecycle/publication.
-3. Request/consume only this interface-decision packet:
-   - **Intent**
-   - **Decision**
-   - **Constraints**
-   - **Implementation latitude**
-   - **Evidence**
-   - **Open assumptions**
-4. Resume control immediately. Translate the packet into the smallest safe WordPress-native implementation without asking Product Interface Designer to choose WordPress internals.
-5. Reuse that packet while the accepted outcome, authoritative product/design truth, target surface/platform/locale, and material evidence that shaped it remain valid. Implementation mechanism, block choice, tool/transport changes, or ordinary implementation defects do not invalidate it.
-6. Consult again only when one of those decision inputs materially changes, new rendered evidence creates a different interface question, or specialist interface review was explicitly part of the accepted work. On re-consult, pass the prior packet plus only the changed evidence/constraint and the exact new interface question; do not resend unrelated project history.
-7. Never bounce unresolved WordPress mechanism/lifecycle questions to Product Interface Designer. Never reinterpret its packet as project, repository, publication, or release authority.
+2. Invoke Product Interface Designer in composed mode and pass only decision-relevant interface context plus the explicit WordPress ownership boundary. Product Interface Designer's own composition contract exclusively owns the exact caller-context requirements, decision-packet schema, and specialist-side escalation rules; do not mirror that rulebook here.
+3. Consume the returned interface-decision packet as bounded implementation input, then resume control immediately and translate it into the smallest safe WordPress-native implementation without asking Product Interface Designer to choose WordPress internals.
+4. Reuse that packet while the accepted outcome, authoritative product/design truth, target surface/platform/locale, and material evidence that shaped it remain valid. Implementation mechanism, block choice, tool/transport changes, or ordinary implementation defects do not invalidate it.
+5. Consult again only when one of those decision inputs materially changes, new rendered evidence creates a different interface question, or specialist interface review was explicitly part of the accepted work. On re-consult, pass the prior packet plus only the changed evidence/constraint and the exact new interface question; do not resend unrelated project history.
+6. Never bounce unresolved WordPress mechanism/lifecycle questions to Product Interface Designer. Never reinterpret its packet as project, repository, publication, or release authority.
 
 If Product Interface Designer is unavailable or not invoked, `references/design-conventions.md` supplies proportional standalone fallback behavior.
 
