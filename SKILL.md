@@ -37,6 +37,8 @@ Consult it only when **general interface judgment is both material and unresolve
 
 Do **not** consult it merely because work is user-facing. Stay local for ordinary bounded edits whose interface intent is already settled, including routine copy/spacing/color adjustments within an established design, WordPress mechanism selection, Gutenberg repair, theme/plugin configuration, transport/execution, or a technical defect that does not materially change the intended experience.
 
+An explicit user request to use Product Interface Designer for the current interface decision/review is a valid consultation reason even when WP Native Builder would otherwise keep the task local. That explicit consultation still does not widen the specialist's ownership or create repeated re-invocation.
+
 When consultation is warranted:
 
 1. Keep the accepted outcome, WordPress mechanism/lifecycle/publication authority, project state, and execution control in WP Native Builder.
