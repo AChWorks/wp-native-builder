@@ -266,17 +266,17 @@ For every semantic rewrite, preserve the independent rule atoms even when the ne
 
 ## AL. Returned packet is reused instead of re-invoked
 
-**Scenario:** Product Interface Designer has already returned a valid interface packet and WP Native Builder is now selecting blocks, template ownership, CSS placement, and execution transport.
+**Scenario:** Product Interface Designer has already returned a valid interface packet—whether WP Native Builder initiated the consultation or Product Interface Designer handed control into WordPress work—and WP Native Builder is now selecting blocks, template ownership, CSS placement, and execution transport.
 
-**Expected:** reuse the packet within its implementation latitude until accepted outcome/material assumptions/evidence change; keep WordPress decisions local.  
-**Forbidden:** re-invoking the specialist at each implementation step, tool change, block choice, or transport operation.
+**Expected:** treat consultation as already satisfied; reuse the packet within its implementation latitude until a material decision input changes; keep WordPress decisions local.  
+**Forbidden:** reciprocal re-invocation when WP Native Builder becomes active, or re-invoking the specialist at each implementation step, tool change, block choice, or transport operation.
 
 ## AM. Rendered review does not create a ping-pong loop
 
 **Scenario:** Implementation is rendered and WP Native Builder finds ordinary spacing/alignment defects but no new material interface question.
 
-**Expected:** fix the implementation defects locally and continue to the normal user-review/publication path. Re-consult Product Interface Designer only if rendered evidence materially invalidates the current packet, introduces a new interface decision, or specialist review was explicitly required.  
-**Forbidden:** automatic specialist re-review after every render or bouncing unchanged findings between the two Skills.
+**Expected:** fix ordinary implementation defects locally and continue to the normal user-review/publication path. Re-consult only when accepted outcome, authoritative product/design truth, target surface/platform/locale, or decision-relevant rendered evidence materially changes the interface question, or specialist review was explicitly required.  
+**Forbidden:** treating block/mechanism/tool changes or ordinary defects as packet invalidation, automatic specialist re-review after every render, or bouncing unchanged findings between the two Skills.
 
 ## AN. WordPress constraint returns only the interface conflict
 
@@ -306,6 +306,20 @@ For every semantic rewrite, preserve the independent rule atoms even when the ne
 **Expected:** perform one bounded specialist consultation for the requested interface decision/review, consume the normal packet, then return control to WP Native Builder.  
 **Forbidden:** ignoring the explicit specialist request, transferring WordPress ownership, or treating the explicit request as permission for repeated automatic re-invocation.
 
+## AR. Specialist packet is derived input, not a new truth owner
+
+**Scenario:** A current specialist packet conflicts with a later accepted Project Brief/Design Direction change or newer authoritative site requirement.
+
+**Expected:** treat the affected packet as stale because it was derived from earlier inputs; use the current authoritative project/design truth, then consult again only if a material interface decision is genuinely unresolved. Persist accepted durable conclusions through the existing canonical artifact rather than storing the packet as a second source of truth.  
+**Forbidden:** giving the packet permanent precedence over newer authoritative requirements or creating a parallel specialist design document.
+
+## AS. Project visual review does not create a second consultation trigger
+
+**Scenario:** A multi-step WordPress project reaches its normal preview/review phase after a valid specialist interface decision has already been implemented.
+
+**Expected:** project workflow performs WordPress-side implementation/fidelity review and human review state handling; specialist re-consultation remains governed only by `SKILL.md` section 1.  
+**Forbidden:** invoking Product Interface Designer merely because `project-workflow.md` says visual/rendered review is material.
+
 ## Regression guard
 
 A valid revision must keep all true:
@@ -321,7 +335,7 @@ A valid revision must keep all true:
 - canonical singleton artifacts are discovered/reused before creation, including legacy `Project Foundation` / `project-foundation` identity for the Project Brief; tasks use purpose-based titles instead of a generic singleton name;
 - no new lifecycle state is added unless an independently necessary state distinction cannot be represented by an existing owner/field;
 - static review is always performed for material work, while renderer/editor/parser claims require actual capability/evidence;
-- composed UI work has one active interface-decision owner and one WordPress mechanism/lifecycle owner; the specialist packet is reused until materially invalidated, and rendered review never creates automatic ping-pong consultation;
+- composed UI work has one active interface-decision owner and one WordPress mechanism/lifecycle owner; a valid packet satisfies consultation regardless of which Skill initiated the flow, remains derived from current authoritative inputs rather than becoming a new truth owner, and rendered/project review never creates automatic ping-pong consultation;
 - Product Interface Designer remains optional: bounded/settled UI work stays local and unavailable specialist capability falls back to proportional standalone design guidance without blocking WordPress work;
 - global/shared impact and available rollback/revision evidence are considered without turning every mutation into an approval ceremony;
 - existing suitable architecture remains preferred over Skill defaults;
