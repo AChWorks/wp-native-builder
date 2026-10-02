@@ -26,7 +26,7 @@ A large visual request is not automatically a multi-step project. Use Project Br
 
 ### Interface-specialist composition
 
-Product Interface Designer is an optional consulted specialist, not a required dependency and not a nested project owner.
+Product Interface Designer is an optional consulted specialist, not a required dependency and not a nested Master or project owner.
 
 Consult it only when **general interface judgment is both material and unresolved**, such as:
 
@@ -50,7 +50,7 @@ When consultation is warranted:
    - **Open assumptions**
 4. Resume control immediately. Translate the packet into the smallest safe WordPress-native implementation without asking Product Interface Designer to choose WordPress internals.
 5. Reuse that packet while its accepted outcome, material interface assumptions, and relevant evidence remain valid. Do not re-consult merely because implementation starts, a tool changes, or another WordPress step begins.
-6. Consult again after implementation only when material rendered evidence introduces a new interface question, the prior packet is invalidated by meaningful change, or specialist interface review was explicitly part of the accepted work.
+6. Consult again after implementation only when material rendered evidence introduces a new interface question, the prior packet is invalidated by meaningful change, or specialist interface review was explicitly part of the accepted work. On re-consult, pass the prior packet plus only the changed evidence/constraint and the exact new interface question; do not resend unrelated project history.
 7. Never bounce unresolved WordPress mechanism/lifecycle questions to Product Interface Designer. Never reinterpret its packet as project, repository, publication, or release authority.
 
 If Product Interface Designer is unavailable or not invoked, `references/design-conventions.md` supplies proportional standalone fallback behavior.
