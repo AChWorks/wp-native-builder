@@ -1,5 +1,7 @@
 # Design and Visual Review Conventions
 
+**Contents:** [Composed mode](#1-composed-mode-preserve-one-interface-decision-owner) · [Standalone fallback](#2-standalone-fallback-establish-only-enough-direction) · [Implementation quality](#3-wordpress-implementation-quality) · [References/assets](#4-references-content-and-assets) · [Custom sections](#5-custom-sections) · [Pre-user review](#6-pre-user-review)
+
 Load this reference for material UI creation/redesign/review, screenshot/reference-led work, custom sections, or presentation where responsive/RTL/accessibility/performance details materially affect WordPress implementation quality.
 
 This file has two modes:
