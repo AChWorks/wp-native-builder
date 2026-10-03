@@ -28,7 +28,7 @@ A large visual request is not automatically a multi-step project. Use Project Br
 
 Product Interface Designer is an optional consulted specialist, not a required dependency and not a nested Master or project owner.
 
-Before consulting, reuse a still-valid Product Interface Designer packet already present in the active flow. Also reuse any accepted durable interface conclusion already reconciled into the canonical `Design Direction`; do not invoke the specialist merely to recreate an already-settled decision.
+Before consulting, reuse a still-valid Product Interface Designer packet already present in the active flow. Also reuse any accepted durable interface conclusion already owned by the applicable canonical derived project artifact; do not invoke the specialist merely to recreate an already-settled decision.
 
 Absent an explicit user request for specialist consultation, consult it only when **general interface judgment is both material and unresolved**, such as:
 
