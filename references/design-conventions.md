@@ -102,6 +102,6 @@ Static review is not rendered proof.
 
 When preview/render is available, inspect actual layout/interaction and correct clear implementation defects before user review. In standalone mode, also check first-impression clarity, balance, credibility, focal path, typography/contrast, content/CTA clarity, reference fidelity, interaction/focus, and whether the result feels generic/template-like for the project; correct clear weak/generic choices when safe. In composed mode, do not use this pass to invent a competing interface direction.
 
-Specialist consultation/re-consultation is governed only by `SKILL.md` section 1; this reference never turns a normal render/review pass into a specialist call.
+A normal render/review pass does not reopen an already accepted interface decision.
 
 When Gutenberg is involved, the Gutenberg safety rules also apply; if an editor/preview is available, explicitly look for invalid/recovery warnings before user review.
