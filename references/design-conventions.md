@@ -22,7 +22,7 @@ This reference never initiates Product Interface Designer consultation or re-con
 
 ## 2. Standalone fallback: establish only enough direction
 
-Use this fallback only when no current specialist decision covers the interface question. If an accepted `Design Direction` already resolves the current interface choice, reuse it rather than deriving another direction. This fallback is intentionally compact so composed work does not run a second generic UI/UX checklist.
+Use this fallback only when no current specialist decision covers the interface question. Reuse current authoritative project/design truth when it already resolves the choice. This fallback is intentionally compact so composed work does not run a second generic UI/UX checklist.
 
 Derive a compact direction from available evidence only when material direction is still unresolved:
 
