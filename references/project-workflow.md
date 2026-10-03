@@ -12,7 +12,8 @@ For this class of work, use:
 DISCOVER EXISTING STATE
   -> PROJECT BRIEF INTAKE
   -> PROJECT BRIEF READY
-  -> DERIVE SPECIALIZED PROJECT DOCS / TASKS
+  -> RESOLVE ROUTED MATERIAL DECISIONS
+  -> DERIVE / REFRESH SPECIALIZED PROJECT DOCS / TASKS
   -> PLAN ENOUGH TO ACT
   -> BUILD / VERIFY / REVIEW
   -> RECONCILE DURABLE STATE
@@ -93,7 +94,9 @@ A change to Project Brief is a material project-level change. Explain the impact
 
 ## 5. Derive specialized documents instead of overloading the Project Brief
 
-Create only artifacts that pay for themselves. Typical derived artifacts may include:
+Create only artifacts that pay for themselves. Derived artifacts persist accepted domain truth; they do not become alternate decision owners. When `SKILL.md` routes a material decision to another owner, resolve or reuse that decision first, then create/update only the artifact future work needs.
+
+Typical derived artifacts may include:
 
 ### Site Architecture Profile
 
@@ -116,7 +119,7 @@ Create when page hierarchy/navigation/content relationships matter across multip
 
 ### Design Direction
 
-Create when recurring visual decisions materially affect multiple surfaces: typography, tokens, spacing/layout language, imagery, interaction/motion, responsive/RTL principles. If a specialist interface conclusion becomes durable, reconcile the accepted conclusion into this existing `Design Direction`; never create a parallel specialist-specific design document.
+Create when recurring accepted visual decisions materially affect multiple surfaces: typography, tokens, spacing/layout language, imagery, interaction/motion, responsive/RTL principles.
 
 ### Content/Data Model
 
