@@ -320,6 +320,13 @@ For every semantic rewrite, preserve the independent rule atoms even when the ne
 **Expected:** the applicable routed review owner performs implementation/fidelity review, while project workflow only manages project Review/Delivery transitions; specialist re-consultation remains governed only by `SKILL.md` section 1.  
 **Forbidden:** duplicating review criteria inside project workflow or invoking Product Interface Designer merely because the project reaches its review phase.
 
+## AT. Derived artifacts do not preempt routed decision owners
+
+**Scenario:** A substantial WordPress redesign requires Project Brief plus durable `Information Architecture` or `Design Direction`, and the underlying interface decision is still material/unresolved.
+
+**Expected:** resolve or reuse the routed interface decision first, then persist only accepted durable conclusions in the existing derived artifact.  
+**Forbidden:** pre-filling derived artifacts with an independently invented interface decision and then consulting the specialist about the same question.
+
 ## Regression guard
 
 A valid revision must keep all true:
