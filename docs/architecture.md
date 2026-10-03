@@ -23,11 +23,11 @@ wp-native-builder/
 
 | Runtime source | Owns |
 |---|---|
-| `SKILL.md` | trigger/routing, universal control loop, source authority, universal review/approval/safety invariants |
+| `SKILL.md` | trigger/routing, universal control loop, source authority, optional Product Interface Designer consultation/re-consultation protocol, universal review/approval/safety invariants |
 | `references/project-workflow.md` | Project Brief, canonical project artifacts, task semantics, multi-step progression, and project-level recovery triggers |
 | `references/implementation-decisions.md` | WordPress owner/mechanism selection, native-vs-custom decisions, placement/naming, shared/global impact and rollback awareness |
 | `references/gutenberg-safety.md` | Gutenberg serialization contract, invalid-block diagnosis, block-specific validation |
-| `references/design-conventions.md` | UI/UX/design judgment, responsive/RTL/accessibility/performance and rendered visual review |
+| `references/design-conventions.md` | WordPress-side interface realization quality and proportional standalone design fallback; it never becomes a second generic UI/UX owner when Product Interface Designer is active |
 | `references/workspace-memory.md` | Workspace persistence, exact progressive-resume procedure, duplicate avoidance, optimistic concurrency, transient Workspace failure |
 | `agents/openai.yaml` | ChatGPT-facing metadata |
 
@@ -56,12 +56,12 @@ A connector does not become the architecture merely because it exposes an operat
 
 ## Review architecture
 
-Pre-user review has two levels:
+Pre-user review has two WordPress-side evidence levels:
 
-- **Static review — always:** content/structure, ownership, semantics, obvious accessibility/responsive/RTL/performance/maintainability risks.
-- **Runtime/rendered review — when available:** preview/editor/parser/live checks, Gutenberg invalid/recovery warnings, visual/functional verification and write-result verification.
+- **Static review — always:** content/structure, ownership, semantics, implementation accessibility/responsive/RTL/performance/maintainability risks, and fidelity to any already-accepted interface intent.
+- **Runtime/rendered review — when available:** preview/editor/parser/live checks, Gutenberg invalid/recovery warnings, implementation/fidelity verification, and write-result verification.
 
-Static review must not be described as rendered validation.
+When Product Interface Designer is active, material interface judgment remains with that specialist; normal WordPress review does not create a second art direction or automatically trigger another specialist call. `SKILL.md` alone owns consultation/re-consultation. Static review must not be described as rendered validation.
 
 ## Shared/global changes
 

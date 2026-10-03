@@ -23,7 +23,7 @@ It must:
 
 | Layer | Owns |
 |---|---|
-| **WP Native Builder Skill** | project semantics, source authority, intake/readiness, mechanism selection, approval and review behavior |
+| **WP Native Builder Skill** | project semantics, source authority, intake/readiness, WordPress mechanism selection, approval and review workflow/state behavior; active specialist interface judgment remains outside this layer |
 | **Project Brief** | accepted durable project-level purpose, audience, scope/non-goals, constraints, success criteria |
 | **Derived Workspace Documents** | specialized durable architecture/design/IA/content-data context |
 | **Workspace Tasks** | unresolved execution, dependency/blocker, review, and delivery state |
@@ -140,7 +140,7 @@ A fresh chat should be able to recover active intent from durable sources withou
 
 ## 11. Review and delivery
 
-Static pre-user review applies even without a renderer. When preview/editor/parser/live capabilities exist, add those checks before user handoff/publication as relevant.
+WordPress-side static pre-user review applies even without a renderer. When preview/editor/parser/live capabilities exist, add those checks before user handoff/publication as relevant. This Workspace layer does not initiate or redefine Product Interface Designer consultation.
 
 Clear approval of a reviewed result may satisfy an already-established “show me first, publish after approval” condition while target/scope/effect remain unchanged. Generic positive feedback alone does not imply publication authorization.
 

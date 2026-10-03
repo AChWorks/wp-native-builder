@@ -30,16 +30,17 @@ The Skill is not a CMS, page builder, connector architecture, or general project
 7. **WordPress-native/public/supported surfaces first.** Prefer supported Core/theme/builder/plugin/data mechanisms over brittle internals or unnecessary custom markup/code.
 8. **Smallest maintainable change.** Preserve unrelated content, configuration, data, visual language, and ownership.
 9. **Gutenberg serialization is a contract.** Raw block markup is version/registration-sensitive and receives proportional structural/serialization/editor validation when used.
-10. **Advisor, not passive copier.** Clearly weak, outdated, inaccessible, confusing, or predictably unmaintainable UX/UI should be challenged with a better direction unless explicit safe fidelity governs.
-11. **Pre-user self-review.** Static review always applies; rendered/editor/parser/live checks are additive when relevant capabilities exist. Never claim evidence that was not actually obtained.
-12. **Human-maintainable naming and ownership.** Future maintainers should be able to identify what was created, where it is edited, and why it exists.
-13. **Low-friction safety.** Safe reversible reads/edits/drafts/previews/validation proceed without repetitive confirmation; genuine consequential actions still require valid authorization.
-14. **Progressive loading.** `SKILL.md` remains a compact control plane and detailed domain rules stay in shallow direct references.
-15. **Durable continuity only when persistence exists.** Persistent Workspace or another user-supplied durable project location may provide cross-chat continuity; manual mode must never pretend persistence occurred.
-16. **Live state owns live questions.** Stored project context never proves a current WordPress object/configuration is unchanged.
-17. **Bounded transient-failure recovery.** One plausible timeout/unavailable transport failure is not enough to declare a logical capability permanently unavailable; blind retry loops are forbidden.
-18. **No duplicate truth owners.** One canonical owner should exist for each durable kind of project truth; derived documents specialize rather than mirror each other.
-19. **Transport independence and target integrity.** The Skill must not require or hard-code a specific plugin, connector, MCP server, gateway, tool name, or one-App-per-site topology. Discover compatible capabilities from current runtime behavior/schema. On a multi-site transport, never infer a site from last-used/conversational context: require an unambiguous current target or an authoritative task/project binding, otherwise ask the user which site before any site-scoped capability is used; keep the resolved target explicit throughout execution.
+10. **Advisor, not passive copier.** In standalone mode, clearly weak, outdated, inaccessible, confusing, or predictably unmaintainable UX/UI should be challenged with a better direction unless explicit safe fidelity governs. When Product Interface Designer already owns an active material interface decision, WP Native Builder must not independently re-decide that judgment.
+11. **Optional interface-specialist composition.** WP Native Builder remains fully useful standalone. Consultation occurs only for materially unresolved interface judgment or an explicit user request; it is never triggered merely by user-facing work or by routine render/review. A still-valid interface packet is reused regardless of which Skill initiated the composed flow, while WP Native Builder retains WordPress mechanism/lifecycle/publication authority.
+12. **Pre-user self-review.** Static review always applies; rendered/editor/parser/live checks are additive when relevant capabilities exist. Never claim evidence that was not actually obtained.
+13. **Human-maintainable naming and ownership.** Future maintainers should be able to identify what was created, where it is edited, and why it exists.
+14. **Low-friction safety.** Safe reversible reads/edits/drafts/previews/validation proceed without repetitive confirmation; genuine consequential actions still require valid authorization.
+15. **Progressive loading.** `SKILL.md` remains a compact control plane and detailed domain rules stay in shallow direct references.
+16. **Durable continuity only when persistence exists.** Persistent Workspace or another user-supplied durable project location may provide cross-chat continuity; manual mode must never pretend persistence occurred.
+17. **Live state owns live questions.** Stored project context never proves a current WordPress object/configuration is unchanged.
+18. **Bounded transient-failure recovery.** One plausible timeout/unavailable transport failure is not enough to declare a logical capability permanently unavailable; blind retry loops are forbidden.
+19. **No duplicate truth owners.** One canonical owner should exist for each durable kind of project truth; derived documents specialize rather than mirror each other.
+20. **Transport independence and target integrity.** The Skill must not require or hard-code a specific plugin, connector, MCP server, gateway, tool name, or one-App-per-site topology. Discover compatible capabilities from current runtime behavior/schema. On a multi-site transport, never infer a site from last-used/conversational context: require an unambiguous current target or an authoritative task/project binding, otherwise ask the user which site before any site-scoped capability is used; keep the resolved target explicit throughout execution.
 
 ## 3. Request classes and Project Brief
 

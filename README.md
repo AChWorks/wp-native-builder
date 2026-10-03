@@ -15,7 +15,7 @@ WP Native Builder helps ChatGPT:
 - route headers, footers, templates, navigation, and reusable/global surfaces to their real Site Editor/theme/builder owner;
 - prefer suitable Core blocks, Patterns, theme/builder/plugin features, WooCommerce presentation, forms, CPT/ACF, and public WordPress capabilities before Custom HTML/custom code;
 - treat Gutenberg markup as a serialization contract and repair invalid blocks narrowly;
-- review material UI for hierarchy, responsive behavior, RTL/LTR, accessibility, performance, and maintainability;
+- review material UI proportionally and consult Product Interface Designer only for materially unresolved interface judgment or when explicitly requested, without transferring WordPress mechanism/lifecycle/publication ownership;
 - perform static self-review even without a renderer, then add preview/editor/parser/live checks when available;
 - preserve human-readable names and discoverable edit ownership;
 - resume multi-step work from persistent Workspace context when the runtime supports it;
@@ -59,6 +59,8 @@ A new/substantial multi-step project resolves durable project-level facts before
 ## Runtime model
 
 Routing is additive: one request may need project-workflow, ownership, Gutenberg, design, and Workspace rules at the same time. `SKILL.md` routes those domains while the direct references own their detailed policy.
+
+Product Interface Designer is an optional consulted specialist for materially unresolved interface judgment or explicit specialist requests. Bounded or already-settled visual edits remain inside WP Native Builder, and the specialist owns its own composition/packet contract rather than having that rulebook duplicated here. WP Native Builder resumes WordPress mechanism selection, implementation, publication, and verification after the bounded interface decision returns.
 
 ```text
 REQUEST

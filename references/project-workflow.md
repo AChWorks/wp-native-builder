@@ -12,7 +12,8 @@ For this class of work, use:
 DISCOVER EXISTING STATE
   -> PROJECT BRIEF INTAKE
   -> PROJECT BRIEF READY
-  -> DERIVE SPECIALIZED PROJECT DOCS / TASKS
+  -> RESOLVE ROUTED MATERIAL DECISIONS
+  -> DERIVE / REFRESH SPECIALIZED PROJECT DOCS / TASKS
   -> PLAN ENOUGH TO ACT
   -> BUILD / VERIFY / REVIEW
   -> RECONCILE DURABLE STATE
@@ -93,7 +94,9 @@ A change to Project Brief is a material project-level change. Explain the impact
 
 ## 5. Derive specialized documents instead of overloading the Project Brief
 
-Create only artifacts that pay for themselves. Typical derived artifacts may include:
+Create only artifacts that pay for themselves. Derived artifacts persist accepted domain truth; they do not become alternate decision owners. When `SKILL.md` routes a material decision to another owner, resolve or reuse that decision first, then create/update only the artifact future work needs.
+
+Typical derived artifacts may include:
 
 ### Site Architecture Profile
 
@@ -116,7 +119,7 @@ Create when page hierarchy/navigation/content relationships matter across multip
 
 ### Design Direction
 
-Create when recurring visual decisions materially affect multiple surfaces: typography, tokens, spacing/layout language, imagery, interaction/motion, responsive/RTL principles.
+Create when recurring accepted visual decisions materially affect multiple surfaces: typography, tokens, spacing/layout language, imagery, interaction/motion, responsive/RTL principles.
 
 ### Content/Data Model
 
@@ -144,10 +147,12 @@ Useful task fields: title, concise goal, acceptance when needed, dependencies/bl
 
 ### Visual review inside a project
 
-Before user review, always perform the applicable static content/structure/ownership/accessibility review. When preview/rendering is available, add rendered review:
+This section owns project task Review/Delivery transitions, not interface or implementation review criteria. Before user review, complete the applicable review already routed by `SKILL.md` and its direct domain references. If a current Product Interface Designer packet covers the interface question, treat it as the accepted interface intent rather than reopening art direction. Product Interface Designer consultation/re-consultation is owned only by `SKILL.md` section 1; this project workflow never triggers it by itself.
+
+When preview/rendering is available, manage the project review loop:
 
 1. build to a draft/preview when the mechanism supports it;
-2. inspect the rendered result and correct clear visual/technical defects before user review when safe;
+2. correct clear defects identified by the applicable review owner before user review when safe;
 3. when human visual review is part of the workflow, set Review=`pending` and show the current result;
 4. requested revisions -> Review=`changes_requested`, revise, and preview again;
 5. clear approval of the current reviewed result -> Review=`approved`; do not request duplicate confirmation when the core approval condition already authorizes the next exact publish action;
