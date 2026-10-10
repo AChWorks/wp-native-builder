@@ -25,7 +25,7 @@ The Skill is not a CMS, page builder, connector architecture, or general project
 2. **Project Brief before substantial build.** New sites, substantial redesigns, and genuinely multi-step/multi-surface projects establish sufficient project-level intent before material design/build whether or not persistence is available; persistence determines durability, not Project Brief readiness.
 3. **No intake quota.** Project Brief discovery continues in compact staged batches until every material domain is known, explicitly delegated, safely inferred, or not applicable.
 4. **Evidence before questions.** Discover decision-relevant live/project facts when possible; ask only unresolved material questions in language the user can answer.
-5. **Stack-adaptive, not stack-forcing.** Existing suitable site architecture, editor, theme, builder, plugin, form, commerce, and data ownership outrank preferred defaults.
+5. **Vendor-neutral, stack-adaptive.** No named theme/builder/plugin/icon/form or permalink default is required; reuse suitable current owners and decide by project evidence.
 6. **Mechanism first, transport second.** Decide what should own behavior before choosing which connected Ability/tool can operate it.
 7. **WordPress-native/public/supported surfaces first.** Prefer supported Core/theme/builder/plugin/data mechanisms over brittle internals or unnecessary custom markup/code.
 8. **Smallest maintainable change.** Preserve unrelated content, configuration, data, visual language, and ownership.
@@ -33,7 +33,7 @@ The Skill is not a CMS, page builder, connector architecture, or general project
 10. **Advisor, not passive copier.** In standalone mode, clearly weak, outdated, inaccessible, confusing, or predictably unmaintainable UX/UI should be challenged with a better direction unless explicit safe fidelity governs. When Product Interface Designer already owns an active material interface decision, WP Native Builder must not independently re-decide that judgment.
 11. **Optional interface-specialist composition.** WP Native Builder remains fully useful standalone. Consultation occurs only for materially unresolved interface judgment or an explicit user request; it is never triggered merely by user-facing work or by routine render/review. A still-valid interface packet is reused regardless of which Skill initiated the composed flow, while WP Native Builder retains WordPress mechanism/lifecycle/publication authority.
 12. **Pre-user self-review.** Static review always applies; rendered/editor/parser/live checks are additive when relevant capabilities exist. Never claim evidence that was not actually obtained.
-13. **Human-maintainable naming and ownership.** Future maintainers should be able to identify what was created, where it is edited, and why it exists.
+13. **Readable naming and ownership.** Prefer English ASCII `lowercase-kebab-case` for new slugs, with safe unique prefixes; preserve existing URLs unless a deliberate migration handles links/SEO/redirects. Make edit ownership discoverable.
 14. **Low-friction safety.** Safe reversible reads/edits/drafts/previews/validation proceed without repetitive confirmation; genuine consequential actions still require valid authorization.
 15. **Progressive loading.** `SKILL.md` remains a compact control plane and detailed domain rules stay in shallow direct references.
 16. **Durable continuity only when persistence exists.** Persistent Workspace or another user-supplied durable project location may provide cross-chat continuity; manual mode must never pretend persistence occurred.
@@ -41,6 +41,10 @@ The Skill is not a CMS, page builder, connector architecture, or general project
 18. **Bounded transient-failure recovery.** One plausible timeout/unavailable transport failure is not enough to declare a logical capability permanently unavailable; blind retry loops are forbidden.
 19. **No duplicate truth owners.** One canonical owner should exist for each durable kind of project truth; derived documents specialize rather than mirror each other.
 20. **Transport independence and target integrity.** The Skill must not require or hard-code a specific plugin, connector, MCP server, gateway, tool name, or one-App-per-site topology. Discover compatible capabilities from current runtime behavior/schema. On a multi-site transport, never infer a site from last-used/conversational context: require an unambiguous current target or an authoritative task/project binding, otherwise ask the user which site before any site-scoped capability is used; keep the resolved target explicit throughout execution.
+
+21. **Pragmatic plugin-vs-code choice.** Compare supported native, installed, maintained-plugin and custom paths on fitness, quality and lifecycle cost; never presume slightly faster custom code beats a credible plugin.
+22. **Navigable source-owned documentation.** Durable project facts belong in one linked canonical document/task owner, with relevant provenance/freshness and selective recovery. Optional index only if discovery needs it.
+23. **Custom-plugin standard.** New custom code/identifiers are English and translation-ready; use slug-matched WordPress text domains, `Author: ACh`, `Author URI: https://ach.li/`, and unique namespaces without speculative frameworks.
 
 ## 3. Request classes and Project Brief
 
@@ -74,7 +78,7 @@ Use these canonical names when a singleton project document is created by the Sk
 - `Design Direction`
 - `Content/Data Model`
 
-Equivalent existing project artifacts may retain their established names when they already own the same truth. Canonical names are defaults, not a reason to duplicate documents. Workspace tasks are work items, not singleton canonical documents; title them by purpose/surface/outcome rather than giving every task the same `Workspace Task` name.
+Existing semantic equivalents retain their names; never duplicate just to normalize. Tasks have purpose/surface/outcome titles. Substantive documents link owners/targets, separate decisions from proposals and capture evidence/verification freshness when material. A Project Map/index, if needed, links rather than mirrors work or site state.
 
 Source authority remains separated:
 
@@ -101,7 +105,7 @@ current suitable owner/mechanism
 
 Global shell/header/footer/navigation/template/reusable surfaces must resolve their actual Site Editor/theme/builder owner before page-local markup is considered. Gutenberg content checks Core blocks/settings/Patterns/template ownership before Custom HTML. Existing CPT/taxonomy/ACF, forms, WooCommerce presentation, and other mature data/function owners are reused when fit.
 
-Preferred defaults for genuinely new/unspecified projects remain fallbacks, not migration targets: WordPress, Astra + Astra Pro, Gutenberg/Block Editor, Gravity Forms, Code Snippets Pro when centralized reusable code is justified, theme-managed fonts, Astra-native global facilities when Astra owns them, Font Awesome 5 Free only when established as available, and post-name permalinks for a new site.
+There is **no named vendor/technology preset**. Inspect actual Core/theme/builder/plugin options and choose by fit, security, compatibility, accessibility, quality, performance, licensing, ongoing support/editability, portability and rollback. Historical examples are not recommendations or migration targets.
 
 Custom code is placed at the narrowest owner matching its scope/lifecycle. Never edit WordPress Core or third-party plugin/theme files directly.
 
@@ -176,8 +180,8 @@ The distributable Skill remains shallow and progressively loaded:
 | Runtime source | Canonical responsibility |
 |---|---|
 | `SKILL.md` | trigger/routing, universal control loop, source authority, universal review/approval/safety invariants |
-| `references/project-workflow.md` | Project Brief, canonical project artifacts, task semantics, multi-step progression, and project-level recovery triggers |
-| `references/implementation-decisions.md` | WordPress surface ownership, native-vs-custom decisions, placement/naming, shared/global impact/rollback awareness |
+| `references/project-workflow.md` | Project Brief readiness, linked domain docs/navigation, tasks, multi-step progression and recovery triggers |
+| `references/implementation-decisions.md` | Vendor-neutral ownership, plugin-vs-code choice, English slugs, custom-plugin i18n/metadata, placement and rollback |
 | `references/gutenberg-safety.md` | Gutenberg serialization, invalid-block diagnosis, block-specific validation |
 | `references/design-conventions.md` | UI/UX/design judgment and visual review |
 | `references/workspace-memory.md` | Workspace persistence, exact progressive-resume procedure, duplicate avoidance, optimistic concurrency, transient Workspace failure |
@@ -189,7 +193,7 @@ Reference files may point to another domain whose rule also applies, but they mu
 
 - General WordPress facts unrelated to site building/implementation.
 - General-purpose WordPress administration or commerce operations unrelated to the requested builder outcome.
-- Forcing Astra, Gutenberg, Gravity Forms, WooCommerce, Elementor, or any named product universally.
+- Requiring or implicitly preferring named vendor stack components because of historical use.
 - Maintaining a plugin/theme encyclopedia.
 - Recreating functionality already cleanly owned by WordPress or a suitable installed capability.
 - Forcing Custom HTML/custom code for every section.
@@ -216,11 +220,14 @@ A release-quality revision must preserve these outcomes:
 - Core blocks/Patterns/native mechanisms remain preferred when fit;
 - Gutenberg raw serialization is validated proportionally and invalid blocks are repaired narrowly;
 - static review always occurs and rendered/editor checks are added when available;
-- naming/ownership remain understandable to future humans;
+- new English readable slugs, preserved existing URLs, discoverable ownership and ACh plugin authorship/text-domain/i18n are enforced;
+- native/existing/plugin/custom paths are compared on lifecycle quality rather than preset vendors;
+- project docs form a linked canonical graph and progressive recovery avoids full history reload;
 - connected mode reconciles stale/ambiguous writes and bounded transient route failure;
 - live WordPress remains authoritative for current site state;
 - manual mode remains useful without connected or persistent capabilities and never claims unavailable persistence;
 - consequential-action classification remains explicit enough to avoid both blanket confirmation and missed gates;
+- static contract checks and documented behavioral regressions cover the changed rules, without claiming static checks prove LLM behavior;
 - public `skill.zip` contains exactly the intended runtime files from the tagged/integrated revision.
 
 Behavioral regression scenarios live in `docs/BEHAVIOR-EVALS.md`.
