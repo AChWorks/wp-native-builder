@@ -4,7 +4,7 @@ Load when substantial design, redesign, visual fidelity, responsive/RTL/accessib
 
 ## Decision ownership: composed or standalone
 
-Use a **current** Product Interface Designer packet within its latitude for the bounded interface decision; WP Native Builder owns mechanism, implementation, lifecycle and publication. Escalate only platform constraints that materially block the accepted UX.
+Use a **current** Product Interface Designer packet within its latitude for the bounded interface decision; WP Native Builder owns mechanism, implementation, lifecycle and publication. Treat the packet as derived design input under accepted site/project truth, not a second permanent authority or copied document. Escalate only platform constraints that materially block the accepted UX.
 
 Only `SKILL.md` triggers consultation. Reuse a packet while outcome/design/target/locale/evidence remain valid; block, transport or render changes alone do not invalidate it. Fix local defects locally; return only material interface conflicts.
 
