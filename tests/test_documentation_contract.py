@@ -43,7 +43,7 @@ class DocumentationContractTests(unittest.TestCase):
     def test_site_global_brief_rejected(self) -> None:
         self.mutate("docs/PROJECT-WORKSPACE-ARCHITECTURE.md",
                     find="per project, not per WordPress site", replace="per WordPress site")
-        self.assert_rejected("storage architecture Project Brief")
+        self.assert_rejected("no site-global Project Brief")
 
     def test_broad_plugin_author_rule_rejected(self) -> None:
         self.mutate("MASTER-SPEC.md",
