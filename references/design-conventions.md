@@ -1,107 +1,34 @@
-# Design and Visual Review Conventions
+# Interface Direction and WordPress Visual Quality
 
-**Contents:** [Composed mode](#1-composed-mode-preserve-one-interface-decision-owner) · [Standalone fallback](#2-standalone-fallback-establish-only-enough-direction) · [Implementation quality](#3-wordpress-implementation-quality) · [References/assets](#4-references-content-and-assets) · [Custom sections](#5-custom-sections) · [Pre-user review](#6-pre-user-review)
+Load when substantial design, redesign, visual fidelity, responsive/RTL/accessibility decisions or a meaningful visual review affects implementation. For small settled UI edits, preserve the design system and stay on the fast path.
 
-Load this reference for material UI creation/redesign/review, screenshot/reference-led work, custom sections, or presentation where responsive/RTL/accessibility/performance details materially affect WordPress implementation quality.
+## Decision ownership: composed or standalone
 
-This file has two modes:
+Use a **current** Product Interface Designer packet within its latitude for the bounded interface decision; WP Native Builder owns mechanism, implementation, lifecycle and publication. Treat the packet as derived design input under accepted site/project truth, not a second permanent authority or copied document. Escalate only platform constraints that materially block the accepted UX.
 
-- **Composed mode:** Product Interface Designer owns the active general interface judgment; this reference owns WordPress realization/fidelity checks and must not create a competing art direction.
-- **Standalone mode:** when no current specialist decision covers the interface question, use the proportional fallback guidance here so WP Native Builder remains useful by itself.
+`SKILL.md` alone owns consultation and packet-validity rules; fix local implementation defects locally and return only material interface conflicts.
 
-## 1. Composed mode: preserve one interface-decision owner
+Without a relevant packet or specialist, remain a capable **standalone** designer: derive enough direction from accepted outcome, existing design/project truth, audience/content hierarchy, platform/locale, references and required interaction. Choose one strong direction; offer alternatives only for a genuine material choice. For substantial new work define just the reusable choices that matter: layout/container, spacing, type scale, color roles, imagery, surfaces, states, responsive behavior and RTL/LTR. Avoid template reflexes (generic hero/cards/CTA, gratuitous gradients/pills/blobs); add a distinctive idea only where it helps the content. Preserve established tokens/structure on bounded work; allow explicit redesign to change obsolete aesthetics.
 
-When a current Product Interface Designer packet covers the interface question:
+Challenge a weak or inaccessible request only for a concrete usability, clarity, accessibility, consistency, maintainability or responsive reason, and propose one better direction. Honor explicit safe fidelity constraints. Look up a small focused set of references only if it materially improves the decision; extract principles instead of copying identities/artwork.
 
-- treat it as the resolved interface intent for that bounded decision;
-- implement within its **Implementation latitude** instead of re-litigating hierarchy, visual direction, interaction, responsive/locale, or accessibility-UX intent;
-- keep WordPress owner/mechanism, Gutenberg safety, theme/plugin/builder lifecycle, semantic realization, runtime implementation cost, execution, publication, and live verification local;
-- surface an exact WordPress constraint only when it materially prevents the intended experience; do not silently replace the interface intent with a platform workaround.
+## WordPress realization standards
 
-This reference never initiates Product Interface Designer consultation or re-consultation. `SKILL.md` section 1 is the sole owner of that protocol. Do not copy or restate the specialist's generic UI rulebook here.
+Check only the dimensions that can change the actual result:
 
-## 2. Standalone fallback: establish only enough direction
+- **Owner & editability:** native page/block/template/theme/builder/plugin owner; avoid page HTML for global structures.
+- **Semantics:** correct landmarks/headings, labels, controls and native semantics; add ARIA only as needed.
+- **Visual consistency:** existing global tokens, typography, contrast, image treatment and spacing; avoid scattered near-duplicate CSS.
+- **Responsive:** meaningful reflow/grouping/order/cropping, tap targets and viewport behavior; not mere shrinking.
+- **RTL/LTR & localization:** logical CSS properties where practical, icon/arrow direction, mixed scripts, logical reading/control order and real translated lengths.
+- **Accessibility:** keyboard, visible focus, meaningful alt/labels, touch and accessible interaction states; use purposeful motion only and honor `prefers-reduced-motion` when motion exists.
+- **Performance:** no duplicate font/icon/framework loading; protect LCP media, defer non-critical media, prefer native/CSS over gratuitous JS.
+- **Maintainability:** stable scoped classes, discoverable edit owner and centralized reuse only where useful. Check selectors and scripts for leakage into at-risk pages, headers, forms or components; use existing global tokens only intentionally, with known consumers.
 
-Use this fallback only when no current specialist decision covers the interface question. Reuse current authoritative project/design truth when it already resolves the choice. This fallback is intentionally compact so composed work does not run a second generic UI/UX checklist.
+Use genuine supplied content/assets; never fabricate social proof, certifications, statistics, customers, product claims, guarantees or brand assets. With an authoritative screenshot, preserve the agreed fidelity target subject to actual mechanism, viewport, accessibility and locale constraints. Inspirational references may guide composition without being reproduced literally.
 
-Derive a compact direction from available evidence only when material direction is still unresolved:
+When a custom section is justified after mechanism choice, use semantic HTML, purpose-prefixed selectors, inherited tokens, independently editable sections where practical and only necessary JS. No gratuitous `!important`, global selectors or duplicate libraries.
 
-1. accepted outcome and hierarchy;
-2. existing approved visual/design-system truth;
-3. target platform, language/direction/locale, and content shape;
-4. visual character plus layout/density/typography/color/imagery treatment needed for the task;
-5. only the interaction/responsive/accessibility decisions that materially affect the requested surface;
-6. for substantial new/redesign work, at most one useful distinctive idea that supports the project rather than a gimmick.
+## Review before handoff
 
-Let content importance determine the path through orientation, understanding/trust, and action where relevant; do not force a stock hero/cards/CTA sequence. Avoid unsupported generic-AI habits such as gratuitous gradients, excessive pills/cards, decorative blobs, or identical card rows when the content calls for another composition.
-
-For recurring visual systems, establish only decisions that genuinely recur: container behavior, spacing rhythm, type scale, color roles, radius/border/depth language, imagery treatment, and interaction states.
-
-For targeted modification, preserve established tokens, geometry, typography, spacing conventions, component language, and ownership unless the accepted change targets them.
-
-For explicit redesign, preserve only constraints that remain requirements. Do not silently turn old aesthetics into immutable rules.
-
-Challenge a requested pattern only when there is a concrete usability, accessibility, consistency, maintainability, responsive, or task-fit problem. Recommend one better direction; do not create a cosmetic decision gate. Honor explicit safe fidelity requirements.
-
-Prefer one strong primary direction. Show alternatives only when a material unresolved choice genuinely remains.
-
-If direction remains weak and allowed reference/search capabilities are available, inspect only a small relevant set when it would materially improve the result; extract principles rather than copying identity or protected artwork.
-
-## 3. WordPress implementation quality
-
-Apply only dimensions that can change the current implementation:
-
-- **Ownership:** place the change in the real page/Site Editor/theme/builder/plugin/Pattern owner.
-- **Tokens:** reuse established theme/global tokens where available; avoid scattering near-duplicate values.
-- **Semantics:** preserve logical heading structure, landmarks, controls, labels, and native semantics before ARIA.
-- **Responsive implementation:** implement intended recomposition/order/grouping/crop/touch/spacing behavior rather than merely shrinking.
-- **RTL/LTR implementation:** use logical alignment/spacing where practical; verify icon/arrow meaning, control order, mixed-direction content, and theme/plugin assumptions.
-- **Accessibility implementation:** keyboard/focus visibility, meaningful alternatives/labels, semantic controls, and applicable platform behavior.
-- **Motion implementation:** implement only intended purposeful motion and preserve `prefers-reduced-motion` behavior when motion exists.
-- **Performance:** avoid duplicate fonts/icon libraries/frameworks; protect critical/LCP media; lazy-load only non-critical media; prefer CSS/native behavior over unnecessary JS.
-- **Maintainability:** keep edit location and ownership discoverable; centralize shared code only when reuse/lifecycle justifies it.
-
-These checks verify realization. In composed mode they do not authorize a new visual hierarchy, interaction model, or art direction.
-
-## 4. References, content, and assets
-
-Treat real content and imagery as implementation inputs. In standalone mode, improve headings, labels, CTA wording, section order, or microcopy when that clearly improves comprehension and stays within known facts. When a specialist packet is active, preserve its interface-copy intent unless implementation constraints require a material return to the decision owner. Never invent testimonials, statistics, certifications, guarantees, product claims, customers, or brand assets.
-
-When a screenshot/reference is authoritative, preserve the accepted fidelity target while adapting only what the target WordPress mechanism, viewport, locale, accessibility constraints, or user-provided requirements legitimately require.
-
-When the reference is merely inspirational, standalone mode may extract hierarchy/density/geometry/typography/imagery principles without copying identity or protected artwork. In composed mode, leave that interpretive interface judgment to Product Interface Designer.
-
-## 5. Custom sections
-
-When Custom HTML/CSS/JS is justified after mechanism selection:
-
-- keep logical sections independently editable when practical;
-- use a stable project-prefixed ID/class and scope selectors beneath it;
-- use semantic HTML and logical headings;
-- inherit current typography/tokens/assets where possible;
-- avoid unnecessary `!important`, global selectors, duplicate libraries, and JS;
-- implement required focus/interaction/mobile/tablet/RTL behavior;
-- centralize shared code only when genuinely reused.
-
-Do not choose Custom HTML merely because translating a design to HTML is easier for the model.
-
-## 6. Pre-user review
-
-Always perform a static WordPress-side review before user handoff. Check:
-
-- owner/mechanism correctness and editability;
-- content/structure and semantic markup;
-- Gutenberg validity/safety when applicable;
-- implementation fidelity to the accepted interface intent;
-- responsive and RTL/LTR realization;
-- accessibility implementation basics;
-- broken/missing assets;
-- obvious performance/maintainability risks.
-
-Static review is not rendered proof.
-
-When preview/render is available, inspect actual layout/interaction and correct clear implementation defects before user review. In standalone mode, also check first-impression clarity, balance, credibility, focal path, typography/contrast, content/CTA clarity, reference fidelity, interaction/focus, and whether the result feels generic/template-like for the project; correct clear weak/generic choices when safe. In composed mode, do not use this pass to invent a competing interface direction.
-
-A normal render/review pass does not reopen an already accepted interface decision.
-
-When Gutenberg is involved, the Gutenberg safety rules also apply; if an editor/preview is available, explicitly look for invalid/recovery warnings before user review.
+Always check the static structure and owner, content/semantics, intended visual fidelity, responsiveness, RTL/LTR, accessibility, missing assets, obvious performance/maintenance risks and Gutenberg safety if relevant. **Static is not visual or parser evidence.** When preview/editor/render is available, inspect the target and any at-risk shared/unrelated consumers, then correct local defects and unexpected spillover before handoff. In standalone design work also examine hierarchy, first impression, balance, typography/contrast, credibility, CTA clarity and generic/template-like outcomes. In composed work **do not** use implementation review to invent competing art direction or automatically request specialist re-review. Human visual approval only when the task's material review/publication boundary calls for it.

@@ -2,31 +2,23 @@
 
 **WP Native Builder** is a ChatGPT Skill for professional WordPress planning, design, implementation, review, troubleshooting, and lightweight project continuity.
 
-It is **stack-adaptive** and **WordPress-native-first**: it works with the site you actually have, establishes enough project truth before substantial builds, and decides which WordPress/theme/builder/plugin/data mechanism should own a change before falling back to custom markup/code.
+It is **vendor-neutral and WordPress-native-first**: use the site's current Core/theme/builder/plugin/data owners whenever suitable, comparing maintained plugins against bespoke code by actual feature quality and total lifecycle cost.
 
 ## What it does
 
-WP Native Builder helps ChatGPT:
+- Plan substantial work from **one Project Brief per distinct project**, asking novices only material questions; keep small changes fast
+- Respect actual WordPress ownership, supported APIs and the site's established theme, builder, plugin and data model—without fixed vendor presets
+- Protect unrelated pages, headers, components, forms and data when shared templates, selectors, hooks or Patterns are edited
+- Treat Gutenberg as a structured editor, review layout/RTL/accessibility and never claim unavailable validation
+- Resume multi-step work from authorized Workspace/repository/folder records rather than prior chat
+- Consult Product Interface Designer only for material unresolved interface judgment, retaining WordPress execution and publication authority
+- Require the applicable authorization for real consequential changes, not repetitive confirmation for routine reversible work
 
-- keep small bounded edits fast while establishing one Project Brief for substantial multi-step site work;
-- ask novice-friendly staged questions until material project gaps are actually resolved;
-- reuse canonical project artifacts instead of creating duplicate “master” documents;
-- understand the relevant current WordPress architecture before changing it;
-- route headers, footers, templates, navigation, and reusable/global surfaces to their real Site Editor/theme/builder owner;
-- prefer suitable Core blocks, Patterns, theme/builder/plugin features, WooCommerce presentation, forms, CPT/ACF, and public WordPress capabilities before Custom HTML/custom code;
-- treat Gutenberg markup as a serialization contract and repair invalid blocks narrowly;
-- review material UI proportionally and consult Product Interface Designer only for materially unresolved interface judgment or when explicitly requested, without transferring WordPress mechanism/lifecycle/publication ownership;
-- perform static self-review even without a renderer, then add preview/editor/parser/live checks when available;
-- preserve human-readable names and discoverable edit ownership;
-- resume multi-step work from persistent Workspace context when the runtime supports it;
-- avoid duplicate Workspace canonical documents through discover/reuse-before-create behavior;
-- reconcile stale/ambiguous Workspace writes instead of overwriting newer state;
-- tolerate one plausibly transient connector/runtime failure without immediately abandoning the workflow;
-- keep genuine consequential publication/security/destructive/customer/order/financial actions behind the applicable approval boundary.
+A **new bespoke plugin authored through Bridge** receives `Author: ACh` and `Author URI: https://ach.li/`; this convention does not modify metadata or files of other installed plugins.
 
 ## Install
 
-Download the latest GitHub Release asset named **`skill.zip`**, then open ChatGPT Skills at **`/skills`** and upload the ZIP.
+Download the latest GitHub Release asset named **`skill.zip`**, then open ChatGPT Skills at **`/skills`** and upload the ZIP. For an unmerged PR, the `wp-native-builder-candidate-skill` GitHub Actions artifact is a **review-only candidate**, not the published Release.
 
 The packaged Skill contains only runtime files:
 
@@ -53,44 +45,23 @@ Ask naturally, for example:
 - `Build this section from the reference screenshot, but tell me if the UX should be improved.`
 - `Fix this Gutenberg block that says it contains unexpected or invalid content.`
 - `Resume the WordPress project and continue the next useful task.`
+- `Change this page's header without altering other pages that share the same template.`
 
 A new/substantial multi-step project resolves durable project-level facts before material design. Small bounded edits stay lightweight.
 
 ## Runtime model
 
-Routing is additive: one request may need project-workflow, ownership, Gutenberg, design, and Workspace rules at the same time. `SKILL.md` routes those domains while the direct references own their detailed policy.
+`SKILL.md` is the compact router. It conditionally loads the ownership, project, Gutenberg, design and persistence references, each with one policy owner.
 
-Product Interface Designer is an optional consulted specialist for materially unresolved interface judgment or explicit specialist requests. Bounded or already-settled visual edits remain inside WP Native Builder, and the specialist owns its own composition/packet contract rather than having that rulebook duplicated here. WP Native Builder resumes WordPress mechanism selection, implementation, publication, and verification after the bounded interface decision returns.
+**Mechanism first, transport second:** bind the exact target and shared effects, use the supported WordPress owner, prepare and review the narrow change, publish only when authorized, and verify target and relevant non-target consumers. A connector's tool names and permissions do not dictate site architecture or user approval.
 
-```text
-REQUEST
-  -> recover/discover relevant truth
-  -> establish Project Brief when required
-  -> choose owner/mechanism
-  -> choose an actually exposed execution transport
-  -> build narrowly
-  -> static self-review
-  -> add preview/editor/parser/live review when available
-  -> user review/publish only when applicable and authorized
-  -> verify
-  -> reconcile future-useful project state
-```
-
-Preferred defaults such as Astra/Astra Pro, Gutenberg, Gravity Forms, and Code Snippets Pro are fallbacks for unspecified/new projects, never migration targets for an existing suitable stack.
+The [runtime architecture](docs/architecture.md) owns the rule map; runtime references hold detailed implementation, approval and recovery behavior. This reader guide does not duplicate those procedures.
 
 ## Project Brief and canonical artifacts
 
-A project that requires a Project Brief keeps one canonical Project Brief containing stable project-level intent. When the Skill creates related artifacts, the canonical default names are:
+Substantial work uses **one Brief per distinct project, not one per WordPress site**. Create only useful distinct domain documents (Site Architecture Profile, Information Architecture, Design Direction, Content/Data Model); reuse existing equivalents. Link accepted decisions and active tasks without copying site inventories or conversation history. Do not repeatedly reopen a settled Brief for bounded work.
 
-- `Project Brief`
-- `Site Architecture Profile`
-- `Information Architecture`
-- `Design Direction`
-- `Content/Data Model`
-
-Existing equivalent artifacts are reused rather than duplicated merely to match those names.
-
-Once ready, Project Brief leaves the routine hot path. Current work normally uses the nearest authoritative task/document/live WordPress state.
+See the [canonical product specification](MASTER-SPEC.md) and [durable-state architecture](docs/PROJECT-WORKSPACE-ARCHITECTURE.md) for their separate authorities.
 
 ## Gutenberg safety
 
@@ -104,35 +75,15 @@ The Skill works without a WordPress connector and provides exact stack-aware imp
 
 ## Connected mode
 
-Connected execution can use any compatible runtime that exposes sufficient WordPress capabilities. The Skill does not require or assume a specific plugin, connector, MCP server, gateway, tool name, or one-App-per-site topology.
+WordPress connectors are optional. Discover actual capabilities from their exposed contracts; never assume a Bridge, Gateway, tool name, installed plugin or one-connector-per-site topology.
 
-Connected work:
+A connection spanning multiple WordPress sites requires **one exact bound site** from current instructions or an authoritative task/project before any site-scoped read/write. Never infer it from the last-used site. Prefer supported mechanisms, draft/reversible changes and actual revision/write checks. If a safe connected route is unavailable, provide stack-specific preparation or manual guidance instead.
 
-1. discovers capabilities by documented behavior/schema rather than product or tool name;
-2. inspects only relevant current architecture, targets, and capabilities;
-3. chooses site mechanism before execution transport;
-4. on a multi-site transport, uses fleet-level discovery only to identify available site identities; if the current request or authoritative active task/project context does not unambiguously identify one site, asks the user which site before any site-scoped inspection/read/write;
-5. never guesses from the last-used site or nearby conversation, and keeps the resolved site identity explicit through all site-scoped operations;
-6. prefers narrow reversible/draft/preview changes while iterating;
-7. guards overwrite-sensitive writes with current identity when supported;
-8. re-reads/reconciles stale or ambiguous state;
-9. verifies writes when practical;
-10. treats one plausible transport failure as transient until bounded evidence says otherwise;
-11. falls back to useful manual/preparation work when no safe connected route exists.
+## Durable project recovery
 
-The Skill selects among currently exposed capabilities by behavior and fit, not vendor/product/tool names. Native WordPress/theme/plugin capabilities may be better transports for the selected mechanism than generic transport operations.
+A fresh chat can continue from an authorized **Workspace, GitHub Issue/repository or project folder** when it identifies the project/site, task, current decisions, blocker, review/publication gate and next safe action. Selectively read governing records, check live WordPress, protect concurrent writes and do not confuse a limited index or identical titles across projects with complete discovery.
 
-## Persistent Workspace
-
-When suitable Workspace abilities are exposed:
-
-- compact orientation comes before broad reload;
-- canonical singleton documents are discovered/reused before create;
-- stable purpose keys may be used when the capability supports them, without assuming storage-level uniqueness;
-- Tasks keep independent progress/review/delivery dimensions;
-- Workspace writes use Workspace-owned optimistic-concurrency identity such as `version + state_hash`;
-- stale writes are rejected and reconciled before retry;
-- live WordPress remains authoritative for current site state.
+No writable source means no claim of newly saved continuity. The [project-state architecture](docs/PROJECT-WORKSPACE-ARCHITECTURE.md) and runtime `workspace-memory` reference own detail.
 
 ## Approval and safety
 
@@ -145,13 +96,13 @@ A current exact instruction is not redundantly reconfirmed while target/scope/ma
 - [`MASTER-SPEC.md`](MASTER-SPEC.md) — canonical product requirements for the Skill itself.
 - [`docs/architecture.md`](docs/architecture.md) — concise runtime/rule ownership architecture.
 - [`docs/PROJECT-WORKSPACE-ARCHITECTURE.md`](docs/PROJECT-WORKSPACE-ARCHITECTURE.md) — persistent Workspace/cross-chat architecture.
-- [`docs/BEHAVIOR-EVALS.md`](docs/BEHAVIOR-EVALS.md) — behavioral regression scenarios.
+- [`docs/BEHAVIOR-EVALS.md`](docs/BEHAVIOR-EVALS.md) — behavioral regression scenarios and baseline-vs-candidate review protocol.
 
 Implementation/release history belongs to Git/GitHub Issues, Pull Requests, and Releases.
 
 ## Validation and packaging
 
-Releases use OpenAI's standard Skill validation/package workflow. The public archive is named exactly **`skill.zip`** and must correspond to the tagged/integrated runtime revision.
+Releases use OpenAI's standard Skill validation/package workflow. The public archive is named exactly **`skill.zip`** and must match the tagged/integrated runtime revision. Run `python scripts/check_runtime_contract.py .`, `python scripts/check_documentation.py .` and `python -m unittest discover -s tests` for structural/document checks and negative mutation probes. Representative model tests in `docs/BEHAVIOR-EVALS.md` remain necessary to claim behavioral equivalence.
 
 ## License
 

@@ -1,12 +1,12 @@
-# WP Native Builder — Project Workspace Architecture
+# WP Native Builder — Durable Project State and Workspace Architecture
 
-This document defines the persistent Workspace architecture used by WP Native Builder. Product requirements live in [`MASTER-SPEC.md`](../MASTER-SPEC.md); runtime rule ownership lives in [`architecture.md`](architecture.md).
+This document explains durable project continuity using a connected Workspace **or** an authorized repository/project-folder source. Product requirements live in [`MASTER-SPEC.md`](../MASTER-SPEC.md); runtime rule ownership lives in [`architecture.md`](architecture.md).
 
-Workspace is an optional persistence layer for project continuity. It is not a chat archive, second CMS, live-site mirror, or general project-management system.
+Persistence is optional; Workspace is one adapter, while user-supplied GitHub Issues/files or project folders can hold equivalent authoritative records. It is not a chat archive, second CMS, live-site mirror, or general project-management system.
 
 ## 1. Goals
 
-Persistent Workspace support must let a fresh connected chat continue useful WordPress work without old conversation history while keeping context small and live WordPress authoritative for current site state.
+Any authorized durable source must support a fresh chat continuing from project records without prior chat history or Memory, keeping context small and live WordPress authoritative for current state.
 
 It must:
 
@@ -25,11 +25,11 @@ It must:
 |---|---|
 | **WP Native Builder Skill** | project semantics, source authority, intake/readiness, WordPress mechanism selection, approval and review workflow/state behavior; active specialist interface judgment remains outside this layer |
 | **Project Brief** | accepted durable project-level purpose, audience, scope/non-goals, constraints, success criteria |
-| **Derived Workspace Documents** | specialized durable architecture/design/IA/content-data context |
-| **Workspace Tasks** | unresolved execution, dependency/blocker, review, and delivery state |
+| **Derived domain documents** | specialized durable architecture/design/IA/content-data context, in the selected authorized store |
+| **Durable tasks** | unresolved outcome/acceptance, target, dependency/blocker, review/delivery gate, evidence and next action |
 | **Live WordPress** | actual current pages/posts/products/media/settings/theme/plugin/templates and other site objects/configuration |
 
-Any compatible runtime or connector may implement the storage/API/admin surface. The Skill remains capability-driven, assumes no named provider, and uses only behavior actually exposed by the current runtime.
+Any compatible runtime or connector may implement the storage/API/admin surface. A readable but non-writable source can support recovery but not state persistence. When Workspace and repository records coexist, preserve the established canonical owner per artifact; do not presume synchronization or duplicate project truth. The Skill stays capability-driven and uses only behavior exposed by the runtime.
 
 ## 3. Canonical documents
 
@@ -41,7 +41,11 @@ When WP Native Builder creates singleton project documents, the default canonica
 - `Design Direction`
 - `Content/Data Model`
 
-An existing equivalent document outranks naming preference. Do not create a second copy merely to normalize a title.
+An existing equivalent document **for the same bound project** outranks naming preference. Project Brief is singleton per project, not per WordPress site: equal names or keys alone do not establish equivalence across independent projects sharing a site. Shared site-level architecture documents are reused only when that ownership is established. Do not create a second copy merely to normalize a title.
+
+### Source-owned document graph
+
+For substantial work, establish only the domains that repay persistence: Brief = purpose/scope; Architecture Profile = actual site and code ownership; Information Architecture = hierarchy/navigation/URLs; Design Direction = accepted reusable interface rules; Content/Data Model = CPT/taxonomy/fields. Additional scoped decisions or recovery notes must own distinct long-lived content. Each relevant document records scope, accepted decisions separate from proposals, exact site/surface and edit owner, intended shared consumers and protected non-targets when non-obvious, dependencies/links and evidence/verification freshness when stale-sensitive. Tasks link to the nearest governing docs and concrete WordPress target. Use one optional Project Map/index only if navigation is otherwise difficult; it links owners and does not duplicate live data, task progress or other documents.
 
 ### Duplicate-safe creation
 
@@ -51,48 +55,21 @@ Before creating a canonical singleton document:
 DISCOVER -> REUSE/UPDATE -> CREATE ONLY IF ABSENT -> VERIFY
 ```
 
-Search/list enough decision-relevant Workspace state to identify semantic equivalents. If a stable document `key` is supported, use a stable purpose key after confirming an equivalent object does not already exist. Do not assume key uniqueness unless the runtime schema/storage guarantees it. An incomplete/truncated listing is not proof of absence.
+Search/list enough decision-relevant state in the authorized store to identify semantic equivalents. If a stable document `key` is supported, use a stable purpose key after confirming an equivalent object does not already exist. Do not assume key uniqueness unless the runtime schema/storage guarantees it. An incomplete/truncated listing is not proof of absence.
 
 ## 4. Project Brief
 
-Project Brief content/coverage semantics are owned by `references/project-workflow.md`, not redefined here. Workspace's responsibility is only to persist/retrieve the canonical document safely when a suitable capability exists. Existing Workspace artifacts titled `Project Foundation` or keyed `project-foundation` remain valid legacy equivalents and are reused rather than normalized by rename or duplicated.
+Project Brief content/coverage semantics are owned by `references/project-workflow.md`, not redefined here. Storage's responsibility is only to persist/retrieve the canonical document safely when a suitable capability exists. Existing Workspace artifacts titled `Project Foundation` or keyed `project-foundation` remain valid legacy equivalents and are reused rather than normalized by rename or duplicated.
 
 After Project Brief readiness it remains discoverable but is not automatically loaded on every resume.
 
-## 5. Tasks
+## 5. Durable tasks and project recovery identity
 
-Tasks exist only when work benefits from explicit continuation, acceptance, dependencies, review, or delivery state.
+Tasks are useful for substantive unfinished outcomes, acceptance, dependencies, review or delivery—not every small edit. The existing Workspace Task, GitHub Issue/file or another durable project record can be the sole owner. The exact task fields and **three independent state dimensions** are defined in [MASTER-SPEC.md](../MASTER-SPEC.md) and `references/project-workflow.md`; do not maintain a second enum or status procedure here.
 
-Useful descriptive fields include title, goal, acceptance, dependencies/blocker, target references, and short durable notes.
+Identity is **project + site + target**, not just the last-used site or a document title. A site-wide summary may mix projects, tasks and historical focus. An incomplete/truncated index cannot prove absence; site-private storage is not automatically project-private. Count/readback checks, access grants, storage field limits and actual project bindings must be verified against the exposed implementation.
 
-State dimensions remain runtime-neutral and independent:
-
-| Dimension | Values |
-|---|---|
-| Progress | `todo` / `in_progress` / `blocked` / `done` |
-| Review | `not_required` / `pending` / `changes_requested` / `approved` |
-| Delivery | `not_applicable` / `draft_preview` / `live` |
-
-`done` != `approved`; `approved` != `live`.
-
-`delivery=not_applicable` means no draft/live delivery state is currently established. A task may still be intended for later publication; represent that intent in goal/acceptance/target references/notes. `draft_preview` requires a real preview/draft and `live` requires intended live delivery to be established/verified.
-
-Small changes completed and verified in one interaction do not gain permanent tasks merely because Workspace exists.
-
-## 6. Compact resume and progressive loading
-
-On fresh/resumed connected work:
-
-1. discover a suitable Workspace resume capability;
-2. request compact orientation before broad rediscovery/questioning;
-3. orient from project identity/current focus, active/review-blocked work, blockers, and references to potentially useful documents;
-4. fetch only task/document details needed for the next decision/action;
-5. do not automatically load Project Brief when a nearer source is sufficient;
-6. load Project Brief only for project-level change/contradiction/recovery/completion need;
-7. verify live WordPress state before current-state-dependent/overwrite-sensitive site mutation;
-8. continue useful work instead of stopping at a recovery summary.
-
-A resume packet should not dump full document bodies or all completed/history tasks by default.
+Read-only authoritative documents can support fresh-chat recovery without a writable target, while absence of any readable durable source cannot. The precise selective-recovery, deduplication and write/retry procedure belongs solely to [workspace-memory.md](../references/workspace-memory.md).
 
 ## 7. Retention
 
@@ -105,60 +82,15 @@ Persist only when all are true:
 
 Do not persist full chats, hidden reasoning, routine worklogs, repeated checkpoints, every micro-edit, copied live content, credentials/secrets, unnecessary customer/order/payment/financial payloads, or broad database/plugin dumps.
 
-## 8. Workspace-owned optimistic concurrency
+## 8. Storage identity, privacy and failure boundaries
 
-Workspace current state/write safety must not depend on WordPress Revision IDs.
+WordPress post Revisions and Workspace document/task concurrency are **distinct**. A Workspace write needs enforceable current storage identity such as `version + state_hash`; a repository/Issue/file uses its supported current revision guard or safe non-overwriting method. A successful acknowledgement may hide truncation, and a timeout may hide a successful update. The detailed read/reconcile/write procedure is maintained only in [workspace-memory.md](../references/workspace-memory.md).
 
-For an overwrite-sensitive document/task update:
+A site-private object does **not** imply project- or user-specific permissions. Actual read/write grants control whether team-sensitive details can be stored. Secrets, irrelevant personal/customer/payment records, full chat transcripts and live-site dumps are not project memory.
 
-1. read the current object plus Workspace-owned identity such as `version + state_hash`;
-2. require the update operation to accept expected identity;
-3. if no guard exists, do not blind-overwrite;
-4. submit with expected identity;
-5. verify resulting state when practical;
-6. on stale/mismatch/conflict, re-read and preserve newer valid work before retry;
-7. on ambiguous write outcome, re-read authoritative current state before any retry.
+Workspace export alone does not prove import, restore, cross-site migration or backup coverage. Hosting/backups or an independently verified migration mechanism own those outcomes.
 
-WordPress Revisions may remain useful secondary history for content but are not Workspace concurrency authority. Site/database disaster recovery remains a hosting/backup concern.
+## 9. Acceptance evidence boundary
 
-## 9. Transient capability loss
+Recovery must be demonstrably project-bound, with exact site/target verification, bounded index handling, no unverified duplicate records, protected writes, truthful read-only/no-store fallback and live-state rechecks. The scenario protocol in [BEHAVIOR-EVALS.md](BEHAVIOR-EVALS.md) owns behavioral evaluation; passing documentation/static checks is not real connected recovery or LLM A/B evidence.
 
-One timeout/unavailable/transport failure is not evidence that the logical Workspace capability disappeared.
-
-- preserve recovered orientation/current state;
-- continue independent work;
-- re-discover/retry once when transient semantics or changed runtime evidence make success plausible;
-- never blind-loop identical failures;
-- stop retrying after clear permission denial, unsupported schema, or authoritative absence;
-- continue manual/non-overwrite work and report a capability blocker only when required semantics truly prevent further outcome-linked progress.
-
-## 10. Continuity reconciliation
-
-After a material multi-step workflow change, update the smallest Workspace object that owns changed future-useful truth when practical. Do not update Workspace merely because another conversational step occurred.
-
-A fresh chat should be able to recover active intent from durable sources without reconstructing project state from old chat history.
-
-## 11. Review and delivery
-
-WordPress-side static pre-user review applies even without a renderer. When preview/editor/parser/live capabilities exist, add those checks before user handoff/publication as relevant. This Workspace layer does not initiate or redefine Product Interface Designer consultation.
-
-Clear approval of a reviewed result may satisfy an already-established “show me first, publish after approval” condition while target/scope/effect remain unchanged. Generic positive feedback alone does not imply publication authorization.
-
-## 12. Manual fallback
-
-Workspace is an enhancement, not a prerequisite. Without a suitable persistence capability, WP Native Builder remains fully useful in manual mode and does not claim connected persistence/mutation occurred.
-
-## 13. Validation invariants
-
-A release-quality implementation demonstrates:
-
-- canonical documents are reused rather than duplicated;
-- Project Brief semantics remain owned by project workflow rather than duplicated into Workspace policy;
-- nearest-source resume without automatic full Project Brief load;
-- selective task/document fetch;
-- guarded Workspace writes using current Workspace-owned identity;
-- stale/ambiguous write reconciliation;
-- runtime-neutral task enums without unnecessary new lifecycle states;
-- bounded transient-route recovery;
-- manual fallback without false persistence claims;
-- no chat/secret/live-content duplication introduced by Workspace behavior.

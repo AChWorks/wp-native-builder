@@ -4,75 +4,49 @@ This is the concise runtime and rule-ownership overview. Stable product requirem
 
 ## Runtime structure
 
-```text
-wp-native-builder/
-├── SKILL.md
-├── agents/
-│   └── openai.yaml
-└── references/
-    ├── design-conventions.md
-    ├── gutenberg-safety.md
-    ├── implementation-decisions.md
-    ├── project-workflow.md
-    └── workspace-memory.md
-```
-
-`SKILL.md` is the control plane. Request routing is additive rather than mutually exclusive; every applicable direct reference may be loaded once.
+The installable runtime is `SKILL.md`, `agents/openai.yaml` and five directly routed `references/` files, as shown in the [README](../README.md). Repository specifications, test scripts and scenarios remain outside the package. Applicable references load once; routing is additive.
 
 ## Rule ownership
 
 | Runtime source | Owns |
 |---|---|
 | `SKILL.md` | trigger/routing, universal control loop, source authority, optional Product Interface Designer consultation/re-consultation protocol, universal review/approval/safety invariants |
-| `references/project-workflow.md` | Project Brief, canonical project artifacts, task semantics, multi-step progression, and project-level recovery triggers |
-| `references/implementation-decisions.md` | WordPress owner/mechanism selection, native-vs-custom decisions, placement/naming, shared/global impact and rollback awareness |
+| `references/project-workflow.md` | Project Brief, linked domain documents, navigation, task state and recovery triggers |
+| `references/implementation-decisions.md` | Mechanism and local/shared/global change boundaries, consumer isolation, English slugs, plugin i18n/author metadata, rollback |
 | `references/gutenberg-safety.md` | Gutenberg serialization contract, invalid-block diagnosis, block-specific validation |
 | `references/design-conventions.md` | WordPress-side interface realization quality and proportional standalone design fallback; it never becomes a second generic UI/UX owner when Product Interface Designer is active |
-| `references/workspace-memory.md` | Workspace persistence, exact progressive-resume procedure, duplicate avoidance, optimistic concurrency, transient Workspace failure |
+| `references/workspace-memory.md` | Backend-neutral project recovery (Workspace/repository), duplicate avoidance, guarded writes and fallback |
 | `agents/openai.yaml` | ChatGPT-facing metadata |
 
 References may state that another domain also applies, but they do not become a second owner of that domain's policy.
 
 ## Project truth model
 
-```text
-Project Brief
-  -> Site Architecture Profile
-  -> Information Architecture / Design Direction / Content/Data Model when useful
-  -> Workspace Tasks for unresolved execution/review/delivery state
-  -> Live WordPress remains authoritative for current site state
-```
+A Project Brief is canonical **per distinct project**, even when multiple projects share a site. Linked domain records own long-lived architecture/IA/design/data decisions; a durable task owns progress, gates and next action; live WordPress owns actual current site objects. Never create duplicate truth owners just for navigation.
 
-Project Brief is required only for substantial project classes. Readiness comes from resolved material coverage, not from a separate Project Brief lifecycle enum, and does not depend on persistence availability; persistence only determines whether that context survives across chats. Once ready, Project Brief leaves the normal hot path.
+The exact architecture and storage limits are in [PROJECT-WORKSPACE-ARCHITECTURE.md](PROJECT-WORKSPACE-ARCHITECTURE.md).
 
 ## Mechanism-first architecture
 
-Every implementation makes two independent decisions:
-
-1. **Owner/mechanism** — WordPress Core, Site Editor/template part, theme, builder, plugin, Pattern, form/commerce/data model, scoped frontend code, or custom extension.
-2. **Transport** — an actually exposed connected capability that can safely operate the selected owner.
-
-A connector does not become the architecture merely because it exposes an operation. Transport selection is capability-based and product-neutral. If one transport fronts multiple WordPress sites, fleet-level discovery may identify site identities, but site-scoped capability use is fail-closed until one exact target is unambiguously established; never infer it from a last-used site or conversational proximity, and keep the resolved identity explicit through the operation.
+Resolve the actual supported WordPress owner—Core/Site Editor, installed theme/builder/plugin, Pattern/template, data/commerce capability or narrow custom extension—**before** selecting a connected transport. Neither a named vendor nor an exposed connector action automatically becomes the right architecture or grants publication consent. Actual mechanisms, site identity and shared impact are owned by `references/implementation-decisions.md`.
 
 ## Review architecture
 
-Pre-user review has two WordPress-side evidence levels:
+Static WordPress-side content/ownership/quality review is always performed. Add preview, editor/parser and live verification when relevant and available; static checks never prove rendered behavior. Optional Product Interface Designer consultation owns unresolved interface judgment, not WordPress implementation. The consultation protocol is owned only by `SKILL.md`.
 
-- **Static review — always:** content/structure, ownership, semantics, implementation accessibility/responsive/RTL/performance/maintainability risks, and fidelity to any already-accepted interface intent.
-- **Runtime/rendered review — when available:** preview/editor/parser/live checks, Gutenberg invalid/recovery warnings, implementation/fidelity verification, and write-result verification.
+## Local, reused and global change boundaries
 
-When Product Interface Designer is active, material interface judgment remains with that specialist; normal WordPress review does not create a second art direction or automatically trigger another specialist call. `SKILL.md` alone owns consultation/re-consultation. Static review must not be described as rendered validation.
-
-## Shared/global changes
-
-Global/template/shared work inspects reuse/impact before mutation and captures current target identity plus a practical revision/rollback route when the runtime exposes one. This is evidence for safe recovery, not a new approval ceremony.
+A local page, header, component, form or data edit must not silently change non-target consumers via shared CSS, options, hooks, templates or Patterns. When a shared/global change is actually needed, investigate material consumers, authorization and rollback; verify protected surfaces before consequential publication if safely possible and afterward. Detailed decisions live in `references/implementation-decisions.md`.
 
 ## Workspace architecture
 
-Workspace is optional and capability-driven. When it is relevant to substantial/multi-step work, including a new project, it stores future-useful durable context, resumes progressively, reuses canonical singleton documents before create, guards overwrite-sensitive writes with Workspace-owned expected identity, and never replaces live WordPress as current-state authority. The exact Workspace resume/retrieval procedure is owned only by `references/workspace-memory.md`.
+Durable source owners can be Workspace, a repository/Issue or a project folder. Bind exact project/site, use guarded writes, distinguish read-only recovery from new persistence and reverify relevant live WordPress. `references/workspace-memory.md` owns the operational procedure; [PROJECT-WORKSPACE-ARCHITECTURE.md](PROJECT-WORKSPACE-ARCHITECTURE.md) explains storage limits and data ownership.
 
-Task delivery retains the current runtime-neutral enum: `not_applicable`, `draft_preview`, `live`. `not_applicable` means no draft/live state is currently established; intended later publication is represented by task goal/acceptance/targets/notes rather than a new lifecycle value.
+
+## External practice evidence
+
+These official references support **specific technical mechanisms**, not a fixed technology stack or a promise of model-level performance: WordPress [Site Editor template precedence](https://developer.wordpress.org/themes/templates/templates/) and [template parts](https://developer.wordpress.org/themes/templates/template-parts/), [Gutenberg block validation](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/), [Block Bindings/Pattern Overrides](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-bindings/), [plugin metadata](https://developer.wordpress.org/plugins/plugin-basics/header-requirements/), [REST permissions](https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/), WooCommerce [HPOS](https://developer.woocommerce.com/docs/features/orders/high-performance-order-storage/), and OWASP [untrusted retrieved content](https://genai.owasp.org/llmrisk/llm01-prompt-injection/). Google's [URL language guidance](https://developers.google.com/search/docs/crawling-indexing/url-structure) does not require English slugs; that preference is a project convention. Verify current installed versions and supported features when these differences matter.
 
 ## Packaging boundary
 
-Only the seven runtime files under `SKILL.md`, `agents/`, and `references/` are packaged as `skill.zip`. Repository docs remain outside the Skill package. The public release asset must correspond to the tagged/integrated runtime revision.
+Only the seven runtime files under `SKILL.md`, `agents/`, and `references/` are packaged as `skill.zip`. Repository docs remain outside the Skill package. The public release asset must correspond to the tagged/integrated runtime revision. CI may upload an exact seven-file `skill.zip` candidate for review, but that artifact is not a public Release.
