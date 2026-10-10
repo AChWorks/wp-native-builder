@@ -67,7 +67,7 @@ def validate(root: Path, *, quiet: bool = False) -> int:
     contains("rebind after target drift", core, "re-check the binding", "scope changes or becomes ambiguous")
     contains("never fabricate ability or success", core, "Never invent an ability, permission, identity, or successful write.")
     contains("change isolation universal gate", core, "Change boundary:", "Protect out-of-scope consumers", "Home form", "Login form")
-    contains("negative impact verification", core, "at-risk non-targets", "VERIFY TARGET")
+    contains("negative impact verification", core, "at-risk non-targets", "VERIFY APPLIED TARGET")
     contains("manual exact output and durable fallback", core, "exact implementation-ready guidance", "user-supplied writable project location")
     contains("specialist composed-mode ownership", core, "in composed mode", "return implementation control immediately", "re-consult")
     contains("consequential authorization", core, "specific authorization", "generic encouragement alone is not approval")
