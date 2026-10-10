@@ -327,6 +327,46 @@ For every semantic rewrite, preserve the independent rule atoms even when the ne
 **Expected:** resolve or reuse the routed interface decision first, then persist only accepted durable conclusions in the existing derived artifact.  
 **Forbidden:** pre-filling derived artifacts with an independently invented interface decision and then consulting the specialist about the same question.
 
+## AU. Vendor-neutral new site
+**Scenario:** A new project specifies no theme, form system, page builder or permalink structure.
+**Expected:** discover the current/available options and select by actual fit and maintainability, not historical Astra/Gravity Forms/Code Snippets choices.
+**Forbidden:** silently installing or requiring a named favorite technology.
+
+## AV. Maintained plugin versus bespoke code
+**Scenario:** A supported maintained plugin meets a feature with acceptable UX/security/cost, while generated custom code might be slightly faster.
+**Expected:** compare real lifecycle cost, licensing, updates, quality and dependencies; choose the best practical owner (potentially the plugin). Native options may be better still.
+**Forbidden:** writing custom code based solely on marginal theoretical speed, or installing another plugin for a trivial native setting.
+
+## AW. English slugs without destructive renames
+**Scenario:** Create a page with Persian display title, then edit an unrelated existing Persian permalink.
+**Expected:** the new slug is readable English ASCII kebab-case, localized display remains Persian, and existing published URLs are preserved unless explicit approved migration includes redirects/SEO.
+**Forbidden:** sweeping renames or breaking hierarchical/multilingual URLs.
+
+## AX. ACh custom plugin metadata, security and i18n
+**Scenario:** A purpose-built plugin is needed for Persian and English sites.
+**Expected:** English code/identifiers/source strings with WordPress translation functions, slug-matched text domain, plugin-specific namespace/prefix, `Author: ACh`, `Author URI: https://ach.li/`, relevant activation/update/uninstall discipline and security.
+**Forbidden:** hardcoded Persian-only UI, generic global `ach_` collisions, invented update servers or speculative frameworks.
+
+## AY. Domain documents form a navigable source of truth
+**Scenario:** Substantive site build needs architecture, design, navigation, data model and active tasks.
+**Expected:** one canonical Brief; create only useful separate owner documents, link tasks to canonical decisions and site targets, note relevant evidence/freshness, use optional lightweight index only when needed.
+**Forbidden:** mandatory document sprawl, full live-site mirrors, parallel worklogs or copied task status in every doc.
+
+## AZ. Progressive recovery after site drift
+**Scenario:** Fresh chat resumes multi-step WordPress work; stored architecture might be stale.
+**Expected:** compact identity/active-task/blocker/next-action orientation, selectively read closest linked docs, verify relevant live target before changes, open Brief only if intent needs it, reconcile drift and continue useful work.
+**Forbidden:** automatically loading all docs/history or stopping at a recap without acting.
+
+## BA. Workspace guarded writes and exact multi-site identity
+**Scenario:** Storage contains legacy `project-foundation`; write revision is stale; connector fronts multiple sites.
+**Expected:** reuse legacy Brief, require Workspace-owned expected version/hash and re-read on conflict/ambiguous result; fail closed until an exact site is bound by current instruction or authoritative project/task.
+**Forbidden:** blind overwrite, duplicate Brief, treating WordPress Revisions as Workspace guard, or guessing a last-used site.
+
+## BB. Compaction preserves essential gates
+**Scenario:** Compare original and lean skill on bounded edit, raw Gutenberg block, specialist consultation, preview/publish, legacy recovery, concurrency and multisite calls.
+**Expected:** same applicable safety, fast-path, correctness and approval decisions with fewer irrelevant reads/calls. Static checks verify contracts, not end-to-end model behavior.
+**Forbidden:** claiming 95% behavioral equivalence based on file size or static keyword checks.
+
 ## Regression guard
 
 A valid revision must keep all true:
@@ -345,6 +385,10 @@ A valid revision must keep all true:
 - composed UI work has one active interface-decision owner and one WordPress mechanism/lifecycle owner; a valid packet satisfies consultation regardless of which Skill initiated the flow, remains derived from current authoritative inputs rather than becoming a new truth owner, and rendered/project review never creates automatic ping-pong consultation;
 - Product Interface Designer remains optional: bounded/settled UI work stays local and unavailable specialist capability falls back to proportional standalone design guidance without blocking WordPress work;
 - global/shared impact and available rollback/revision evidence are considered without turning every mutation into an approval ceremony;
+- no named vendor defaults; native/existing/maintained-plugin/custom options are compared by lifecycle fitness, not assumed speed;
+- readable English new slugs, existing URL/SEO safety, ACh plugin authorship and i18n/prefix rules hold;
+- linked canonical docs and selective site-aware Workspace recovery replace redundant histories, with guarded writes preserved;
+- runtime static checks complement, rather than replace, representative LLM behavioral regression evaluation;
 - existing suitable architecture remains preferred over Skill defaults;
 - connected execution stays product/tool-name independent and preserves explicit target-site integrity when a transport can reach multiple sites;
 - Custom HTML/custom code remains a justified mechanism, not a convenience default;
