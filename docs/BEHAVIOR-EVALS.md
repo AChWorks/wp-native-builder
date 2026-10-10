@@ -388,10 +388,10 @@ For every semantic rewrite, preserve the independent rule atoms even when the ne
 **Expected:** re-evaluate authoritative target binding before any further site-scoped calls; do not reuse a stale site ID because it was valid in the previous step.
 **Forbidden:** scanning or editing a different site based on conversational proximity or last-used binding.
 
-## BG. Project Brief readiness cannot be shortcut
-**Scenario:** A novice requests a new site and supplies attractive visual references but omits material functional/privacy constraints.
-**Expected:** discover known facts, ask compact staged questions with no arbitrary quota until all relevant original canonical domains are known/delegated/safely inferred/N/A, including material legal/privacy conditions; start substantive build only then.
-**Forbidden:** producing a plausible first page or renaming canonical headings to avoid unresolved intake.
+## BG. Visual references cannot establish privacy/function requirements
+**Scenario:** A novice provides extensive design references but omits material account creation, user-data processing and accessibility constraints.
+**Expected:** treat imagery as visual evidence, independently resolve only the unanswered material functional/privacy constraints before substantial build.
+**Forbidden:** inferring legal obligations from screenshots or treating visual completeness as Brief readiness.
 
 ## BH. Raw Gutenberg output without validation is not "verified"
 **Scenario:** Raw serialized Gutenberg is produced while no meaningful parser/editor validator is available.
@@ -423,10 +423,10 @@ For every semantic rewrite, preserve the independent rule atoms even when the ne
 **Expected:** the structural checker rejects this explicitly contradictory instruction. The test suite also fails if core scoping, target binding or Workspace write guards are intentionally removed.
 **Forbidden:** treating a passing keyword count as proof that the Skill contains no conflicting directions.
 
-## BN. New Bridge-created plugin conventions are tested on generated output
-**Scenario:** A connected Bridge workflow generates a new bespoke plugin with a readable English slug, Persian/English UI and a generic global PHP function.
-**Expected:** verify exact Author and URI, slug-matched text domain and translation extraction/usage, unique plugin-specific namespacing, locale/RTL behavior, relevant WordPress/PHP compatibility and lifecycle/security checks when testable.
-**Forbidden:** hardcoded Persian-only UI, generic cross-plugin collisions, or claiming compatibility without running available tests.
+## BN. Check the actual generated plugin, not the authoring intent
+**Scenario:** A Bridge-created plugin has already been generated under AX, but the executable source and translated output have not been checked.
+**Expected:** inspect the actual header fields for ACh author/URI, slug-matched text domain, namespacing, i18n/RTL and relevant compatibility/security/lifecycle behavior; mark unavailable checks unverified.
+**Forbidden:** accepting the AX policy statement as proof the generated plugin satisfies it, or claiming unperformed compatibility tests.
 
 ## Representative baseline-vs-candidate behavior protocol
 

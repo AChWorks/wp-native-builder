@@ -178,19 +178,9 @@ Version-sensitive WordPress/WooCommerce/theme/plugin/Abilities/MCP behavior must
 
 ## 10. Runtime rule ownership
 
-The distributable Skill remains shallow and progressively loaded:
+The Skill has one compact routing/control-plane file, five conditionally loaded direct references, and one metadata file. The canonical **rule-owner map** is in [docs/architecture.md](docs/architecture.md); do not copy that table or create second owners through supporting documentation.
 
-| Runtime source | Canonical responsibility |
-|---|---|
-| `SKILL.md` | trigger/routing, universal control loop, source authority, universal review/approval/safety invariants |
-| `references/project-workflow.md` | Project Brief readiness, linked domain docs/navigation, tasks, multi-step progression and recovery triggers |
-| `references/implementation-decisions.md` | Vendor-neutral ownership, plugin-vs-code choice, English slugs, custom-plugin i18n/metadata, placement and rollback |
-| `references/gutenberg-safety.md` | Gutenberg serialization, invalid-block diagnosis, block-specific validation |
-| `references/design-conventions.md` | UI/UX/design judgment and visual review |
-| `references/workspace-memory.md` | Backend-neutral storage/recovery, duplicate avoidance, guarded writes, transient failures and fallback |
-| `agents/openai.yaml` | ChatGPT-facing metadata |
-
-Reference files may point to another domain whose rule also applies, but they must not become a second owner of that domain's policy. All runtime references remain directly reachable from `SKILL.md`.
+The enduring separation is: `SKILL.md` owns universal routing/authorization/specialist consultation; project workflow owns Project Brief, tasks and domain semantics; workspace memory owns source discovery, recovery and write concurrency; implementation decisions own WordPress mechanisms and shared impact; Gutenberg safety owns block validity; design conventions own WordPress-side visual realization. Every reference remains directly reachable from `SKILL.md`.
 
 ## 11. Non-goals
 
@@ -210,43 +200,20 @@ Reference files may point to another domain whose rule also applies, but they mu
 
 ## 12. Acceptance and release requirements
 
-A release-quality revision must preserve these outcomes:
+For release readiness, validate the **exact distributable source and `skill.zip`** using required Skill packaging/provenance and integration/review gates. The evidence must cover:
 
-- standard Skill validation and packaging pass;
-- small bounded work remains fast;
-- substantial projects resolve material Project Brief gaps before major build even when no persistence location is available;
-- novice intake does not require WordPress terminology;
-- one canonical durable Project Brief is used when persistence exists, while current-session Project Brief semantics remain valid without persistence;
-- additive routing can load every applicable direct reference without duplicate loading, including Workspace mechanics for new as well as resumed projects;
-- canonical singleton project documents are reused before new copies are created, while tasks use purpose-based titles;
-- every change binds a local/reused/global scope and protects unintended non-targets, with consumer/rollback/negative-impact checks proportional to risk;
-- global/template/shared changes inspect impact and preserve practical revision/rollback evidence when available;
-- Core blocks/Patterns/native mechanisms remain preferred when fit;
-- Gutenberg raw serialization is validated proportionally and invalid blocks are repaired narrowly;
-- static review always occurs and rendered/editor checks are added when available;
-- new readable slugs, preserved URLs and discoverable ownership are enforced; a new bespoke plugin created through Bridge receives ACh author metadata, text-domain and i18n rules without affecting other plugins;
-- native/existing/plugin/custom paths are compared on lifecycle quality rather than preset vendors;
-- project docs form a linked canonical graph and progressive recovery avoids full history reload;
-- connected mode reconciles stale/ambiguous writes and bounded transient route failure;
-- live WordPress remains authoritative for current site state;
-- manual mode remains useful without connected or persistent capabilities and never claims unavailable persistence;
-- consequential-action classification remains explicit enough to avoid both blanket confirmation and missed gates;
-- static contract checks and documented behavioral regressions cover the changed rules, without claiming static checks prove LLM behavior;
-- public `skill.zip` contains exactly the intended runtime files from the tagged/integrated revision.
+- **Scope and intent:** bounded edits stay fast, substantial work resolves material Brief gaps, and each distinct project retains its own canonical Brief rather than a separate Brief per chat or a site-global Brief
+- **WordPress correctness:** adaptive owner/mechanism-first implementation, no named vendor preset, isolated effects across pages/headers/components/forms/data, safe Gutenberg serialization and supported editor mechanisms
+- **Connected continuity:** exact target-site binding, capability-neutral/manual fallback, optional project records, duplicate prevention, guarded concurrent writes, and honest truncated/ambiguous results
+- **Quality and authorization:** proportional static plus available rendered/editor/functional checks, UX/accessibility/RTL/performance, and consent for genuine consequential effects without unnecessary repeated prompts
+- **Maintainer boundaries:** new readable slugs, existing URLs preserved, source-specific document owners, and ACh author/URI **only for new bespoke plugins authored through Bridge**, with unrelated plugins unaffected
+- **Evidence limits:** documented regression cases and automated checks support—but do not prove—model behavioral parity, live WordPress behavior or actual publication
 
-Behavioral regression scenarios live in `docs/BEHAVIOR-EVALS.md`.
+The representative [behavior protocol](docs/BEHAVIOR-EVALS.md) governs any quantitative behavioral retention claim; unexecuted checks must be described as unverified.
 
 ## 13. Repository and release model
 
-| Path/system | Responsibility |
-|---|---|
-| `README.md` | user-facing installation/usage guide |
-| `SKILL.md` + `references/` + `agents/` | installable runtime Skill |
-| `MASTER-SPEC.md` | this canonical product specification |
-| `docs/architecture.md` | concise runtime architecture/rule ownership |
-| `docs/PROJECT-WORKSPACE-ARCHITECTURE.md` | detailed Workspace/cross-chat persistence architecture |
-| `docs/BEHAVIOR-EVALS.md` | behavioral regression scenarios |
-| Git history / Issues / PRs | implementation history and unresolved work |
-| Releases | immutable public `skill.zip` delivery evidence |
+`MASTER-SPEC.md` owns product intent; [docs/architecture.md](docs/architecture.md) owns runtime rule architecture; [docs/PROJECT-WORKSPACE-ARCHITECTURE.md](docs/PROJECT-WORKSPACE-ARCHITECTURE.md) owns storage architecture; and [docs/BEHAVIOR-EVALS.md](docs/BEHAVIOR-EVALS.md) owns scenarios. `README.md` is the installation/usage entrypoint. `SKILL.md`, `agents/` and `references/` are the installable runtime. GitHub Issues, PRs, CI and Releases—not documentation copies—own current execution and delivery facts.
 
-Repository-only documentation is not bundled into `skill.zip`. Public packaging uses OpenAI's standard Skill validation/package flow and the distributable archive name remains exactly `skill.zip`.
+Only the validated integrated/tagged runtime is eligible for the public `skill.zip`. Repository docs and tests are never packaged.
+
