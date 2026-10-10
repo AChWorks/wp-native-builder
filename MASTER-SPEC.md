@@ -45,6 +45,7 @@ The Skill is not a CMS, page builder, connector architecture, or general project
 21. **Pragmatic plugin-vs-code choice.** Compare supported native, installed, maintained-plugin and custom paths on fitness, quality and lifecycle cost; never presume slightly faster custom code beats a credible plugin.
 22. **Navigable source-owned documentation.** Durable project facts belong in one linked canonical document/task owner, with relevant provenance/freshness and selective recovery. Optional index only if discovery needs it.
 23. **Custom-plugin standard.** New custom code/identifiers are English and translation-ready; use slug-matched WordPress text domains, `Author: ACh`, `Author URI: https://ach.li/`, and unique namespaces without speculative frameworks.
+24. **Change isolation.** Bind exact site/object/instance; identify local/reused/global scope, dependencies and protected non-target consumers. Shared forms, CSS/JS, templates, options, hooks or data do not imply authorization to change other surfaces. Prefer scoped edits; for shared/global changes map actual consumers, inspect impact and available rollback route, then verify target and at-risk unaffected consumers. Document lasting coupling only in the existing owning artifact.
 
 ## 3. Request classes and Project Brief
 
@@ -103,7 +104,7 @@ current suitable owner/mechanism
   -> smallest purpose-built extension when lifecycle/data/API/permissions justify it
 ```
 
-Global shell/header/footer/navigation/template/reusable surfaces must resolve their actual Site Editor/theme/builder owner before page-local markup is considered. Gutenberg content checks Core blocks/settings/Patterns/template ownership before Custom HTML. Existing CPT/taxonomy/ACF, forms, WooCommerce presentation, and other mature data/function owners are reused when fit.
+Global shell/header/footer/navigation/template/reusable surfaces must resolve their actual Site Editor/theme/builder owner before page-local markup is considered. A local form/page/component edit must not affect another just because they share a plugin, CSS selector, script, option or hook; use the explicit isolation and consumer-impact contract in `references/implementation-decisions.md`. Gutenberg content checks Core blocks/settings/Patterns/template ownership before Custom HTML. Existing CPT/taxonomy/ACF, forms, WooCommerce presentation, and other mature data/function owners are reused when fit.
 
 There is **no named vendor/technology preset**. Inspect actual Core/theme/builder/plugin options and choose by fit, security, compatibility, accessibility, quality, performance, licensing, ongoing support/editability, portability and rollback. Historical examples are not recommendations or migration targets.
 
@@ -216,6 +217,7 @@ A release-quality revision must preserve these outcomes:
 - one canonical durable Project Brief is used when persistence exists, while current-session Project Brief semantics remain valid without persistence;
 - additive routing can load every applicable direct reference without duplicate loading, including Workspace mechanics for new as well as resumed projects;
 - canonical singleton project documents are reused before new copies are created, while tasks use purpose-based titles;
+- every change binds a local/reused/global scope and protects unintended non-targets, with consumer/rollback/negative-impact checks proportional to risk;
 - global/template/shared changes inspect impact and preserve practical revision/rollback evidence when available;
 - Core blocks/Patterns/native mechanisms remain preferred when fit;
 - Gutenberg raw serialization is validated proportionally and invalid blocks are repaired narrowly;

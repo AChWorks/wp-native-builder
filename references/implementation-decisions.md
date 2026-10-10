@@ -9,13 +9,16 @@ Discover current theme/editor/builder, installed capabilities and exact target o
 | Surface | Prefer when fit | Avoid |
 |---|---|---|
 | Block theme's global shell | Site Editor, templates/parts, Global Styles | Page-local duplicated header/footer |
-| Classic theme or builder global shell | Its supported header/footer/template facility | Rebuilding global markup per page |
+| Classic/theme-managed global shell | Current theme's supported header/footer/hooks or child theme when justified | Copying shell into every page |
+| Existing builder-owned global shell | Builder's global template/Theme Builder facility | Reimplementing builder shell without migration |
 | Gutenberg content | Core/installed blocks, supported settings | Hand-authored serialized markup for convenience |
 | Reusable section | Pattern/Synced Pattern; template for true global structure | Copied HTML/CSS across pages |
-| Navigation/listings | Native navigation/Query Loop or existing dynamic owner | Hardcoded duplicates |
-| Forms | Suitable installed form engine | Reimplementing anti-spam, validation and storage |
+| Navigation | Current theme/Site Editor/builder navigation owner | Static duplicated menus |
+| Dynamic content listing | Query Loop or actual data/plugin owner | Hardcoded cards for dynamic data |
+| Forms | Suitable installed form and its per-form configuration, validation, anti-spam, notifications and storage | Reimplementing submissions or altering other form instances |
 | WooCommerce UI | Supported Woo blocks/templates/theme integration | Rebuilding commerce logic |
 | CPT/taxonomy/ACF | Existing model and registered APIs | Parallel schemas |
+| Media/content | Media Library and supported content APIs | Unmanaged duplicates or direct database edits |
 | Presentation-only gap | Scoped CSS; HTML/JS only when needed | Plugin/PHP just for styling |
 | Shared behavior, permissions, API or lifecycle | Suitable plugin/central capability or focused extension | Scattered snippets/inline scripts |
 
@@ -27,23 +30,33 @@ Choose the **smallest maintainable supported mechanism**, not the shortest code:
 
 Compare relevant fit/quality, security/maintenance, compatibility, licensing/cost, updates, performance, accessibility/editability, data lock-in and reversibility. **A maintained suitable plugin can beat slightly faster custom code**; a native setting may beat both. Offer alternatives only for real trade-offs; verify version-sensitive claims.
 
-Recommendations do not authorize purchases, activation or consequential global changes; apply `SKILL.md` gates. Lack of a safe connector must not change the chosen mechanism; prepare/manual-implement instead.
+Recommendations do not authorize plugin/theme **installation, activation, purchases, external-vendor commitments** or consequential global changes; apply `SKILL.md` gates to the actual effect. Lack of a safe connector must not change the chosen mechanism; prepare/manual-implement instead.
 
-## 3. Existing-site impact and code placement
+## 3. Change boundaries, shared consumers and rollback
 
-Preserve existing owners, tokens, URLs and unrelated work. Before global/shared edits inspect consumers and rollback/revision evidence. For accepted migration, consider dependencies and reversibility.
+For any edit establish the **exact site/target and allowed change**, classify its owner as **local, reused/shared or global**, and identify **protected non-targets**. Shared technology is not shared authorization.
 
-Place local style locally, shared design centrally, server behavior in supported PHP/snippet/plugin, and data/API/permissions in an owned extension when required. Avoid duplicate libraries, global selectors, unreliable inline scripts, raw SQL when APIs fit, and Core/vendor edits.
+1. **Find the real owner:** page/template/block/form instance and ID, supported plugin setting, CSS/JS selector, PHP hook, option, API or data model. Inspect only relevant consumers/dependencies: Synced Patterns, shared forms/templates, theme tokens, broad selectors/events, plugin-wide options, hooks and data users.
+2. **Isolate first:** prefer instance-specific form settings, page/component-prefixed selectors, registered block styles and conditional hooks keyed to actual target IDs/context. Avoid broad CSS selectors, global handlers or plugin-wide configuration for a local request. Don't duplicate or fork healthy shared code needlessly; preserve deliberate reuse.
+3. **For genuine shared/global changes:** enumerate consumers and their expected effects, distinguish intended from forbidden impact, check whether expanded scope needs approval, and capture current identity plus practical revision/rollback route **before** mutation when available. If an isolated change is impossible, surface the actual coupling/trade-off rather than silently changing extra surfaces.
+4. **Verify after:** test the intended target and **representative at-risk non-target consumers** (form fields/validation/submission, login, templates, other pages or data/API callers as relevant); check responsive/locale/cache variants only where meaningful. Repair/roll back unintended changes; never claim that untouched consumers were verified without evidence.
+5. **Document only lasting coupling:** in the nearest `Site Architecture Profile` or active task, record real owner, intended shared consumers, protected targets, choice/rollback/verification evidence. Do not create a separate worklog for each edit.
 
-For WooCommerce presentation preserve existing product/order authority; do not infer refunds, payment or destructive customer/order actions from design tasks. For actual WooCommerce data extensions, respect the active storage/API contracts (including HPOS when applicable).
+**Example:** changing a Home contact form must not alter a Login form even if they share a form plugin or `.form-field` CSS/JS. Scope changes by the real page/form ID or an approved per-instance API; plugin-global styles/options or shared templates require explicit impact evaluation of both consumers.
 
-## 4. Names and localization
+## 4. Existing-site impact and code placement
+
+Preserve existing owners, tokens, URLs and unrelated work. For an authorized migration inspect dependencies, compatibility and reversibility before switching ownership. Local styles stay local, intentionally shared design remains centrally owned, and behavior/data/API/permissions live in the narrowest suitable supported extension. Avoid duplicate libraries, broad selectors, unreliable inline scripts, raw SQL when APIs fit, and Core/vendor edits.
+
+For WooCommerce presentation preserve existing product/order authority; do not infer refunds, payment or destructive customer/order actions from design tasks. For data extensions respect active storage/API contracts, including HPOS where applicable.
+
+## 5. Names and localization
 
 Use human-readable maintainer-facing titles, e.g. `Home — Hero`, `Header — Main`, `Site — Mobile Navigation`, rather than `Section 1`, random hashes, or tool defaults. Name *new* slug-bearing pages/posts/CPTs/taxonomies/patterns/custom extensions in concise, descriptive **English ASCII `lowercase-kebab-case`**, even on Persian or multilingual sites unless an explicit requirement dictates otherwise. Use project-appropriate unique prefixes/namespaces for CSS, IDs, code and blocks, not WordPress/vendor-reserved prefixes. Record edit ownership when non-obvious.
 
 Don't silently change existing slugs, published URLs or permalinks: inspect inbound links, hierarchy, translation mapping and SEO; plan redirects and update references before an approved rename. Keep localized *display labels* free to use the site's language.
 
-## 5. Custom plugin engineering contract
+## 6. Custom plugin engineering contract
 
 Only build a plugin when the decision above justifies it. Keep source, identifiers, filenames, comments and original translatable strings **English**, with WordPress i18n wrapping every user-facing string (including JavaScript where applicable). Use the exact plugin slug as `Text Domain` in code/header; provide `/languages` translations when needed, including Persian; implement locale/RTL behavior where relevant. Do not hardcode Persian into PHP as the sole UI language.
 

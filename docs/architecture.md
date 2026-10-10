@@ -25,7 +25,7 @@ wp-native-builder/
 |---|---|
 | `SKILL.md` | trigger/routing, universal control loop, source authority, optional Product Interface Designer consultation/re-consultation protocol, universal review/approval/safety invariants |
 | `references/project-workflow.md` | Project Brief, linked domain documents, navigation, task state and recovery triggers |
-| `references/implementation-decisions.md` | Vendor-neutral native/plugin/custom choice, English slugs, ACh plugin i18n/author metadata, ownership and rollback |
+| `references/implementation-decisions.md` | Mechanism and local/shared/global change boundaries, consumer isolation, English slugs, plugin i18n/author metadata, rollback |
 | `references/gutenberg-safety.md` | Gutenberg serialization contract, invalid-block diagnosis, block-specific validation |
 | `references/design-conventions.md` | WordPress-side interface realization quality and proportional standalone design fallback; it never becomes a second generic UI/UX owner when Product Interface Designer is active |
 | `references/workspace-memory.md` | Workspace persistence, exact progressive-resume procedure, duplicate avoidance, optimistic concurrency, transient Workspace failure |
@@ -63,9 +63,9 @@ Pre-user review has two WordPress-side evidence levels:
 
 When Product Interface Designer is active, material interface judgment remains with that specialist; normal WordPress review does not create a second art direction or automatically trigger another specialist call. `SKILL.md` alone owns consultation/re-consultation. Static review must not be described as rendered validation.
 
-## Shared/global changes
+## Local, reused and global change boundaries
 
-Global/template/shared work inspects reuse/impact before mutation and captures current target identity plus a practical revision/rollback route when the runtime exposes one. This is evidence for safe recovery, not a new approval ceremony.
+`SKILL.md` binds exact target and protected non-targets for every edit. The implementation reference owns detailed scope/impact decisions: check actual consumers of shared forms, CSS/JS, templates, plugin settings, hooks and data; choose per-instance settings/selectors for a local request or enumerate intended shared effects with applicable authorization before broad mutation. Capture practical rollback evidence before shared/global work, then verify the target and representative at-risk unrelated consumers. **Example:** homepage contact-form styling must not silently modify the login form. No all-site audit or extra document is imposed for routine isolated edits.
 
 ## Workspace architecture
 

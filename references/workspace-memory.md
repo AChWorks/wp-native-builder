@@ -5,9 +5,9 @@ Load for relevant persistent Workspace work/resume. `project-workflow.md` owns *
 ## 1. Progressive resume (minimal reads)
 
 1. Discover the actual available project-Workspace capabilities. Logical roles such as `workspace-resume`, `workspace-document`, `workspace-task` describe behavior, **not** callable names to invent. Without usable persistence work manually and state that cross-chat recovery is unavailable.
-2. Request compact project orientation first: exact project/site identity and target, current focus, open/review-blocked tasks, blockers, links to canonical docs, next safe action. Do **not** dump all site data or documents.
+2. Request compact project orientation first: exact project/site identity and target, active change boundary/protected surfaces if material, current focus, open/review-blocked tasks, blockers, links to canonical docs, next safe action. Do **not** dump all site data or documents.
 3. Fetch only the active task and documents that resolve the next decision. Prefer active task / derived domain truth to the full Project Brief; open the brief for unresolved/changed intent, contradictions or launch reconciliation.
-4. For site-dependent operations, reverify the relevant live WordPress owner/object/revision. A saved note never proves current site configuration; a persisted last-used site is not by itself an authorized target. Reconcile changed data before writing.
+4. For site-dependent operations, reverify the relevant live WordPress owner/object/revision and rebind if site/scope drifted. A saved note never proves current site configuration; a persisted last-used site is not by itself an authorized target. Reconcile changed data before writing.
 5. Resume the highest-value safe task and update future-useful state only if its owner actually changed.
 
 ## 2. Find the canonical owner; avoid duplication
@@ -16,7 +16,7 @@ Before creating a document or task: **discover -> reuse/update the semantic equi
 
 Stable singleton examples: `project-brief`, `site-architecture-profile`, `information-architecture`, `design-direction`, `content-data-model`. Treat legacy **`Project Foundation` / `project-foundation` as the existing Project Brief**; do not rename/delete or create another solely to normalize. Use stable keys only when the capability supports them; don't presume uniqueness without a documented guarantee. Task titles identify their actual purpose/surface, never the generic `Task` singleton.
 
-Keep a connected **document graph, not a second database**: current tasks link to their governing docs and WordPress targets; derived docs point to their canonical Project Brief/related owner when useful. Persist a small index only if listing/findability is otherwise insufficient. Do not mirror live content, plugin inventory, site snapshots or statuses into multiple notes. Include scope, accepted decisions, provenance/verification context and known uncertainty when those facts matter for future recovery.
+Keep a connected **document graph, not a second database**: current tasks link to their governing docs and WordPress targets; derived docs point to their canonical Project Brief/related owner when useful. Persist a small index only if listing/findability is otherwise insufficient. Do not mirror live content, plugin inventory, site snapshots or statuses into multiple notes. Include scope, accepted decisions, stable shared-component ownership and protected non-target consumers, provenance/verification context and known uncertainty when those facts matter for future recovery.
 
 ## 3. Safe mutation and concurrency
 

@@ -45,7 +45,7 @@ An existing equivalent document outranks naming preference. Do not create a seco
 
 ### Source-owned document graph
 
-For substantial work, establish only the domains that repay persistence: Brief = purpose/scope; Architecture Profile = actual site and code ownership; Information Architecture = hierarchy/navigation/URLs; Design Direction = accepted reusable interface rules; Content/Data Model = CPT/taxonomy/fields. Additional scoped decisions or recovery notes must own distinct long-lived content. Each relevant document records scope, accepted decisions separate from proposals, affected site/surface, edit owner, dependencies/links and evidence/verification freshness when stale-sensitive. Tasks link to the nearest governing docs and concrete WordPress target. Use one optional Project Map/index only if navigation is otherwise difficult; it links owners and does not duplicate live data, task progress or other documents.
+For substantial work, establish only the domains that repay persistence: Brief = purpose/scope; Architecture Profile = actual site and code ownership; Information Architecture = hierarchy/navigation/URLs; Design Direction = accepted reusable interface rules; Content/Data Model = CPT/taxonomy/fields. Additional scoped decisions or recovery notes must own distinct long-lived content. Each relevant document records scope, accepted decisions separate from proposals, exact site/surface and edit owner, intended shared consumers and protected non-targets when non-obvious, dependencies/links and evidence/verification freshness when stale-sensitive. Tasks link to the nearest governing docs and concrete WordPress target. Use one optional Project Map/index only if navigation is otherwise difficult; it links owners and does not duplicate live data, task progress or other documents.
 
 ### Duplicate-safe creation
 
@@ -67,7 +67,7 @@ After Project Brief readiness it remains discoverable but is not automatically l
 
 Tasks exist only when work benefits from explicit continuation, acceptance, dependencies, review, or delivery state.
 
-Useful descriptive fields include title, goal, acceptance, dependencies/blocker, target references, and short durable notes.
+Useful descriptive fields include title, goal, acceptance, dependencies/blocker, exact target references, meaningful affected/protected consumers and short durable notes. Do not create a record for a trivial isolated edit.
 
 State dimensions remain runtime-neutral and independent:
 
@@ -89,7 +89,7 @@ On fresh/resumed connected work:
 
 1. discover a suitable Workspace resume capability;
 2. request compact orientation before broad rediscovery/questioning;
-3. orient from exact project/site identity and authorized site target, current focus/active/review-blocked work, blockers, links to governing documents and next safe action; never use a last-used site as target authority;
+3. orient from exact project/site identity and authorized site target, active change boundary/protected consumers when material, current focus/active/review-blocked work, blockers, links to governing documents and next safe action; never use a last-used site as target authority;
 4. fetch only task/document details needed for the next decision/action;
 5. do not automatically load Project Brief when a nearer source is sufficient;
 6. load Project Brief only for project-level change/contradiction/recovery/completion need;

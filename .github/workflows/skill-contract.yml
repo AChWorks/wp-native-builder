@@ -1,0 +1,32 @@
+name: WP Native Builder Contract
+on:
+  pull_request:
+    paths:
+      - 'SKILL.md'
+      - 'references/**'
+      - 'agents/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - '.github/workflows/skill-contract.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'SKILL.md'
+      - 'references/**'
+      - 'agents/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - '.github/workflows/skill-contract.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Source-scoped safety contracts
+        run: python3 -B scripts/check_runtime_contract.py .
+      - name: Adversarial mutation probes
+        run: python3 -B -m unittest discover -s tests -v

@@ -18,7 +18,7 @@ If raw block markup is unavoidable:
 
 ## Proportional mandatory self-review
 
-Before user handoff inspect owner/structure/balanced delimiters and unintended adjacent edits **statically**. Additionally, **when available** use block parser/serializer round-trip checks, actual editor block validation (including invalid/recovery warnings), preview/rendered UI, functional/responsive review, and post-write readback. Investigate material serialization drift rather than declaring it harmless. Static checks alone are **not** evidence that the editor accepted the content; name unverified checks explicitly.
+Before user handoff inspect owner/structure/balanced delimiters and unintended adjacent edits **statically**. Additionally, **when available**, parse -> reserialize and **compare affected block structure**, use editor block validation (including invalid/recovery warnings), preview/rendered UI, functional/responsive checks and post-write readback. Resolve invalid/recovery warnings and material round-trip drift before claiming editor-validated readiness. If no meaningful parser/editor validation route exists, report that limitation and prefer a safer block-aware/editor application path over unverified raw serialization; static checks alone do not prove acceptance.
 
 ## Repair an invalid block narrowly
 

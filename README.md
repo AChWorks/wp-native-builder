@@ -12,6 +12,7 @@ WP Native Builder helps ChatGPT:
 - ask novice-friendly staged questions until material project gaps are actually resolved;
 - organize durable project truth in distinct, linked canonical documents instead of duplicating “master” snapshots;
 - understand the relevant current WordPress architecture before changing it;
+- isolate the requested target from unrelated forms, components, data and shared styling/behavior, verifying actual impacted consumers;
 - route headers, footers, templates, navigation, and reusable/global surfaces to their real Site Editor/theme/builder owner;
 - prefer suitable Core blocks, Patterns, theme/builder/plugin features, WooCommerce presentation, forms, CPT/ACF, and public WordPress capabilities before Custom HTML/custom code;
 - treat Gutenberg markup as a serialization contract and repair invalid blocks narrowly;
@@ -53,6 +54,7 @@ Ask naturally, for example:
 - `Build this section from the reference screenshot, but tell me if the UX should be improved.`
 - `Fix this Gutenberg block that says it contains unexpected or invalid content.`
 - `Resume the WordPress project and continue the next useful task.`
+- `Restyle the homepage contact form without changing the login form, though both use the same plugin.`
 
 A new/substantial multi-step project resolves durable project-level facts before material design. Small bounded edits stay lightweight.
 
@@ -66,15 +68,18 @@ Product Interface Designer is an optional consulted specialist for materially un
 REQUEST
   -> recover/discover relevant truth
   -> establish Project Brief when required
-  -> choose owner/mechanism
+  -> choose owner/mechanism and local/shared/global change boundary
+  -> identify at-risk consumers and protected non-targets
   -> choose an actually exposed execution transport
   -> build narrowly
   -> static self-review
   -> add preview/editor/parser/live review when available
   -> user review/publish only when applicable and authorized
-  -> verify
+  -> verify target and at-risk non-target consumers
   -> reconcile future-useful project state
 ```
+
+**Isolation example:** changes to the homepage contact form should be scoped to the true form/page ID or an owned component; shared plugin-wide options or generic selectors require a consumer-impact check including the login form. Preserve the unrelated login fields/behavior and verify them when at risk. Document enduring shared coupling in the nearest existing task/architecture source, not one extra document per edit.
 
 No fixed theme, builder, form, icon, plugin or permalink preset applies. Select existing/native/plugin/custom solutions based on feature fit, reliability, licensing, security, performance, editing quality, maintainability and reversibility—not habitual tools or slight hypothetical code speed gains.
 
@@ -145,13 +150,13 @@ A current exact instruction is not redundantly reconfirmed while target/scope/ma
 - [`MASTER-SPEC.md`](MASTER-SPEC.md) — canonical product requirements for the Skill itself.
 - [`docs/architecture.md`](docs/architecture.md) — concise runtime/rule ownership architecture.
 - [`docs/PROJECT-WORKSPACE-ARCHITECTURE.md`](docs/PROJECT-WORKSPACE-ARCHITECTURE.md) — persistent Workspace/cross-chat architecture.
-- [`docs/BEHAVIOR-EVALS.md`](docs/BEHAVIOR-EVALS.md) — behavioral regression scenarios.
+- [`docs/BEHAVIOR-EVALS.md`](docs/BEHAVIOR-EVALS.md) — behavioral regression scenarios and baseline-vs-candidate review protocol.
 
 Implementation/release history belongs to Git/GitHub Issues, Pull Requests, and Releases.
 
 ## Validation and packaging
 
-Releases use OpenAI's standard Skill validation/package workflow. The public archive is named exactly **`skill.zip`** and must match the tagged/integrated runtime revision. Run `python scripts/check_runtime_contract.py .` for structural invariants; the behavioral scenarios in `docs/BEHAVIOR-EVALS.md` still require representative model testing before claiming behavioral equivalence.
+Releases use OpenAI's standard Skill validation/package workflow. The public archive is named exactly **`skill.zip`** and must match the tagged/integrated runtime revision. Run `python scripts/check_runtime_contract.py .` plus `python -m unittest discover -s tests` for structural checks and negative mutation probes; the behavioral scenarios in `docs/BEHAVIOR-EVALS.md` still require representative model testing before claiming behavioral equivalence.
 
 ## License
 
