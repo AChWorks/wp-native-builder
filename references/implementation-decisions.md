@@ -35,7 +35,7 @@ Preserve existing owners, tokens, URLs and unrelated work. Before global/shared 
 
 Place local style locally, shared design centrally, server behavior in supported PHP/snippet/plugin, and data/API/permissions in an owned extension when required. Avoid duplicate libraries, global selectors, unreliable inline scripts, raw SQL when APIs fit, and Core/vendor edits.
 
-For WooCommerce presentation preserve existing product/order authority; do not infer refunds, payment or destructive customer/order actions from design tasks.
+For WooCommerce presentation preserve existing product/order authority; do not infer refunds, payment or destructive customer/order actions from design tasks. For actual WooCommerce data extensions, respect the active storage/API contracts (including HPOS when applicable).
 
 ## 4. Names and localization
 
@@ -63,6 +63,6 @@ For **every newly authored custom plugin**:
 
 Use an English readable plugin folder/slug and matching text domain; the example name/version is **not** a required naming scheme or compatibility claim. Add only accurate metadata (`Requires at least`, `Requires PHP`, `Requires Plugins`, `License`, `Plugin URI`) as applicable. For non-WordPress.org plugins, choose an appropriate documented `Update URI` to avoid unintended same-slug replacements when needed; don't invent an update server. Respect the distribution's licensing obligations.
 
-Use plugin-specific namespaces or sufficiently unique prefixes (not generic `ach_`) for hooks, functions, classes, options, REST routes, assets, CSS and block identifiers. Design a modest, discoverable structure with clear responsibility; separate lifecycle/data/permissions from presentation where it matters, not through speculative frameworks. Cover activation/update/uninstall and safe data retention/removal only when relevant; make migrations backward-compatible and reversible when possible. Document setup, settings and recovery instructions proportionally.
+Use plugin-specific namespaces or unique prefixes (at least four characters, preferably five; not generic `ach_`) for hooks, functions, classes, options, REST routes, assets, CSS and block identifiers. Design a modest, discoverable structure with clear responsibility; separate lifecycle/data/permissions from presentation where it matters, not through speculative frameworks. Cover activation/update/uninstall and safe data retention/removal only when relevant; make migrations backward-compatible and reversible when possible. Document setup, settings and recovery instructions proportionally.
 
 Enforce validation, contextual sanitization/escaping, capability checks, nonce/CSRF vs authorization separation, REST `permission_callback`, prepared queries/WordPress APIs, and safe secrets handling. Test against actual supported PHP/WordPress versions; use focused automated/integration tests when behavior warrants them. Check translation extraction and representative RTL/Persian rendering when available. Never claim tests or compatibility not verified.
