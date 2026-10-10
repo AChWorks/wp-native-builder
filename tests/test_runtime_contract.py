@@ -101,7 +101,7 @@ class RuntimeContractTests(unittest.TestCase):
         self.assert_rejected("durable task recovery fields")
 
     def test_pattern_propagation_rule_preserved(self) -> None:
-        self.mutate("references/implementation-decisions.md", find="updates should propagate", replace="updates might differ")
+        self.mutate("references/implementation-decisions.md", find="Synced Pattern for deliberately shared structure/changes", replace="Synced Pattern for unrelated copies")
         self.assert_rejected("Synced Pattern update semantics")
 
     def test_same_site_distinct_project_briefs(self) -> None:
