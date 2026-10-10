@@ -65,7 +65,7 @@ When Product Interface Designer is active, material interface judgment remains w
 
 ## Local, reused and global change boundaries
 
-`SKILL.md` binds exact target and protected non-targets for every edit. The implementation reference owns detailed scope/impact decisions: check actual consumers of shared forms, CSS/JS, templates, plugin settings, hooks and data; choose per-instance settings/selectors for a local request or enumerate intended shared effects with applicable authorization before broad mutation. Capture practical rollback evidence before shared/global work, then verify the target and representative at-risk unrelated consumers. **Example:** homepage contact-form styling must not silently modify the login form. No all-site audit or extra document is imposed for routine isolated edits.
+`SKILL.md` binds exact target and protected non-targets for every edit. The implementation reference owns detailed scope/impact decisions: check actual consumers of shared forms, CSS/JS, templates, plugin settings, hooks and data; choose per-instance settings/selectors for a local request or enumerate intended shared effects with applicable authorization before broad mutation. Capture practical rollback evidence before shared/global work; check the target and representative at-risk unrelated consumers before consequential publication when safe preview/testing exists, and again after applying. **Example:** homepage contact-form styling must not silently modify the login form. No all-site audit or extra document is imposed for routine isolated edits.
 
 ## Workspace architecture
 

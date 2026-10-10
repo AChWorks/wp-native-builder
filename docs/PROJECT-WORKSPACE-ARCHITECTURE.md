@@ -98,6 +98,8 @@ On fresh/resumed work using an authorized durable source (the normative retrieva
 
 A resume packet should not dump full document bodies or all completed/history tasks by default.
 
+**Capability caveat:** a connected Workspace may have site-wide rather than project-specific summaries, finite unpaged indexes, per-object text limits and no import/restore API. Treat returned summaries as orientation rather than exhaustive discovery; match project/site/task IDs, use supported targeted gets, verify saved content after sanitization/limits and do not assume per-project privacy or cross-site recovery. These are capabilities to verify in the actual connected release, not a requirement to hardcode one vendor or expand the Skill into a backup tool.
+
 ## 7. Retention
 
 Persist only when all are true:

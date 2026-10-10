@@ -122,5 +122,30 @@ class RuntimeContractTests(unittest.TestCase):
         self.assert_rejected("multi-store canonical ownership")
 
 
+    def test_plugin_authorship_not_globally_assigned(self) -> None:
+        self.mutate("SKILL.md", find="never misattribute ownership", replace="use this always")
+        self.assert_rejected("truthful plugin author")
+
+    def test_shared_change_checked_pre_publish(self) -> None:
+        self.mutate("references/implementation-decisions.md", find="before consequential shared/global publication", replace="only after publication")
+        self.assert_rejected("prepublish shared surface verification")
+
+    def test_bounded_workspace_index_not_complete(self) -> None:
+        self.mutate("references/workspace-memory.md", find="bounded/truncated indexes do not prove absence", replace="any missing item is absent")
+        self.assert_rejected("bounded summary not complete")
+
+    def test_workspace_write_readback_required(self) -> None:
+        self.mutate("references/workspace-memory.md", find="actual returned/stored fields", replace="trust the acknowledged write")
+        self.assert_rejected("readback after bounded writes")
+
+    def test_site_private_workspace_not_team_private(self) -> None:
+        self.mutate("references/workspace-memory.md", find="Hidden WordPress storage is not proof", replace="Hidden WordPress storage is proof")
+        self.assert_rejected("read permission and privacy caveat")
+
+    def test_export_is_not_restore(self) -> None:
+        self.mutate("references/workspace-memory.md", find="Workspace export does not prove restore/import", replace="Workspace export is full restore/import")
+        self.assert_rejected("export is not restore")
+
+
 if __name__ == "__main__":
     unittest.main()

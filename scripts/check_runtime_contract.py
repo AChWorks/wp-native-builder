@@ -74,6 +74,8 @@ def validate(root: Path, *, quiet: bool = False) -> int:
     contains("recommendation not install permission", core, "Recommending a plugin/theme is not authorization to install", "activate", "purchase")
     contains("local WordPress security", core, "permission_callback", "nonces for CSRF", "protect secrets")
     contains("new slug and author standard", core, "English ASCII", "lowercase-kebab-case", "Author: ACh", "Author URI: https://ach.li/")
+    contains("truthful plugin author", core, "ACh-authored plugins", "for other projects", "never misattribute ownership")
+    contains("prepublish consumer checks", core, "before publication when a safe preview/test exists", "VERIFY APPLIED TARGET")
 
     project = refs["project-workflow.md"]
     for label in (
@@ -108,6 +110,8 @@ def validate(root: Path, *, quiet: bool = False) -> int:
     contains("shared rollback before mutation", impl, "practical revision/rollback route", "before", "mutation")
     contains("verify representative untouched consumers", impl, "representative at-risk non-target consumers", "never claim")
     contains("future-useful coupling ownership", impl, "Site Architecture Profile", "active task", "lasting coupling")
+    contains("ACh author scope and true external publisher", impl, "AChWorks-authored plugin deliverables", "actual authorized publisher", "never claim ACh authorship")
+    contains("prepublish shared surface verification", impl, "before consequential shared/global publication", "safe available draft/staging preview")
     contains("security and HPOS", impl, "permission_callback", "prepared queries", "HPOS")
     contains("English slug and URLs", impl, "English ASCII", "lowercase-kebab-case", "translation mapping", "redirects")
     contains("custom plugin security and i18n", impl, "i18n", "WordPress", "nonce", "REST", "text domain")
@@ -150,6 +154,11 @@ def validate(root: Path, *, quiet: bool = False) -> int:
     contains("repository revision protection", ws, "file/commit version", "non-overwriting route")
     contains("read-only recovery separated from missing source", ws, "Readable but not writable durable source", "No accessible durable source")
     contains("multi-store canonical ownership", ws, "established authoritative owner per artifact", "unsanctioned parallel copies")
+    contains("read permission and privacy caveat", ws, "Hidden WordPress storage is not proof", "real read/write grants")
+    contains("bounded summary not complete", ws, "bounded/truncated indexes do not prove absence", "avoid unbounded full-content lists")
+    contains("multiple projects site binding", ws, "multiple projects/tasks share a site", "exact bound")
+    contains("readback after bounded writes", ws, "actual returned/stored fields", "silently bound bytes/list entries")
+    contains("export is not restore", ws, "Workspace export does not prove restore/import")
 
     size = sum((root / p).stat().st_size for p in ["SKILL.md", *("references/" + n for n in REFERENCES)])
     if not quiet:

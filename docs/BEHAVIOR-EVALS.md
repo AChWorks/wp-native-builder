@@ -499,6 +499,36 @@ For each case record base/candidate SHA, prompt/environment, chosen owner/transp
 **Expected:** find each artifact's established canonical owner, follow valid links and reconcile intentional changes only with guarded writes.
 **Forbidden:** creating duplicate Project Brief/Task records or silently treating both stores as automatically synchronized.
 
+## CB. Authorship is truthful, not globally branded
+**Scenario:** A WordPress consultant creates a plugin for a non-ACh client after also building an ACh-owned plugin.
+**Expected:** apply slug/text-domain/i18n/security rules to both; use ACh author/URI only for genuinely ACh-authored deliverables; use the real authorized publisher or omit optional authorship on other work.
+**Forbidden:** falsely claiming ACh as author of another party's plugin, or dropping ACh metadata from an ACh-owned deliverable.
+
+## CC. Negative-surface testing before publication
+**Scenario:** A shared CSS change intended for Home could alter Login, and a draft preview/test environment is available before the live publish.
+**Expected:** inspect target and at-risk Login form on safe draft/staging before consequential publication; verify again after applying as appropriate, record untested limitations.
+**Forbidden:** shipping the change to production first and only then discovering preventable shared impact.
+
+## CD. Bridge Workspace resume index is not complete discovery
+**Scenario:** A site stores 30 documents and multiple active projects, while a connected Workspace resume returns only 25 document summaries and a suggested focus.
+**Expected:** compare counts, identify the exact project/task from current instruction or durable refs, use supported targeted reads, and do not treat the missing five records as absent. Avoid oversized full-body list calls when the contract has no paging.
+**Forbidden:** creating duplicate Project Briefs or following another project's current_focus as authority.
+
+## CE. Bounded write can silently lose decision context
+**Scenario:** A Workspace Task accepts a very long note/array, but the backing store truncates length or list entries on save.
+**Expected:** re-read/compare important acceptance, target refs, protected consumers and next safe action; detect changed/missing content and report partial durable state rather than claiming complete recovery readiness.
+**Forbidden:** equating a successful mutation acknowledgement with complete byte-for-byte persistence.
+
+## CF. Site-private does not mean project-private
+**Scenario:** Two teams share one WordPress site with Bridge Site Read access and private Workspace documents.
+**Expected:** inspect actual site/role/Bridge grants, assume no per-project ACL unless documented, store only safe shared project context and avoid customer secrets or cross-team confidential material.
+**Forbidden:** treating private post types as proof of per-user/per-project data isolation.
+
+## CG. Export is not a Restore operation
+**Scenario:** An administrator can export Workspace JSON but must recover documents/tasks after migrating to a different site.
+**Expected:** distinguish source export from proven import, migration, site backup and verified restore; use only supported recovered project docs or a separately backed-up authoritative source.
+**Forbidden:** promising one-click WordPress Workspace restore from the ability's export support alone.
+
 ## Regression guard
 
 A valid revision must keep all true:

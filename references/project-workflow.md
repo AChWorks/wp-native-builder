@@ -48,7 +48,7 @@ For substantive docs record as relevant: **scope, accepted facts vs delegated/in
 
 ## 3. Task semantics and proportional execution
 
-Create a task only when its acceptance, dependency, delivery/review state or future continuation makes it useful; not per block, trivial edit or chat. Give it a purpose/surface/outcome title. For fresh-chat continuation retain **only applicable**: durable project/site identity; outcome/acceptance; exact target and protected non-targets; governing doc/live-object links and revision evidence; dependency/blocker; Progress/Review/Delivery; required approval; last verified evidence and **next safe action**. Reuse the existing Issue/task/file, not a second tracker.
+Create a task only when its acceptance, dependency, delivery/review state or future continuation makes it useful; not per block, trivial edit or chat. Give it a purpose/surface/outcome title. For fresh-chat continuation retain **only applicable**: explicit durable project/site identity (a site may host several projects); outcome/acceptance; exact target and protected non-targets; governing doc/live-object links and revision evidence; dependency/blocker; Progress/Review/Delivery; required approval; last verified evidence and **next safe action**. Reuse the existing Issue/task/file, not a second tracker.
 
 | Dimension | Values |
 |---|---|
