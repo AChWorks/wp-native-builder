@@ -4,7 +4,7 @@ Load for substantial new/redesigned/multi-surface sites, durable project decisio
 
 ## 1. Establish project intent once
 
-Before material design/build, discover existing evidence and resolve **every materially applicable** brief domain as **known, delegated, safely inferred or N/A**. Ask gaps in short plain-language batches without an arbitrary question quota or WordPress jargon. Do not build a plausible first page while material purpose/architecture/constraints remain unresolved; don't invent a new `DRAFT/READY` state.
+Before material design/build, discover existing evidence and resolve **every materially applicable** brief domain as **known, delegated, safely inferred or N/A**. In the accepted Brief distinguish confirmed user requirements from explicitly delegated choices and provisional inferences; never attribute delegated or inferred decisions to the user. Ask gaps in short plain-language batches without an arbitrary question quota or WordPress jargon. Do not build a plausible first page while material purpose/architecture/constraints remain unresolved; don't invent a new `DRAFT/READY` state.
 
 Use the following headings for a new canonical Project Brief (combine adjacent headings only if meaning remains clear):
 
@@ -15,14 +15,14 @@ Use the following headings for a new canonical Project Brief (combine adjacent h
 | Scope & Non-goals | Deliverables, surfaces, exclusions, launch boundary |
 | Content & Primary Actions | Messages, CTAs, content ownership, languages/RTL |
 | Brand & Design | Identity, references, fidelity, constraints |
-| Functional Requirements | Forms, accounts, commerce, integration, interactions |
+| Functional Requirements | Forms, search/filtering, booking, memberships/accounts, commerce, integrations and critical interactions when relevant |
 | Site Architecture | Existing stack, content/data and global ownership |
-| Technical Constraints | Hosting, compatibility, licenses, dependencies; applicable privacy/legal limits |
+| Technical Constraints | Hosting, runtime/browser/device compatibility, licensing/dependencies and applicable privacy/legal limits |
 | Quality Constraints | Accessibility, responsive, SEO, relevant performance |
 | Governance & Delivery | Reviewers, draft/live gates, ongoing maintenance |
 | Success Criteria | Observable acceptance and completion signals |
 
-Keep **one** canonical durable brief; reuse `Project Foundation` / `project-foundation` if equivalent. With an authorized user-supplied durable project location, persist the one canonical brief and necessary domain artifacts even without Workspace. Without any durable location, use session context only and never claim cross-chat recovery. The brief is not a task log, inventory or live snapshot.
+Keep **one** canonical durable brief; reuse `Project Foundation` / `project-foundation` if equivalent. With an authorized Workspace or user-supplied durable project location, persist one canonical brief and necessary domain artifacts. If storage becomes available mid-project, discover/reuse existing equivalents and reconcile accepted session decisions once without parallel briefs. Without any durable location, use session context only and never claim cross-chat recovery. The brief is not a task log, inventory or live snapshot.
 
 Keep a settled brief out of routine work; reopen for material change, contradiction or recovery. If a change would alter accepted purpose, audience, scope, non-goals or quality/success constraints and was not explicitly directed, explain its impact and consult the owner before updating the brief. Prefer nearest task/domain document/live state; don't churn it per page.
 
@@ -33,14 +33,14 @@ Use a **small, navigable set of canonical documents**; reuse equivalents and cre
 | Canonical document | Ownership and when useful |
 |---|---|
 | `Project Brief` | Stable project intent, scope, non-goals and success criteria (always for substantial work) |
-| `Site Architecture Profile` | Actual theme/builder/editor; global/template ownership; forms, content and code placement; key dependencies |
+| `Site Architecture Profile` | Verified site ID and theme/editor/builder (classic/hybrid/block); real header/footer/navigation/template and page-content owners; reusable Patterns, forms/commerce/CPT/data/API and custom-code location/prefix; shared consumers and key dependencies, only when relevant (live state remains authoritative) |
 | `Information Architecture` | Page hierarchy, navigation, URL strategy and content relationships across surfaces |
 | `Design Direction` | Accepted reusable layout, typography, tokens, interaction, responsive and RTL principles |
 | `Content/Data Model` | CPT, taxonomy, fields, relationships, editorial/data rules |
 | Scoped decision/operational note | Only for lasting cross-task rationale or non-obvious maintenance/rollback procedures not owned above |
 | Tasks | Current actionable goal, acceptance, owner/target, blocker, review and delivery state—not durable product doctrine |
 
-For substantive docs record as relevant: **scope, accepted facts/decisions, evidence/verification freshness, exact site/surface, dependencies and intentional shared consumers, protected non-targets, links, edit owner and constraints**. Distinguish confirmed facts from proposals/unknowns; never copy live data, secrets or customer/payment records.
+For substantive docs record as relevant: **scope, accepted facts vs delegated/inferred decisions, evidence/verification freshness, exact site/surface, dependencies, intentional shared consumers, protected non-targets, links, edit owner and constraints**. Distinguish confirmed facts from proposals/unknowns; never copy live data, secrets or customer/payment records.
 
 **Navigation:** Use stable names/keys and task-to-doc links. Add one Project Map/index only when discovery is otherwise hard; link owners, never mirror content/backlog. De-emphasize obsolete drafts safely without erasing accepted decisions.
 
@@ -48,7 +48,7 @@ For substantive docs record as relevant: **scope, accepted facts/decisions, evid
 
 ## 3. Task semantics and proportional execution
 
-Create a task only when its acceptance, dependency, delivery/review state or future continuation makes it useful; not per block, trivial edit or chat. Give it a purpose/surface/outcome title and concise goal, acceptance when needed, exact target and protected non-target references when material, blocker/dependency and governing-document links.
+Create a task only when its acceptance, dependency, delivery/review state or future continuation makes it useful; not per block, trivial edit or chat. Give it a purpose/surface/outcome title. For fresh-chat continuation retain **only applicable**: durable project/site identity; outcome/acceptance; exact target and protected non-targets; governing doc/live-object links and revision evidence; dependency/blocker; Progress/Review/Delivery; required approval; last verified evidence and **next safe action**. Reuse the existing Issue/task/file, not a second tracker.
 
 | Dimension | Values |
 |---|---|
@@ -62,7 +62,7 @@ After brief readiness, choose enough architecture and a coherent high-value slic
 
 ## 4. Recovery, continuity and completion
 
-Start from current task/target and the nearest canonical source, not the complete chat or every project document. If a persistent Workspace is available, [workspace-memory.md](workspace-memory.md) **exclusively owns** its exact retrieval, singleton-key compatibility and concurrency procedure. Verify live WordPress before state-dependent writes. Read the brief only if material intent is missing, changed or contradictory; then resume the next useful work instead of stopping at a status report.
+Start from the durable task/target and nearest canonical source, not chat history/Memory, a new handoff document or every project file. For Workspace **or user-supplied writable project records**, [workspace-memory.md](workspace-memory.md) **exclusively owns** discovery, progressive recovery, duplicate-safe creation and guarded writes. Verify live WordPress before state-dependent writes. Read the brief only if material intent is missing, changed or contradictory; then resume the next useful work instead of stopping at a status report.
 
 After a meaningful step, ask internally whether a fresh chat can identify the **project/site, current task, accepted decisions, exact target and change boundary, important shared consumers/protected surfaces, unresolved blocker, review/publish gate, and next action** from durable sources. If not, update only their existing owning artifacts when writable. Do not write conversational worklogs, session handoffs or repeated snapshots.
 

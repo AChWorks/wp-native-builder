@@ -92,5 +92,26 @@ class RuntimeContractTests(unittest.TestCase):
         self.assert_rejected("no vendor preset")
 
 
+    def test_durable_recovery_has_no_memory_dependency(self) -> None:
+        self.mutate("references/workspace-memory.md", find="Chat history and assistant Memory are not durable authorities.", replace="")
+        self.assert_rejected("repository-backed fresh-chat recovery")
+
+    def test_task_recovery_requires_next_action(self) -> None:
+        self.mutate("references/project-workflow.md", find="**next safe action**", replace="unknown later action")
+        self.assert_rejected("durable task recovery fields")
+
+    def test_pattern_propagation_rule_preserved(self) -> None:
+        self.mutate("references/implementation-decisions.md", find="updates should propagate", replace="updates might differ")
+        self.assert_rejected("Synced Pattern update semantics")
+
+    def test_workspace_sensitive_data_guard(self) -> None:
+        self.mutate("references/workspace-memory.md", find="customer/order/payment/financial payloads", replace="other miscellaneous data")
+        self.assert_rejected("sensitive data retention boundary")
+
+    def test_full_page_conversion_is_approved(self) -> None:
+        self.mutate("references/gutenberg-safety.md", find="explicitly accepts that ownership change", replace="might tolerate the ownership change")
+        self.assert_rejected("Gutenberg full-page ownership conversion")
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -28,7 +28,7 @@ wp-native-builder/
 | `references/implementation-decisions.md` | Mechanism and local/shared/global change boundaries, consumer isolation, English slugs, plugin i18n/author metadata, rollback |
 | `references/gutenberg-safety.md` | Gutenberg serialization contract, invalid-block diagnosis, block-specific validation |
 | `references/design-conventions.md` | WordPress-side interface realization quality and proportional standalone design fallback; it never becomes a second generic UI/UX owner when Product Interface Designer is active |
-| `references/workspace-memory.md` | Workspace persistence, exact progressive-resume procedure, duplicate avoidance, optimistic concurrency, transient Workspace failure |
+| `references/workspace-memory.md` | Backend-neutral project recovery (Workspace/repository), duplicate avoidance, guarded writes and fallback |
 | `agents/openai.yaml` | ChatGPT-facing metadata |
 
 References may state that another domain also applies, but they do not become a second owner of that domain's policy.
@@ -39,7 +39,7 @@ References may state that another domain also applies, but they do not become a 
 Project Brief
   -> Site Architecture Profile
   -> Information Architecture / Design Direction / Content/Data Model when useful
-  -> Workspace Tasks for unresolved execution/review/delivery state
+  -> Durable Tasks (Workspace or authorized repository/folder) for execution/review/delivery/next action
   -> Live WordPress remains authoritative for current site state
 ```
 
@@ -69,7 +69,7 @@ When Product Interface Designer is active, material interface judgment remains w
 
 ## Workspace architecture
 
-Workspace is optional and capability-driven. It stores only useful decisions/tasks, links canonical owners, resumes from compact orientation and nearest linked source, reuses singleton docs, guards overwrite-sensitive updates with Workspace-owned expected identity, and never replaces live WordPress as current-state authority. The exact Workspace resume/retrieval procedure is owned only by `references/workspace-memory.md`.
+Durable persistence is optional and source-driven: Workspace **or an authorized repository/folder** stores useful decisions/tasks and links canonical owners. Recovery starts from the exact project/site and active Task, never from chat history or Memory. Workspace updates use Workspace-owned expected identity; repository/file updates use their supported current revision guards. Neither replaces live WordPress authority. The exact Workspace resume/retrieval procedure is owned only by `references/workspace-memory.md`.
 
 Task delivery retains the current runtime-neutral enum: `not_applicable`, `draft_preview`, `live`. `not_applicable` means no draft/live state is currently established; intended later publication is represented by task goal/acceptance/targets/notes rather than a new lifecycle value.
 

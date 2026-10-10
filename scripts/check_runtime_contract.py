@@ -68,7 +68,7 @@ def validate(root: Path, *, quiet: bool = False) -> int:
     contains("never fabricate ability or success", core, "Never invent an ability, permission, identity, or successful write.")
     contains("change isolation universal gate", core, "Change boundary:", "Protect out-of-scope consumers", "Home form", "Login form")
     contains("negative impact verification", core, "at-risk non-targets", "VERIFY TARGET")
-    contains("manual exact output and durable fallback", core, "exact implementation-ready guidance", "user-supplied writable durable location")
+    contains("manual exact output and durable fallback", core, "exact implementation-ready guidance", "user-supplied writable project location")
     contains("specialist composed-mode ownership", core, "in composed mode", "return implementation control immediately", "re-consult")
     contains("consequential authorization", core, "specific authorization", "generic encouragement alone is not approval")
     contains("recommendation not install permission", core, "Recommending a plugin/theme is not authorization to install", "activate", "purchase")
@@ -90,7 +90,10 @@ def validate(root: Path, *, quiet: bool = False) -> int:
     contains("document graph with protected consumers", project, "non-obvious", "protected non-targets", "dependencies", "links")
     contains("independent task enums", project, "todo", "in_progress", "blocked", "done", "not_required", "pending", "changes_requested", "approved", "not_applicable", "draft_preview", "live")
     contains("review preview live transition", project, "Progress=`done`", "Review=`pending`", "Delivery=`draft_preview`", "until live delivery is verified")
-    contains("no chat-only recovery when writable", project, "user-supplied durable project location", "without Workspace")
+    contains("no chat-only recovery when writable", project, "user-supplied durable project location", "reconcile accepted session decisions")
+    contains("durable task recovery fields", project, "next safe action", "governing doc/live-object links", "required approval")
+    contains("delegated-choice attribution", project, "explicitly delegated choices", "provisional inferences")
+    contains("provider-neutral recovery routing", core, "cross-chat recovery matter", "assistant Memory as the sole source")
     contains("boundaries recoverable in active task", project, "protected surfaces", "next action")
 
     impl = refs["implementation-decisions.md"]
@@ -99,6 +102,8 @@ def validate(root: Path, *, quiet: bool = False) -> int:
     contains("plugin-vs-code economics", impl, "plugin can beat", "custom code", "licensing")
     contains("install activation permission", impl, "installation", "activation", "external-vendor commitments")
     contains("scope classification and protected consumers", impl, "local, reused/shared or global", "protected non-targets")
+    contains("Synced Pattern update semantics", impl, "Unsynced Pattern", "Synced Pattern", "propagate")
+    contains("plugin data and security lifecycle", impl, "security history", "data export/ownership")
     contains("form-instance scoping versus global opts", impl, "Home contact form", "Login form", "plugin-wide configuration", "form ID")
     contains("shared rollback before mutation", impl, "practical revision/rollback route", "before", "mutation")
     contains("verify representative untouched consumers", impl, "representative at-risk non-target consumers", "never claim")
@@ -125,12 +130,14 @@ def validate(root: Path, *, quiet: bool = False) -> int:
     contains("block serialization contract", gutenberg, "serialization contract", "wp-block-*", "nested")
     contains("roundtrip compare and invalid warnings", gutenberg, "compare affected block structure", "Resolve invalid/recovery warnings")
     contains("unverified raw markup fallback", gutenberg, "no meaningful parser/editor validation", "safer block-aware/editor application path")
+    contains("Gutenberg full-page ownership conversion", gutenberg, "explicitly accepts that ownership change", "better supported long-term mechanism")
     contains("minimal invalid block recovery", gutenberg, "Preserve user data", "re-open/revalidate", "Never flatten")
 
     design = refs["design-conventions.md"]
     contains("composed/standalone design", design, "standalone", "Product Interface Designer", "composed")
     contains("visual a11y and localization", design, "RTL", "prefers-reduced-motion", "keyboard", "LCP")
     contains("scoped styles avoid other forms", design, "leakage into unrelated surfaces", "Home contact form", "Login form")
+    contains("product claims are evidence-bound", design, "product claims", "guarantees")
 
     ws = refs["workspace-memory.md"]
     contains("Legacy Brief reused", ws, "project-foundation", "discover", "truncated")
@@ -138,6 +145,9 @@ def validate(root: Path, *, quiet: bool = False) -> int:
     contains("ambiguous write re-read", ws, "ambiguous timeout", "re-read before any retry")
     contains("compact nearest-source recovery", ws, "compact project orientation", "next safe action", "live WordPress")
     contains("protected coupling in recovery", ws, "protected non-target consumers", "site/scope drifted")
+    contains("repository-backed fresh-chat recovery", ws, "GitHub repository", "assistant Memory", "next safe action")
+    contains("sensitive data retention boundary", ws, "customer/order/payment/financial payloads", "secrets")
+    contains("repository revision protection", ws, "file/commit version", "non-overwriting route")
 
     size = sum((root / p).stat().st_size for p in ["SKILL.md", *("references/" + n for n in REFERENCES)])
     if not quiet:

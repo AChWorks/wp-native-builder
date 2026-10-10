@@ -47,6 +47,8 @@ The Skill is not a CMS, page builder, connector architecture, or general project
 23. **Custom-plugin standard.** New custom code/identifiers are English and translation-ready; use slug-matched WordPress text domains, `Author: ACh`, `Author URI: https://ach.li/`, and unique namespaces without speculative frameworks.
 24. **Change isolation.** Bind exact site/object/instance; identify local/reused/global scope, dependencies and protected non-target consumers. Shared forms, CSS/JS, templates, options, hooks or data do not imply authorization to change other surfaces. Prefer scoped edits; for shared/global changes map actual consumers, inspect impact and available rollback route, then verify target and at-risk unaffected consumers. Document lasting coupling only in the existing owning artifact.
 
+**Fresh-chat independence.** With an authorized durable project source (Workspace or supplied repository/folder), a future session recovers from exact project/site identity, governing docs and its active task—including scope, acceptance, blocker, approval/review, evidence and next action—not old chats or assistant Memory. Without such a source, do not promise cross-chat recovery. Task meaning lives in project workflow; storage procedures live only in `workspace-memory.md`.
+
 ## 3. Request classes and Project Brief
 
 ### 3.1 Fast bounded work
@@ -86,7 +88,7 @@ Source authority remains separated:
 1. current explicit user instruction — requested outcome/change;
 2. Project Brief — accepted durable project-level intent when persisted, or current-session project-level intent when no durable location exists;
 3. derived project documents — their specialized durable domain;
-4. Workspace tasks — unresolved execution/review/delivery state when persistent Workspace exists;
+4. durable tasks (Workspace, repository Issue/file or equivalent) — unresolved execution/review/delivery/next-action state;
 5. verified live WordPress — current site objects/configuration;
 6. Skill defaults — unresolved fallback choices only.
 
@@ -135,22 +137,22 @@ Connected execution must discover capabilities by documented behavior/schema rat
 
 Capability/permission never proves user approval or successful execution.
 
-### Workspace
+### Durable project state and Workspace
 
-Persistent Workspace is optional and capability-driven. Its runtime contract owns persistence/recovery mechanics, not project semantics. Whenever Workspace is relevant to substantial/multi-step work—including starting a new project as well as resuming one—the Skill must load the Workspace-specific procedure and:
+Workspace is optional; an authorized user-supplied repository/project folder can own equivalent canonical project records. Whenever durable records or recovery matter, the Skill loads its storage-neutral procedure and:
 
 - resume progressively rather than dump all history;
 - persist only future-useful context;
 - discover/reuse/update canonical singleton documents before creating new ones;
 - use stable purpose keys when the capability supports them, without assuming key uniqueness unless guaranteed;
-- protect overwrite-sensitive Workspace writes with Workspace-owned expected identity such as `version + state_hash`;
+- guard overwrite-sensitive writes with storage-owned current identity (Workspace `version + state_hash` or supported repository/file revision check);
 - preserve newer valid work on stale/conflict;
 - re-read authoritative state after ambiguous write outcomes;
 - keep WordPress Revisions separate from Workspace concurrency authority.
 
 ## 8. Task-state semantics
 
-Workspace task dimensions remain intentionally small and independent:
+Durable task dimensions remain intentionally small and independent regardless of storage backend:
 
 | Dimension | Values |
 |---|---|
@@ -185,7 +187,7 @@ The distributable Skill remains shallow and progressively loaded:
 | `references/implementation-decisions.md` | Vendor-neutral ownership, plugin-vs-code choice, English slugs, custom-plugin i18n/metadata, placement and rollback |
 | `references/gutenberg-safety.md` | Gutenberg serialization, invalid-block diagnosis, block-specific validation |
 | `references/design-conventions.md` | UI/UX/design judgment and visual review |
-| `references/workspace-memory.md` | Workspace persistence, exact progressive-resume procedure, duplicate avoidance, optimistic concurrency, transient Workspace failure |
+| `references/workspace-memory.md` | Backend-neutral storage/recovery, duplicate avoidance, guarded writes, transient failures and fallback |
 | `agents/openai.yaml` | ChatGPT-facing metadata |
 
 Reference files may point to another domain whose rule also applies, but they must not become a second owner of that domain's policy. All runtime references remain directly reachable from `SKILL.md`.

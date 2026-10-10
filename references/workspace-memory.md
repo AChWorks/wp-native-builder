@@ -1,36 +1,47 @@
-# Persistent Workspace: Organization, Safe Writes and Recovery
+# Durable Project Sources: Recovery and Safe Writes
 
-Load for relevant persistent Workspace work/resume. `project-workflow.md` owns **what** documents mean; this file owns **how** to recover and safely write them. Never assume tool/storage names.
+Load when durable project state or cross-chat recovery matters: connected Workspace, or an authorized user-supplied writable repository/project folder. `project-workflow.md` owns **what** the Brief, domain documents and tasks mean; this reference alone owns **how** to discover, persist, recover and protect them. **Chat history and assistant Memory are not durable authorities.** Never invent a store, site, capability, write or recovery result.
 
-## 1. Progressive resume (minimal reads)
+## 1. Use the actual durable owner
 
-1. Discover the actual available project-Workspace capabilities. Logical roles such as `workspace-resume`, `workspace-document`, `workspace-task` describe behavior, **not** callable names to invent. Without usable persistence work manually and state that cross-chat recovery is unavailable.
-2. Request compact project orientation first: exact project/site identity and target, active change boundary/protected surfaces if material, current focus, open/review-blocked tasks, blockers, links to canonical docs, next safe action. Do **not** dump all site data or documents.
-3. Fetch only the active task and documents that resolve the next decision. Prefer active task / derived domain truth to the full Project Brief; open the brief for unresolved/changed intent, contradictions or launch reconciliation.
-4. For site-dependent operations, reverify the relevant live WordPress owner/object/revision and rebind if site/scope drifted. A saved note never proves current site configuration; a persisted last-used site is not by itself an authorized target. Reconcile changed data before writing.
-5. Resume the highest-value safe task and update future-useful state only if its owner actually changed.
+| Source | Contract |
+|---|---|
+| Persistent Workspace | Discover its actual project capabilities. `workspace-resume`, `workspace-document` and `workspace-task` are logical roles, **not** callable names. |
+| User-provided GitHub repository / project folder / equivalent durable files | Reuse its established canonical docs and Issue/Task records at their actual paths/IDs and revision guards; do **not** require Workspace, duplicate task tracking or a new fixed directory. |
+| No verified writable durable source | Continue manual/session work. Explicitly state that cross-chat recovery is unavailable unless the user supplies the authoritative project source later; never claim persistence. |
 
-## 2. Find the canonical owner; avoid duplication
+Persistence can exist even without a WordPress execution connector. Preserve one owner per fact and existing project conventions; never build a new storage platform for a small bounded edit.
 
-Before creating a document or task: **discover -> reuse/update the semantic equivalent -> create only after reliable absence -> verify**. Incomplete or truncated discovery never establishes absence.
+## 2. Progressive fresh-chat recovery
 
-Stable singleton examples: `project-brief`, `site-architecture-profile`, `information-architecture`, `design-direction`, `content-data-model`. Treat legacy **`Project Foundation` / `project-foundation` as the existing Project Brief**; do not rename/delete or create another solely to normalize. Use stable keys only when the capability supports them; don't presume uniqueness without a documented guarantee. Task titles identify their actual purpose/surface, never the generic `Task` singleton.
+```text
+RESOLVE project + EXACT SITE from current instruction or bound durable record
+ -> compact project orientation / discover active or review-blocked task
+ -> fetch only its governing document links and current target
+ -> reverify relevant live WordPress owner/object/revision
+ -> continue next safe action -> persist changed owner once
+```
 
-Keep a connected **document graph, not a second database**: current tasks link to their governing docs and WordPress targets; derived docs point to their canonical Project Brief/related owner when useful. Persist a small index only if listing/findability is otherwise insufficient. Do not mirror live content, plugin inventory, site snapshots or statuses into multiple notes. Include scope, accepted decisions, stable shared-component ownership and protected non-target consumers, provenance/verification context and known uncertainty when those facts matter for future recovery.
+1. Get a **compact project orientation**: project/site identity and exact target binding, current task/outcome, protected non-target consumers when material, dependency/blocker, review/publish gate, canonical links and **next safe action**. A last-used site, chat history or Memory alone cannot authorize a site. If ambiguity remains, ask for the exact site before site-scoped operations.
+2. Read the active task first, then only the nearest relevant domain sources. Open Project Brief for missing, changed or contradictory project-level intent or launch reconciliation, not for every chat. Incomplete or **truncated** discovery does not prove an item absent.
+3. Verify the relevant **live WordPress** target, current owner and revision before state-dependent changes; rebind if **site/scope drifted**. Durable project notes are not proof of unchanged live configuration. Resume useful work rather than stopping at a recap.
+4. After material progress, update only the source owning a changed decision, target, blocker, task review/delivery state or next action; verify the authoritative result. No chat transcripts, session handoffs or copied inventories.
 
-## 3. Safe mutation and concurrency
+## 3. Canonical document/task graph
 
-For overwrite-sensitive Workspace Document/Task updates:
+**discover -> reuse/update equivalent -> create only after reliable absence -> verify**. Stable singleton keys, if the source supports them, include `project-brief`, `site-architecture-profile`, `information-architecture`, `design-direction`, `content-data-model`. Treat legacy **`Project Foundation` / `project-foundation` as the existing Project Brief**; do not rename, delete or duplicate it merely to normalize. Do not assume storage enforces key uniqueness without a documented guarantee.
 
-1. Read the current object with **Workspace-owned** identity (e.g., `version + state_hash`). WordPress post Revision IDs are unrelated to this protection.
-2. Require an update operation with an enforced expected-identity precondition. If unavailable, do **not** blind-overwrite; use a safe non-overwriting route or surface the precise blocker.
-3. Patch only the owning artifact with expected identity; preserve concurrent valid changes. Verify accepted state when possible.
-4. On version mismatch, re-read, reconcile and retry only if still justified. On ambiguous timeout/write result, **re-read before any retry**, never blindly duplicate an object.
+Tasks are purpose/target-specific, **not** one generic `Task` singleton. Link the active task to accepted domain documents and actual WordPress targets. Keep a small graph, not a second database; use an index only if listing/search cannot navigate it. Retain stable shared ownership, **protected non-target consumers**, source/evidence freshness and relevant uncertainty when future tasks benefit. Never mirror site data or the backlog in every document. If durable storage becomes available mid-project, reconcile accepted session decisions into an existing canonical source, not a new Brief.
 
-Don't rely on WordPress Revisions being enabled or retained. Backup/disaster recovery is a separate hosting concern, not proof supplied by Workspace notes.
+## 4. Guard overwrite-sensitive writes
 
-## 4. Durable reconciliation and failures
+1. Read exact destination and **storage-owned identity**. For Workspace Document/Task updates require an enforced **expected-identity precondition** such as `version + state_hash`; **WordPress post Revision IDs** cannot protect Workspace documents.
+2. For repository/folder records use a supported current **file/commit version** or other real compare-and-swap. Preserve valid concurrent changes. Without a safe guard, use a supported **non-overwriting route**; otherwise **do not blind-overwrite** and report the precise write blocker.
+3. Patch only the owning record, verify accepted state and on mismatch re-read/reconcile before justified retry. After an **ambiguous timeout** or write result, **re-read before any retry**, never blindly duplicate a task or document.
+4. WordPress Revisions may be disabled or pruned and do not replace storage concurrency. Backups/disaster recovery are separate hosting concerns.
 
-After material project progress, persist only the smallest future-useful changed truth: accepted decision, real site owner, active task/next action, blocker, review/delivery state or unresolved defect. Don't create a worklog on each turn, cache hidden reasoning, store secrets, or update every document merely because conversation progressed.
+Never store secrets, credentials, full chats, hidden reasoning, copies of live content or unnecessary **customer/order/payment/financial payloads** in project sources, logs or notes. Store minimal decision references instead.
 
-For transient failures preserve recovered orientation, continue independent tasks, and make **at most one evidence-justified** route rediscovery/retry; no blind loop. If persistent writes remain unavailable, do safe manual/non-overwrite work and report the exact blocked action. Never claim a document was saved until the authoritative result verifies it.
+## 5. Failure and manual fallback
+
+One plausible connector/storage failure may be transient: preserve orientation, continue independent safe tasks and rediscover/retry once only when evidence justifies it, including a safe equivalent authoritative route. Do not blindly loop or disguise permission/schema denial. When writes remain unavailable, continue useful manual/non-overwrite work, report the exact blocked mutation, and **never claim a document was saved** without its authoritative result.

@@ -22,6 +22,6 @@ Before user handoff inspect owner/structure/balanced delimiters and unintended a
 
 ## Repair an invalid block narrowly
 
-Find the exact block and expected-versus-stored difference using editor diagnostics where possible. Determine whether malformed attributes/source types, wrapper/class/style changes, manual markup changes, plugin/version drift or altered save behavior caused it. Preserve user data and unaffected blocks; repair using the current block contract, a supported recovery/conversion operation or a better true owner; then re-open/revalidate. Never flatten an entire page into Custom HTML merely to suppress an invalid-block warning.
+Find the exact block and expected-versus-stored difference using editor diagnostics where possible. Determine whether malformed attributes/source types, wrapper/class/style changes, manual markup changes, plugin/version drift or altered save behavior caused it. Preserve user data and unaffected blocks; repair using the current block contract, a supported recovery/conversion operation or a better true owner; then re-open/revalidate. Never flatten an entire page into Custom HTML for block repair unless the user explicitly accepts that ownership change **and** it is the better supported long-term mechanism; suppressing a warning is not a reason.
 
 If freeform HTML remains the correct owner, scope selectors, use accessible semantics, ensure responsive/RTL behavior and keep genuinely reusable behavior out of page-local markup. Follow implementation/design references when their separate triggers apply.

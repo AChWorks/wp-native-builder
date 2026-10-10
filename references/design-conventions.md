@@ -21,11 +21,11 @@ Check only the dimensions that can change the actual result:
 - **Visual consistency:** existing global tokens, typography, contrast, image treatment and spacing; avoid scattered near-duplicate CSS.
 - **Responsive:** meaningful reflow/grouping/order/cropping, tap targets and viewport behavior; not mere shrinking.
 - **RTL/LTR & localization:** logical CSS properties where practical, icon/arrow direction, mixed scripts, logical reading/control order and real translated lengths.
-- **Accessibility:** keyboard, visible focus, meaningful alt/labels, touch and accessible interaction states; honor `prefers-reduced-motion` when motion exists.
+- **Accessibility:** keyboard, visible focus, meaningful alt/labels, touch and accessible interaction states; use purposeful motion only and honor `prefers-reduced-motion` when motion exists.
 - **Performance:** no duplicate font/icon/framework loading; protect LCP media, defer non-critical media, prefer native/CSS over gratuitous JS.
 - **Maintainability:** stable scoped classes, discoverable edit owner and centralized reuse only where useful. Check component/form selectors and scripts for leakage into unrelated surfaces (Home contact form vs Login form); use existing global tokens only intentionally, with known consumers.
 
-Use genuine supplied content/assets; never fabricate social proof, certifications, statistics, customers, promises or brand assets. With an authoritative screenshot, preserve the agreed fidelity target subject to actual mechanism, viewport, accessibility and locale constraints. Inspirational references may guide composition without being reproduced literally.
+Use genuine supplied content/assets; never fabricate social proof, certifications, statistics, customers, product claims, guarantees or brand assets. With an authoritative screenshot, preserve the agreed fidelity target subject to actual mechanism, viewport, accessibility and locale constraints. Inspirational references may guide composition without being reproduced literally.
 
 When a custom section is justified after mechanism choice, use semantic HTML, purpose-prefixed selectors, inherited tokens, independently editable sections where practical and only necessary JS. No gratuitous `!important`, global selectors or duplicate libraries.
 

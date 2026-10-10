@@ -19,7 +19,7 @@ WP Native Builder helps ChatGPT:
 - review material UI proportionally and consult Product Interface Designer only for materially unresolved interface judgment or when explicitly requested, without transferring WordPress mechanism/lifecycle/publication ownership;
 - perform static self-review even without a renderer, then add preview/editor/parser/live checks when available;
 - prefer English readable slugs for new objects, preserve existing URLs and use translation-ready ACh custom-plugin conventions;
-- resume multi-step work from persistent Workspace context when the runtime supports it;
+- resume substantial work from durable project records (Workspace or authorized repository/folder), not chat history or Memory;
 - avoid duplicate Workspace canonical documents through discover/reuse-before-create behavior;
 - reconcile stale/ambiguous Workspace writes instead of overwriting newer state;
 - tolerate one plausibly transient connector/runtime failure without immediately abandoning the workflow;
@@ -127,7 +127,9 @@ Connected work:
 
 The Skill selects among currently exposed capabilities by behavior and fit, not vendor/product/tool names. Native WordPress/theme/plugin capabilities may be better transports for the selected mechanism than generic transport operations.
 
-## Persistent Workspace
+## Durable project recovery
+
+With Workspace or an authorized project repository/folder, a new chat resolves the exact project/site and active task, follows only relevant Brief/domain links, checks live WordPress and continues the next safe step. The task stores acceptance, target/protected consumers, blocker, review/delivery gate, evidence and next action in its existing owner. Without such a durable source, in-session work remains possible but automatic cross-chat recovery is not guaranteed.
 
 When suitable Workspace abilities are exposed:
 

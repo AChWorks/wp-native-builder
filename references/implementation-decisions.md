@@ -4,7 +4,7 @@ Load when ownership/mechanism, a shared/global surface, plugin/theme/builder, da
 
 ## 1. Inspect only relevant architecture
 
-Discover current theme/editor/builder, installed capabilities and exact target ownership (local, global, reusable, data, form/commerce or lifecycle). Save recurring architecture in `Site Architecture Profile`; avoid unrelated inventory or stack-forcing.
+Discover current classic/hybrid/block theme, editor/builder, installed capabilities and exact target ownership (local, global, reusable, data, form/commerce or lifecycle). Save recurring architecture in `Site Architecture Profile`; avoid unrelated inventory or stack-forcing.
 
 | Surface | Prefer when fit | Avoid |
 |---|---|---|
@@ -12,10 +12,10 @@ Discover current theme/editor/builder, installed capabilities and exact target o
 | Classic/theme-managed global shell | Current theme's supported header/footer/hooks or child theme when justified | Copying shell into every page |
 | Existing builder-owned global shell | Builder's global template/Theme Builder facility | Reimplementing builder shell without migration |
 | Gutenberg content | Core/installed blocks, supported settings | Hand-authored serialized markup for convenience |
-| Reusable section | Pattern/Synced Pattern; template for true global structure | Copied HTML/CSS across pages |
+| Reusable section | Unsynced Pattern for independent inserted copies; Synced Pattern only when updates should propagate among shared instances; templates for real global structure. Inspect version/instance overrides before editing. | Accidental cross-page updates or copied HTML/CSS |
 | Navigation | Current theme/Site Editor/builder navigation owner | Static duplicated menus |
 | Dynamic content listing | Query Loop or actual data/plugin owner | Hardcoded cards for dynamic data |
-| Forms | Suitable installed form and its per-form configuration, validation, anti-spam, notifications and storage | Reimplementing submissions or altering other form instances |
+| Forms | Suitable installed form and its per-form validation, anti-spam, notifications, integrations and submission/storage owner | Reimplementing submissions or changing unrelated form instances |
 | WooCommerce UI | Supported Woo blocks/templates/theme integration | Rebuilding commerce logic |
 | CPT/taxonomy/ACF | Existing model and registered APIs | Parallel schemas |
 | Media/content | Media Library and supported content APIs | Unmanaged duplicates or direct database edits |
@@ -28,7 +28,7 @@ Before Custom HTML check: Core/existing blocks and supported settings -> Pattern
 
 Choose the **smallest maintainable supported mechanism**, not the shortest code: reuse an installed feature, add a focused maintained plugin, scoped presentation CSS/JS, or a purpose-built extension for specialized lifecycle/data/permission needs.
 
-Compare relevant fit/quality, security/maintenance, compatibility, licensing/cost, updates, performance, accessibility/editability, data lock-in and reversibility. **A maintained suitable plugin can beat slightly faster custom code**; a native setting may beat both. Offer alternatives only for real trade-offs; verify version-sensitive claims.
+Compare fit/quality, WordPress/PHP/theme/builder compatibility, material security history, maintenance/support, licensing/cost, updates, performance, accessibility/editability, data export/ownership and uninstall/reversibility. Deepen the review only for relevant risk (e.g. customer-data plugins). **A maintained suitable plugin can beat slightly faster custom code**; a native setting may beat both. Offer alternatives only for real trade-offs; verify version-sensitive claims.
 
 Recommendations do not authorize plugin/theme **installation, activation, purchases, external-vendor commitments** or consequential global changes; apply `SKILL.md` gates to the actual effect. Lack of a safe connector must not change the chosen mechanism; prepare/manual-implement instead.
 
@@ -46,7 +46,7 @@ For any edit establish the **exact site/target and allowed change**, classify it
 
 ## 4. Existing-site impact and code placement
 
-Preserve existing owners, tokens, URLs and unrelated work. For an authorized migration inspect dependencies, compatibility and reversibility before switching ownership. Local styles stay local, intentionally shared design remains centrally owned, and behavior/data/API/permissions live in the narrowest suitable supported extension. Avoid duplicate libraries, broad selectors, unreliable inline scripts, raw SQL when APIs fit, and Core/vendor edits.
+Preserve existing owners, tokens, URLs and unrelated work. For an authorized migration inspect dependencies, compatibility and reversibility before switching ownership. Local styles stay local, intentionally shared design remains centrally owned, and behavior/data/API/permissions live in the narrowest suitable supported extension. Avoid duplicate libraries, broad selectors, raw SQL when WordPress APIs fit and Core/vendor edits. Do not assume inline `<script>` in page content is supported, retained or maintainable; use the actual supported script owner.
 
 For WooCommerce presentation preserve existing product/order authority; do not infer refunds, payment or destructive customer/order actions from design tasks. For data extensions respect active storage/API contracts, including HPOS where applicable.
 
