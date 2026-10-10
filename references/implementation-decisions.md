@@ -12,7 +12,7 @@ Discover current classic/hybrid/block theme, editor/builder, installed capabilit
 | Classic/theme-managed global shell | Current theme's supported header/footer/hooks or child theme when justified | Copying shell into every page |
 | Existing builder-owned global shell | Builder's global template/Theme Builder facility | Reimplementing builder shell without migration |
 | Gutenberg content | Core/installed blocks, supported settings | Hand-authored serialized markup for convenience |
-| Reusable section | Unsynced Pattern for independent inserted copies; Synced Pattern only when updates should propagate among shared instances; templates for real global structure. Inspect version/instance overrides before editing. | Accidental cross-page updates or copied HTML/CSS |
+| Reusable section | Unsynced Pattern for independent copies; Synced Pattern for deliberately shared structure/changes. Supported Pattern Overrides can keep specific content/attributes instance-local. Check actual override support and consumers before editing; templates own real global structure. | Accidental cross-page updates or copied HTML/CSS |
 | Navigation | Current theme/Site Editor/builder navigation owner | Static duplicated menus |
 | Dynamic content listing | Query Loop or actual data/plugin owner | Hardcoded cards for dynamic data |
 | Forms | Suitable installed form and its per-form validation, anti-spam, notifications, integrations and submission/storage owner | Reimplementing submissions or changing unrelated form instances |

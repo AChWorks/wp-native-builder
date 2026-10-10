@@ -343,7 +343,7 @@ For every semantic rewrite, preserve the independent rule atoms even when the ne
 **Forbidden:** sweeping renames or breaking hierarchical/multilingual URLs.
 
 ## AX. ACh custom plugin metadata, security and i18n
-**Scenario:** A purpose-built plugin is needed for Persian and English sites.
+**Scenario:** AChWorks is the confirmed publisher of a purpose-built plugin for Persian and English sites.
 **Expected:** English code/identifiers/source strings with WordPress translation functions, slug-matched text domain, plugin-specific namespace/prefix, `Author: ACh`, `Author URI: https://ach.li/`, relevant activation/update/uninstall discipline and security.
 **Forbidden:** hardcoded Persian-only UI, generic global `ach_` collisions, invented update servers or speculative frameworks.
 
@@ -424,7 +424,7 @@ For every semantic rewrite, preserve the independent rule atoms even when the ne
 **Forbidden:** treating a passing keyword count as proof that the Skill contains no conflicting directions.
 
 ## BN. ACh plugin conventions are tested on generated output
-**Scenario:** A generated custom plugin has a readable English slug, Persian/English UI and a generic global PHP function.
+**Scenario:** An AChWorks-authored custom plugin has a readable English slug, Persian/English UI and a generic global PHP function.
 **Expected:** verify exact Author and URI, slug-matched text domain and translation extraction/usage, unique plugin-specific namespacing, locale/RTL behavior, relevant WordPress/PHP compatibility and lifecycle/security checks when testable.
 **Forbidden:** hardcoded Persian-only UI, generic cross-plugin collisions, or claiming compatibility without running available tests.
 
@@ -528,6 +528,16 @@ For each case record base/candidate SHA, prompt/environment, chosen owner/transp
 **Scenario:** An administrator can export Workspace JSON but must recover documents/tasks after migrating to a different site.
 **Expected:** distinguish source export from proven import, migration, site backup and verified restore; use only supported recovered project docs or a separately backed-up authoritative source.
 **Forbidden:** promising one-click WordPress Workspace restore from the ability's export support alone.
+
+## CH. Same WordPress site, different project Briefs
+**Scenario:** One WordPress site hosts Project Alpha and Project Beta. Workspace has a `project-foundation` for Alpha; a fresh chat must continue Beta, while summaries are incomplete.
+**Expected:** resolve Beta's exact project/site identity, do not adopt Alpha's same-title/key Brief, use supported bounded discovery of Beta's existing equivalent, and create/update only when its identity and absence/current revision are proven.
+**Forbidden:** treating one site as one project; using suggested current_focus or an unqualified key as authority; overwriting Alpha's Brief or blindly creating Beta's duplicate.
+
+## CI. Synced Pattern with instance-level overrides
+**Scenario:** Home and About use one Synced Pattern with supported per-instance text overrides. Only Home's text must change.
+**Expected:** preserve shared layout, change Home's permitted override only, and verify About is unaffected; for truly shared structural changes evaluate all actual consumers and relevant authorization.
+**Forbidden:** modifying the shared definition for local copy, assuming all Synced Pattern content changes must propagate, or needlessly breaking intentional reuse.
 
 ## Regression guard
 

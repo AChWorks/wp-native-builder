@@ -41,7 +41,7 @@ When WP Native Builder creates singleton project documents, the default canonica
 - `Design Direction`
 - `Content/Data Model`
 
-An existing equivalent document outranks naming preference. Do not create a second copy merely to normalize a title.
+An existing equivalent document **for the same bound project** outranks naming preference. Project Brief is singleton per project, not per WordPress site: equal names or keys alone do not establish equivalence across independent projects sharing a site. Shared site-level architecture documents are reused only when that ownership is established. Do not create a second copy merely to normalize a title.
 
 ### Source-owned document graph
 

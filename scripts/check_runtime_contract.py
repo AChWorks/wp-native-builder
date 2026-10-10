@@ -104,7 +104,8 @@ def validate(root: Path, *, quiet: bool = False) -> int:
     contains("plugin-vs-code economics", impl, "plugin can beat", "custom code", "licensing")
     contains("install activation permission", impl, "installation", "activation", "external-vendor commitments")
     contains("scope classification and protected consumers", impl, "local, reused/shared or global", "protected non-targets")
-    contains("Synced Pattern update semantics", impl, "Unsynced Pattern", "Synced Pattern", "propagate")
+    contains("Synced Pattern update semantics", impl, "Unsynced Pattern", "Synced Pattern", "shared")
+    contains("Synced Pattern instance override", impl, "Pattern Overrides", "instance-local", "consumers")
     contains("plugin data and security lifecycle", impl, "security history", "data export/ownership")
     contains("form-instance scoping versus global opts", impl, "Home contact form", "Login form", "plugin-wide configuration", "form ID")
     contains("shared rollback before mutation", impl, "practical revision/rollback route", "before", "mutation")
@@ -157,6 +158,7 @@ def validate(root: Path, *, quiet: bool = False) -> int:
     contains("read permission and privacy caveat", ws, "Hidden WordPress storage is not proof", "real read/write grants")
     contains("bounded summary not complete", ws, "bounded/truncated indexes do not prove absence", "avoid unbounded full-content lists")
     contains("multiple projects site binding", ws, "multiple projects/tasks share a site", "exact bound")
+    contains("per-project singleton isolation", ws, "per distinct project, not per WordPress site", "matching title/key alone cannot prove equivalence", "cannot reliably distinguish projects")
     contains("readback after bounded writes", ws, "actual returned/stored fields", "silently bound bytes/list entries")
     contains("export is not restore", ws, "Workspace export does not prove restore/import")
 

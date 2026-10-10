@@ -6,7 +6,7 @@ Load when substantial design, redesign, visual fidelity, responsive/RTL/accessib
 
 Use a **current** Product Interface Designer packet within its latitude for the bounded interface decision; WP Native Builder owns mechanism, implementation, lifecycle and publication. Treat the packet as derived design input under accepted site/project truth, not a second permanent authority or copied document. Escalate only platform constraints that materially block the accepted UX.
 
-Only `SKILL.md` triggers consultation. Reuse a packet while outcome/design/target/locale/evidence remain valid; block, transport or render changes alone do not invalidate it. Fix local defects locally; return only material interface conflicts.
+`SKILL.md` alone owns consultation and packet-validity rules; fix local implementation defects locally and return only material interface conflicts.
 
 Without a relevant packet or specialist, remain a capable **standalone** designer: derive enough direction from accepted outcome, existing design/project truth, audience/content hierarchy, platform/locale, references and required interaction. Choose one strong direction; offer alternatives only for a genuine material choice. For substantial new work define just the reusable choices that matter: layout/container, spacing, type scale, color roles, imagery, surfaces, states, responsive behavior and RTL/LTR. Avoid template reflexes (generic hero/cards/CTA, gratuitous gradients/pills/blobs); add a distinctive idea only where it helps the content. Preserve established tokens/structure on bounded work; allow explicit redesign to change obsolete aesthetics.
 

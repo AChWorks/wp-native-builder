@@ -130,7 +130,7 @@ The Skill selects among currently exposed capabilities by behavior and fit, not 
 
 ## Durable project recovery
 
-With Workspace or an authorized project repository/folder, a new chat resolves the exact project/site and active task, follows only relevant Brief/domain links, checks live WordPress and continues the next safe step. The task stores acceptance, target/protected consumers, blocker, review/delivery gate, evidence and next action in its existing owner. Without such a durable source, in-session work remains possible but automatic cross-chat recovery is not guaranteed.
+With Workspace or an authorized project repository/folder, a new chat resolves the exact project/site and active task, follows only relevant Brief/domain links, checks live WordPress and continues the next safe step. Two projects on one site must not share a Project Brief merely because its title or key matches. The task stores acceptance, target/protected consumers, blocker, review/delivery gate, evidence and next action in its existing owner. Without such a durable source, in-session work remains possible but automatic cross-chat recovery is not guaranteed.
 
 When suitable Workspace abilities are exposed:
 

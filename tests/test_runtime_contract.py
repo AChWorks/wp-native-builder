@@ -104,6 +104,14 @@ class RuntimeContractTests(unittest.TestCase):
         self.mutate("references/implementation-decisions.md", find="updates should propagate", replace="updates might differ")
         self.assert_rejected("Synced Pattern update semantics")
 
+    def test_same_site_distinct_project_briefs(self) -> None:
+        self.mutate("references/workspace-memory.md", find="per distinct project, not per WordPress site", replace="per site")
+        self.assert_rejected("per-project singleton isolation")
+
+    def test_synced_pattern_instance_override_preserved(self) -> None:
+        self.mutate("references/implementation-decisions.md", find="Pattern Overrides can keep specific content/attributes instance-local", replace="all changes affect every instance")
+        self.assert_rejected("Synced Pattern instance override")
+
     def test_workspace_sensitive_data_guard(self) -> None:
         self.mutate("references/workspace-memory.md", find="customer/order/payment/financial payloads", replace="other miscellaneous data")
         self.assert_rejected("sensitive data retention boundary")

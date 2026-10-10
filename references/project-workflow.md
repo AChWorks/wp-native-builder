@@ -22,7 +22,7 @@ Use the following headings for a new canonical Project Brief (combine adjacent h
 | Governance & Delivery | Reviewers, draft/live gates, ongoing maintenance |
 | Success Criteria | Observable acceptance and completion signals |
 
-Keep **one** canonical durable brief; reuse `Project Foundation` / `project-foundation` if equivalent. With an authorized Workspace or user-supplied durable project location, persist one canonical brief and necessary domain artifacts. If storage becomes available mid-project, discover/reuse existing equivalents and reconcile accepted session decisions once without parallel briefs. Without any durable location, use session context only and never claim cross-chat recovery. The brief is not a task log, inventory or live snapshot.
+Keep **one canonical Brief per distinct project**, not one for the entire WordPress site. Reuse `Project Foundation` / `project-foundation` only when it belongs to the **same bound project**. With an authorized Workspace or user-supplied durable project location, persist that project's canonical Brief and necessary domain artifacts. If storage becomes available mid-project, discover/reuse existing equivalents and reconcile accepted session decisions once without parallel briefs. Without any durable location, use session context only and never claim cross-chat recovery. The brief is not a task log, inventory or live snapshot.
 
 Keep a settled brief out of routine work; reopen for material change, contradiction or recovery. If a change would alter accepted purpose, audience, scope, non-goals or quality/success constraints and was not explicitly directed, explain its impact and consult the owner before updating the brief. Prefer nearest task/domain document/live state; don't churn it per page.
 

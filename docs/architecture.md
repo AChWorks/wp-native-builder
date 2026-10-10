@@ -43,7 +43,7 @@ Project Brief
   -> Live WordPress remains authoritative for current site state
 ```
 
-Project Brief readiness derives from material coverage for substantial work, not a new status enum or availability of persistence. Once ready it leaves the hot path. Derived docs own separate lasting domains; active tasks own progress. Stable links and selective verification make project recovery navigable without copying live state, history or a parallel backlog.
+Project Brief readiness derives from material coverage for substantial work, not a new status enum or availability of persistence. It is unique per identified project, not automatically shared by all projects on one WordPress site. Once ready it leaves the hot path. Derived docs own separate lasting domains; active tasks own progress. Stable links and selective verification make project recovery navigable without copying live state, history or a parallel backlog.
 
 ## Mechanism-first architecture
 
