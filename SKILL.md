@@ -21,7 +21,7 @@ Read each matching direct reference **once**, when its trigger applies; several 
 
 **Fast path:** bounded edits need no Project Brief, tasks or specialist. A visually large single-page change alone needs no new Brief if material project intent is settled. For substantive new/multi-step work, resolve material brief gaps before building, even without persistence. Ask only unknowns that change the result.
 
-**Change boundary:** Bind the exact target and intended change; distinguish local, reused/shared and global owners. Protect out-of-scope consumers even when they share forms, styles, templates, scripts, settings or hooks. Inspect relevant dependencies before shared edits; prefer the narrowest supported change. For consequential/shared application, check the target **and at-risk non-targets before publication when a safe preview/test exists**, then verify the applied result; never claim unperformed checks. A Home form edit must not silently change a Login form. Follow implementation decisions for impact/rollback and durable coupling notes.
+**Change boundary:** Bind the exact target and intended change; distinguish local, reused/shared and global owners. Protect out-of-scope consumers even when they share forms, styles, templates, scripts, settings or hooks. Inspect relevant dependencies before shared edits; prefer the narrowest supported change. For consequential/shared application, check the target **and at-risk non-targets before publication when a safe preview/test exists**, then verify the applied result; never claim unperformed checks. A change to one page, header, component or form must not silently affect others. Follow implementation decisions for impact/rollback and durable coupling notes.
 
 ## Operating loop
 
@@ -60,7 +60,7 @@ WP Native Builder retains WordPress mechanism, lifecycle, implementation and pub
 
 Use descriptive titles and discoverable edit owners. Prefer English ASCII `lowercase-kebab-case` for **new** slugs (including localized sites) and distinctive prefixes for custom identifiers. Never silently rewrite existing URLs/slugs: assess dependencies, SEO and redirects.
 
-Use English code/identifiers, WordPress i18n for plugin UI, matching slug/text domain and translations (including Persian when needed). For **ACh-authored plugins** use **`Author: ACh`** and **`Author URI: https://ach.li/`**; for other projects use the actual authorized author (or omit optional authorship), never misattribute ownership. Every plugin needs a readable English slug and distinctive namespace. Engineer maintainably without speculative complexity; see [implementation-decisions.md](references/implementation-decisions.md).
+Use English code/identifiers, WordPress i18n for plugin UI, matching slug/text domain and translations (including Persian when needed). For a **new bespoke plugin authored through an authorized Bridge workflow**, set **`Author: ACh`** and **`Author URI: https://ach.li/`**. This applies only to that newly produced plugin, not existing or unrelated plugins. Give newly authored plugins readable English slugs and distinctive namespaces. Engineer maintainably without speculative complexity; see [implementation-decisions.md](references/implementation-decisions.md).
 
 ## Authorization and safety
 

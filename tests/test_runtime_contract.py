@@ -59,8 +59,8 @@ class RuntimeContractTests(unittest.TestCase):
         self.mutate("SKILL.md", find="re-check the binding", replace="use the old binding")
         self.assert_rejected("rebind after")
 
-    def test_form_boundary_required(self) -> None:
-        self.mutate("SKILL.md", find="A Home form edit must not silently change a Login form.", replace="")
+    def test_general_change_boundary_required(self) -> None:
+        self.mutate("SKILL.md", find="A change to one page, header, component or form must not silently affect others.", replace="")
         self.assert_rejected("change isolation")
 
     def test_representative_non_target_verification_required(self) -> None:
@@ -130,9 +130,13 @@ class RuntimeContractTests(unittest.TestCase):
         self.assert_rejected("multi-store canonical ownership")
 
 
-    def test_plugin_authorship_not_globally_assigned(self) -> None:
-        self.mutate("SKILL.md", find="never misattribute ownership", replace="use this always")
-        self.assert_rejected("truthful plugin author")
+    def test_bridge_author_rule_not_globally_assigned(self) -> None:
+        self.mutate("SKILL.md", find="not existing or unrelated plugins", replace="every installed plugin")
+        self.assert_rejected("Bridge-created plugin author scope")
+
+    def test_bridge_author_rule_requires_bridge_creation(self) -> None:
+        self.mutate("references/implementation-decisions.md", find="Bridge workflow creates a new purpose-built plugin", replace="any installed plugin exists")
+        self.assert_rejected("Bridge author applies only to new plugin")
 
     def test_shared_change_checked_pre_publish(self) -> None:
         self.mutate("references/implementation-decisions.md", find="before consequential shared/global publication", replace="only after publication")

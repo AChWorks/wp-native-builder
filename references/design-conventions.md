@@ -23,7 +23,7 @@ Check only the dimensions that can change the actual result:
 - **RTL/LTR & localization:** logical CSS properties where practical, icon/arrow direction, mixed scripts, logical reading/control order and real translated lengths.
 - **Accessibility:** keyboard, visible focus, meaningful alt/labels, touch and accessible interaction states; use purposeful motion only and honor `prefers-reduced-motion` when motion exists.
 - **Performance:** no duplicate font/icon/framework loading; protect LCP media, defer non-critical media, prefer native/CSS over gratuitous JS.
-- **Maintainability:** stable scoped classes, discoverable edit owner and centralized reuse only where useful. Check component/form selectors and scripts for leakage into unrelated surfaces (Home contact form vs Login form); use existing global tokens only intentionally, with known consumers.
+- **Maintainability:** stable scoped classes, discoverable edit owner and centralized reuse only where useful. Check selectors and scripts for leakage into at-risk pages, headers, forms or components; use existing global tokens only intentionally, with known consumers.
 
 Use genuine supplied content/assets; never fabricate social proof, certifications, statistics, customers, product claims, guarantees or brand assets. With an authoritative screenshot, preserve the agreed fidelity target subject to actual mechanism, viewport, accessibility and locale constraints. Inspirational references may guide composition without being reproduced literally.
 

@@ -18,7 +18,7 @@ WP Native Builder helps ChatGPT:
 - treat Gutenberg markup as a serialization contract and repair invalid blocks narrowly;
 - review material UI proportionally and consult Product Interface Designer only for materially unresolved interface judgment or when explicitly requested, without transferring WordPress mechanism/lifecycle/publication ownership;
 - perform static self-review even without a renderer, then add preview/editor/parser/live checks when available;
-- prefer English readable slugs for new objects, preserve existing URLs and use translation-ready custom-plugin conventions with truthful authorship;
+- prefer English readable slugs for new objects, preserve existing URLs and apply ACh author metadata to new bespoke Bridge-created plugins without changing other plugins;
 - resume substantial work from durable project records (Workspace or authorized repository/folder), not chat history or Memory;
 - avoid duplicate Workspace canonical documents through discover/reuse-before-create behavior;
 - reconcile stale/ambiguous Workspace writes instead of overwriting newer state;
@@ -54,7 +54,7 @@ Ask naturally, for example:
 - `Build this section from the reference screenshot, but tell me if the UX should be improved.`
 - `Fix this Gutenberg block that says it contains unexpected or invalid content.`
 - `Resume the WordPress project and continue the next useful task.`
-- `Restyle the homepage contact form without changing the login form, though both use the same plugin.`
+- `Change this page's header without altering other pages that share the same template.`
 
 A new/substantial multi-step project resolves durable project-level facts before material design. Small bounded edits stay lightweight.
 
@@ -80,7 +80,7 @@ REQUEST
   -> reconcile future-useful project state
 ```
 
-**Isolation example:** changes to the homepage contact form should be scoped to the true form/page ID or an owned component; shared plugin-wide options or generic selectors require a consumer-impact check including the login form. Preserve the unrelated login fields/behavior and verify them when at risk. Document enduring shared coupling in the nearest existing task/architecture source, not one extra document per edit.
+**Change isolation:** scope each edit to its intended page, header, template, form, component or data flow. For shared selectors, hooks, patterns or settings, assess relevant consumers and verify representative protected surfaces when at risk. Document lasting coupling in the existing task/architecture owner, not an extra document per edit.
 
 No fixed theme, builder, form, icon, plugin or permalink preset applies. Select existing/native/plugin/custom solutions based on feature fit, reliability, licensing, security, performance, editing quality, maintainability and reversibility—not habitual tools or slight hypothetical code speed gains.
 

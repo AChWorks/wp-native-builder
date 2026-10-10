@@ -44,7 +44,7 @@ The Skill is not a CMS, page builder, connector architecture, or general project
 
 21. **Pragmatic plugin-vs-code choice.** Compare supported native, installed, maintained-plugin and custom paths on fitness, quality and lifecycle cost; never presume slightly faster custom code beats a credible plugin.
 22. **Navigable source-owned documentation.** Durable project facts belong in one linked canonical document/task owner, with relevant provenance/freshness and selective recovery. Project Brief uniqueness is per identified project, not per site; equal document names/keys do not establish cross-project identity. Optional index only if discovery needs it.
-23. **Custom-plugin standard.** New custom code/identifiers are English and translation-ready; use slug-matched WordPress text domains and unique namespaces; use `Author: ACh` and `Author URI: https://ach.li/` **only for genuinely ACh-authored deliverables**, never for unrelated authors.
+23. **New Bridge-created plugin standard.** For a new bespoke plugin authored through the authorized Bridge workflow, use English translation-ready source, slug-matched text domain, unique namespace, `Author: ACh` and `Author URI: https://ach.li/`. This imposes no authorship rule or modification on existing/unrelated plugins.
 24. **Change isolation.** Bind exact site/object/instance; identify local/reused/global scope, dependencies and protected non-target consumers. Shared forms, CSS/JS, templates, options, hooks or data do not imply authorization to change other surfaces. Prefer scoped edits; for shared/global changes map actual consumers, inspect impact and available rollback route, verify target and representative at-risk unaffected consumers **before consequential publication when a safe test path exists, and after application**. Document lasting coupling only in the existing owning artifact.
 
 **Fresh-chat independence.** With an authorized durable project source (Workspace or supplied repository/folder), a future session recovers from exact project/site identity, governing docs and its active task—including scope, acceptance, blocker, approval/review, evidence and next action—not old chats or assistant Memory. Without such a source, do not promise cross-chat recovery. Task meaning lives in project workflow; storage procedures live only in `workspace-memory.md`.
@@ -224,7 +224,7 @@ A release-quality revision must preserve these outcomes:
 - Core blocks/Patterns/native mechanisms remain preferred when fit;
 - Gutenberg raw serialization is validated proportionally and invalid blocks are repaired narrowly;
 - static review always occurs and rendered/editor checks are added when available;
-- new readable slugs, preserved URLs, discoverable ownership and truthful (ACh-only where applicable) plugin authorship/text-domain/i18n are enforced;
+- new readable slugs, preserved URLs and discoverable ownership are enforced; a new bespoke plugin created through Bridge receives ACh author metadata, text-domain and i18n rules without affecting other plugins;
 - native/existing/plugin/custom paths are compared on lifecycle quality rather than preset vendors;
 - project docs form a linked canonical graph and progressive recovery avoids full history reload;
 - connected mode reconciles stale/ambiguous writes and bounded transient route failure;

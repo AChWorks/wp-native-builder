@@ -36,13 +36,11 @@ Recommendations do not authorize plugin/theme **installation, activation, purcha
 
 For any edit establish the **exact site/target and allowed change**, classify its owner as **local, reused/shared or global**, and identify **protected non-targets**. Shared technology is not shared authorization.
 
-1. **Find the real owner:** page/template/block/form instance and ID, supported plugin setting, CSS/JS selector, PHP hook, option, API or data model. Inspect only relevant consumers/dependencies: Synced Patterns, shared forms/templates, theme tokens, broad selectors/events, plugin-wide options, hooks and data users.
+1. **Find the real owner:** page/template/block/form instance and ID, supported plugin setting, CSS/JS selector, PHP hook, option, API or data model. Inspect only relevant consumers/dependencies: Synced Patterns, shared headers/navigation/templates and forms, theme tokens, broad selectors/events, plugin-wide options, hooks and data users.
 2. **Isolate first:** prefer instance-specific form settings, page/component-prefixed selectors, registered block styles and conditional hooks keyed to actual target IDs/context. Avoid broad CSS selectors, global handlers or plugin-wide configuration for a local request. Don't duplicate or fork healthy shared code needlessly; preserve deliberate reuse.
 3. **For genuine shared/global changes:** enumerate consumers and their expected effects, distinguish intended from forbidden impact, check whether expanded scope needs approval, and capture current identity plus practical revision/rollback route **before** mutation when available. If an isolated change is impossible, surface the actual coupling/trade-off rather than silently changing extra surfaces.
-4. **Verify before/after as applicable:** before consequential shared/global publication, check the target and **representative at-risk non-target consumers** in a safe available draft/staging preview; after the actual edit, verify the applied result (form fields/validation/submission, login, templates, other pages or data/API callers as relevant); check responsive/locale/cache variants only where meaningful. Repair/roll back unintended changes; never claim that untouched consumers were verified without evidence.
+4. **Verify before/after as applicable:** before consequential shared/global publication, check the target and **representative at-risk non-target consumers** in a safe available draft/staging preview; after the actual edit, verify the applied result (affected pages, headers/navigation, reusable components, forms or data/API callers as relevant); check responsive/locale/cache variants only where meaningful. Repair/roll back unintended changes; never claim that untouched consumers were verified without evidence.
 5. **Document only lasting coupling:** in the nearest `Site Architecture Profile` or active task, record real owner, intended shared consumers, protected targets, choice/rollback/verification evidence. Do not create a separate worklog for each edit.
-
-**Example:** changing a Home contact form must not alter a Login form even if they share a form plugin or `.form-field` CSS/JS. Scope changes by the real page/form ID or an approved per-instance API; plugin-global styles/options or shared templates require explicit impact evaluation of both consumers.
 
 ## 4. Existing-site impact and code placement
 
@@ -60,7 +58,7 @@ Don't silently change existing slugs, published URLs or permalinks: inspect inbo
 
 Only build a plugin when the decision above justifies it. Keep source, identifiers, filenames, comments and original translatable strings **English**, with WordPress i18n wrapping every user-facing string (including JavaScript where applicable). Use the exact plugin slug as `Text Domain` in code/header; provide `/languages` translations when needed, including Persian; implement locale/RTL behavior where relevant. Do not hardcode Persian into PHP as the sole UI language.
 
-For **AChWorks-authored plugin deliverables**, this is a valid header example (use the actual authorized publisher for other projects; never claim ACh authorship automatically):
+Only when an **authorized Bridge workflow creates a new purpose-built plugin**, use this header convention for that generated plugin. This does not direct changes to any existing or unrelated plugins:
 
 ```php
 /**
@@ -74,7 +72,7 @@ For **AChWorks-authored plugin deliverables**, this is a valid header example (u
  */
 ```
 
-Use an English readable plugin folder/slug and matching text domain; the example name/version and author identity are **not** universal defaults or compatibility claims. Add only accurate metadata (`Requires at least`, `Requires PHP`, `Requires Plugins`, `License`, `Plugin URI`) as applicable. For non-WordPress.org plugins, choose an appropriate documented `Update URI` to avoid unintended same-slug replacements when needed; don't invent an update server. Respect the distribution's licensing obligations.
+Use an English readable plugin folder/slug and matching text domain; the example name/version are illustrative, not fixed defaults or compatibility claims; the author fields apply to the newly generated Bridge plugin. Add only accurate metadata (`Requires at least`, `Requires PHP`, `Requires Plugins`, `License`, `Plugin URI`) as applicable. For non-WordPress.org plugins, choose an appropriate documented `Update URI` to avoid unintended same-slug replacements when needed; don't invent an update server. Respect the distribution's licensing obligations.
 
 Use plugin-specific namespaces or unique prefixes (at least four characters, preferably five; not generic `ach_`) for hooks, functions, classes, options, REST routes, assets, CSS and block identifiers. Design a modest, discoverable structure with clear responsibility; separate lifecycle/data/permissions from presentation where it matters, not through speculative frameworks. Cover activation/update/uninstall and safe data retention/removal only when relevant; make migrations backward-compatible and reversible when possible. Document setup, settings and recovery instructions proportionally.
 

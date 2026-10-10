@@ -342,10 +342,10 @@ For every semantic rewrite, preserve the independent rule atoms even when the ne
 **Expected:** the new slug is readable English ASCII kebab-case, localized display remains Persian, and existing published URLs are preserved unless explicit approved migration includes redirects/SEO.
 **Forbidden:** sweeping renames or breaking hierarchical/multilingual URLs.
 
-## AX. ACh custom plugin metadata, security and i18n
-**Scenario:** AChWorks is the confirmed publisher of a purpose-built plugin for Persian and English sites.
+## AX. Bridge-created bespoke plugin metadata, security and i18n
+**Scenario:** An authorized WordPress Bridge workflow creates a new purpose-built plugin for a Persian/English site.
 **Expected:** English code/identifiers/source strings with WordPress translation functions, slug-matched text domain, plugin-specific namespace/prefix, `Author: ACh`, `Author URI: https://ach.li/`, relevant activation/update/uninstall discipline and security.
-**Forbidden:** hardcoded Persian-only UI, generic global `ach_` collisions, invented update servers or speculative frameworks.
+**Forbidden:** hardcoded Persian-only UI, generic global `ach_` collisions, invented update servers, speculative frameworks or modifying unrelated installed plugins for author metadata.
 
 ## AY. Domain documents form a navigable source of truth
 **Scenario:** Substantive site build needs architecture, design, navigation, data model and active tasks.
@@ -373,10 +373,10 @@ For every semantic rewrite, preserve the independent rule atoms even when the ne
 **Expected:** identify the actual form/page instance and shared consumers; use a supported per-form setting or an instance-scoped selector/event handler; verify the homepage change and the login form's fields, validation and behavior where at risk.
 **Forbidden:** applying plugin-global options, generic `.form-field` CSS, global selectors or handlers that silently alter the login form.
 
-## BD. Intentionally shared component change has explicit consumers
-**Scenario:** The homepage and footer share one Synced Pattern or one reused form; user asks to change only the homepage instance.
-**Expected:** determine whether an isolated supported override/instance is feasible. If the only modification affects both consumers, explain the coupling and consequential scope before changing the shared owner; preserve intentional shared reuse rather than making a speculative duplicate.
-**Forbidden:** silently changing the footer or duplicating shared code without a genuine ownership reason.
+## BD. Shared header/template change has explicit consumers
+**Scenario:** Several pages share a theme-managed header/template part; user asks for a Home-only layout change.
+**Expected:** identify the shared owner and protected page consumers, use a supported page-specific override/variant where fit. If only a shared/global change is possible, explain its effect and authorization before changing the owner; preserve deliberate reuse.
+**Forbidden:** silently changing every page header or needlessly forking a healthy shared template.
 
 ## BE. Hooks and global settings stay inside the requested contract
 **Scenario:** A custom plugin handles several forms/pages through shared PHP hooks, options and JS listeners; one registration route needs a new validation rule.
@@ -409,9 +409,9 @@ For every semantic rewrite, preserve the independent rule atoms even when the ne
 **Forbidden:** storing all continuity only in chat despite writable authorized storage, or claiming persistence without a verified write.
 
 ## BK. Recovery retains shared boundaries without new worklogs
-**Scenario:** A new chat resumes a partly finished homepage-form edit that shares CSS and hooks with login.
-**Expected:** orient from exact site/active task and canonical architecture owner, find recorded allowed/protected consumers and review/rollback evidence, verify relevant live state and continue. Use optional links/index only when necessary.
-**Forbidden:** requiring a full historical dump, cloning documents, assuming saved notes prove live state, or losing login-form protection.
+**Scenario:** A new chat resumes a partly finished page-specific navigation change that shares CSS and hooks with other pages.
+**Expected:** orient from exact site/active task and canonical architecture owner, find allowed/protected pages and review/rollback evidence, verify relevant live state and continue. Use optional links/index only when necessary.
+**Forbidden:** requiring a full historical dump, cloning documents, assuming saved notes prove live state, or losing non-target navigation protection.
 
 ## BL. Specialist consultation respects exact handoff and ownership
 **Scenario:** Product Interface Designer sent an interface packet for a shared header, followed by ordinary WordPress implementation fixes.
@@ -423,14 +423,14 @@ For every semantic rewrite, preserve the independent rule atoms even when the ne
 **Expected:** the structural checker rejects this explicitly contradictory instruction. The test suite also fails if core scoping, target binding or Workspace write guards are intentionally removed.
 **Forbidden:** treating a passing keyword count as proof that the Skill contains no conflicting directions.
 
-## BN. ACh plugin conventions are tested on generated output
-**Scenario:** An AChWorks-authored custom plugin has a readable English slug, Persian/English UI and a generic global PHP function.
+## BN. New Bridge-created plugin conventions are tested on generated output
+**Scenario:** A connected Bridge workflow generates a new bespoke plugin with a readable English slug, Persian/English UI and a generic global PHP function.
 **Expected:** verify exact Author and URI, slug-matched text domain and translation extraction/usage, unique plugin-specific namespacing, locale/RTL behavior, relevant WordPress/PHP compatibility and lifecycle/security checks when testable.
 **Forbidden:** hardcoded Persian-only UI, generic cross-plugin collisions, or claiming compatibility without running available tests.
 
 ## Representative baseline-vs-candidate behavior protocol
 
-Before claiming behavioral equivalence, compare the **exact current base and candidate** with identical prompts, model/settings, runtime abilities, site fixtures and approval state. Include at least scenarios **A, B, G, J, L, S, U, W, Z, AH, AI, AK, BC, BD, BE, BF, BG, BH, BI, BJ, BK, CH, CI** across bounded, project, block, transport, permission and shared-boundary paths. Include negative protected-surface assertions (the Login form must remain unchanged after the Home form edit).
+Before claiming behavioral equivalence, compare the **exact current base and candidate** with identical prompts, model/settings, runtime abilities, site fixtures and approval state. Include at least scenarios **A, B, G, J, L, S, U, W, Z, AH, AI, AK, BC, BD, BE, BF, BG, BH, BI, BJ, BK, CH, CI** across bounded, project, block, transport, permission and shared-boundary paths. Include negative protected-surface assertions across distinct site surfaces (e.g. an unrelated page's header remains unchanged).
 
 For each case record base/candidate SHA, prompt/environment, chosen owner/transport, actual operations/evidence, allowed targets, protected consumers, reviewer outcome (PASS/FAIL/UNVERIFIED), latency or measured token/tool burden when available, and reason for any delta. **Zero** tolerable critical regressions in authorization, target identity, write safety, data preservation or scope isolation; ambiguous or unexercised cases remain unverified. The percentage of model behavior retained is **unknown** without a representative executed A/B sample and a declared scoring rubric. Static lint and negative mutation probes check documented contracts, **not** model execution.
 
@@ -445,8 +445,8 @@ For each case record base/candidate SHA, prompt/environment, chosen owner/transp
 **Forbidden:** creating competing briefs, pretending earlier chat was durable, or overwriting concurrent accepted decisions.
 
 ## BQ. Task-alone recovery and approval gate
-**Scenario:** A new session sees a durable task for an unfinished homepage-form change, with a shared selector and pending visual approval.
-**Expected:** recover exact project/site, target and protected Login form, outcome/acceptance, blocker, design/architecture references, evidence, Progress/Review/Delivery and next action.
+**Scenario:** A new session sees a durable task for an unfinished page-specific header change, with a shared selector and pending visual approval.
+**Expected:** recover exact project/site, target and protected other-page headers, outcome/acceptance, blocker, design/architecture references, evidence, Progress/Review/Delivery and next action.
 **Forbidden:** equating done with approved or published, or assuming a remembered last-used site.
 
 ## BR. Concurrent repository task updates
@@ -499,15 +499,15 @@ For each case record base/candidate SHA, prompt/environment, chosen owner/transp
 **Expected:** find each artifact's established canonical owner, follow valid links and reconcile intentional changes only with guarded writes.
 **Forbidden:** creating duplicate Project Brief/Task records or silently treating both stores as automatically synchronized.
 
-## CB. Authorship is truthful, not globally branded
-**Scenario:** A WordPress consultant creates a plugin for a non-ACh client after also building an ACh-owned plugin.
-**Expected:** apply slug/text-domain/i18n/security rules to both; use ACh author/URI only for genuinely ACh-authored deliverables; use the real authorized publisher or omit optional authorship on other work.
-**Forbidden:** falsely claiming ACh as author of another party's plugin, or dropping ACh metadata from an ACh-owned deliverable.
+## CB. Bridge-created plugin author rule does not spread to other plugins
+**Scenario:** A connected Bridge workflow creates one new bespoke plugin while unrelated third-party plugins are already installed.
+**Expected:** set `Author: ACh` and `Author URI: https://ach.li/` on the newly created plugin only; leave other plugins' files and metadata untouched.
+**Forbidden:** treating the ACh header as a site-wide policy, editing installed plugins to normalize authorship or omitting the fields from the new Bridge-created plugin.
 
 ## CC. Negative-surface testing before publication
-**Scenario:** A shared CSS change intended for Home could alter Login, and a draft preview/test environment is available before the live publish.
-**Expected:** inspect target and at-risk Login form on safe draft/staging before consequential publication; verify again after applying as appropriate, record untested limitations.
-**Forbidden:** shipping the change to production first and only then discovering preventable shared impact.
+**Scenario:** A CSS rule meant for a landing-page header may also alter the account-page navigation, and a safe preview/test is available before live publication.
+**Expected:** inspect the target header and at-risk account navigation on draft/staging before consequential publication; verify again after applying as appropriate and record untested limitations.
+**Forbidden:** publishing the shared rule before checking a known at-risk non-target.
 
 ## CD. Bridge Workspace resume index is not complete discovery
 **Scenario:** A site stores 30 documents and multiple active projects, while a connected Workspace resume returns only 25 document summaries and a suggested focus.
@@ -558,7 +558,7 @@ A valid revision must keep all true:
 - Product Interface Designer remains optional: bounded/settled UI work stays local and unavailable specialist capability falls back to proportional standalone design guidance without blocking WordPress work;
 - local/reused/global change boundaries keep unrelated forms/pages/hooks/data unmodified; shared consumers, protected non-targets, negative checks and available rollback/revision evidence are considered without turning every edit into an approval ceremony;
 - no named vendor defaults; native/existing/maintained-plugin/custom options are compared by lifecycle fitness, not assumed speed;
-- readable English new slugs, existing URL/SEO safety, ACh plugin authorship and i18n/prefix rules hold;
+- readable English new slugs and existing URL/SEO safety hold; new Bridge-authored bespoke plugins receive ACh metadata, matching text domain and i18n/prefix safeguards without changing unrelated plugins;
 - linked canonical docs and selective site-aware Workspace recovery replace redundant histories, with guarded writes preserved;
 - runtime static checks include negative mutation probes but complement, rather than replace, representative LLM behavioral regression evaluation;
 - existing suitable architecture remains preferred over Skill defaults;

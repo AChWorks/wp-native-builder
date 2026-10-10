@@ -66,7 +66,7 @@ def validate(root: Path, *, quiet: bool = False) -> int:
     contains("exact site before reads/writes", core, "one exact site", "before any site-scoped", "never assume last-used site")
     contains("rebind after target drift", core, "re-check the binding", "scope changes or becomes ambiguous")
     contains("never fabricate ability or success", core, "Never invent an ability, permission, identity, or successful write.")
-    contains("change isolation universal gate", core, "Change boundary:", "Protect out-of-scope consumers", "Home form", "Login form")
+    contains("change isolation universal gate", core, "Change boundary:", "Protect out-of-scope consumers", "page, header, component or form")
     contains("negative impact verification", core, "at-risk non-targets", "VERIFY APPLIED TARGET")
     contains("manual exact output and durable fallback", core, "exact implementation-ready guidance", "user-supplied writable project location")
     contains("specialist composed-mode ownership", core, "in composed mode", "return implementation control immediately", "re-consult")
@@ -74,7 +74,7 @@ def validate(root: Path, *, quiet: bool = False) -> int:
     contains("recommendation not install permission", core, "Recommending a plugin/theme is not authorization to install", "activate", "purchase")
     contains("local WordPress security", core, "permission_callback", "nonces for CSRF", "protect secrets")
     contains("new slug and author standard", core, "English ASCII", "lowercase-kebab-case", "Author: ACh", "Author URI: https://ach.li/")
-    contains("truthful plugin author", core, "ACh-authored plugins", "for other projects", "never misattribute ownership")
+    contains("Bridge-created plugin author scope", core, "new bespoke plugin", "authorized Bridge workflow", "only to that newly produced plugin", "not existing or unrelated plugins")
     contains("prepublish consumer checks", core, "before publication when a safe preview/test exists", "VERIFY APPLIED TARGET")
 
     project = refs["project-workflow.md"]
@@ -107,11 +107,11 @@ def validate(root: Path, *, quiet: bool = False) -> int:
     contains("Synced Pattern update semantics", impl, "Unsynced Pattern", "Synced Pattern for deliberately shared structure/changes")
     contains("Synced Pattern instance override", impl, "Pattern Overrides", "instance-local", "consumers")
     contains("plugin data and security lifecycle", impl, "security history", "data export/ownership")
-    contains("form-instance scoping versus global opts", impl, "Home contact form", "Login form", "plugin-wide configuration", "form ID")
+    contains("cross-surface isolation and scoping", impl, "shared headers/navigation/templates", "page/component-prefixed selectors", "plugin-wide configuration", "protected non-targets")
     contains("shared rollback before mutation", impl, "practical revision/rollback route", "before", "mutation")
     contains("verify representative untouched consumers", impl, "representative at-risk non-target consumers", "never claim")
     contains("future-useful coupling ownership", impl, "Site Architecture Profile", "active task", "lasting coupling")
-    contains("ACh author scope and true external publisher", impl, "AChWorks-authored plugin deliverables", "actual authorized publisher", "never claim ACh authorship")
+    contains("Bridge author applies only to new plugin", impl, "Bridge workflow creates a new purpose-built plugin", "not direct changes to any existing or unrelated plugins")
     contains("prepublish shared surface verification", impl, "before consequential shared/global publication", "safe available draft/staging preview")
     contains("security and HPOS", impl, "permission_callback", "prepared queries", "HPOS")
     contains("English slug and URLs", impl, "English ASCII", "lowercase-kebab-case", "translation mapping", "redirects")
@@ -141,7 +141,7 @@ def validate(root: Path, *, quiet: bool = False) -> int:
     design = refs["design-conventions.md"]
     contains("composed/standalone design", design, "standalone", "Product Interface Designer", "composed")
     contains("visual a11y and localization", design, "RTL", "prefers-reduced-motion", "keyboard", "LCP")
-    contains("scoped styles avoid other forms", design, "leakage into unrelated surfaces", "Home contact form", "Login form")
+    contains("scoped styles protect other site surfaces", design, "leakage into at-risk pages, headers, forms or components", "known consumers")
     contains("product claims are evidence-bound", design, "product claims", "guarantees")
 
     ws = refs["workspace-memory.md"]
