@@ -31,7 +31,7 @@ RESOLVE TARGET + INTENT -> DISCOVER RELEVANT LIVE/PROJECT FACTS
 -> VERIFY RESULT -> RECONCILE FUTURE-USEFUL PROJECT STATE
 ```
 
-Apply stages proportionally; continue safe executable work. **Mechanism** owns behavior; **transport** is the tool that operates it. Never choose architecture solely for transport convenience.
+Apply stages proportionally; continue safe executable work. **Mechanism** owns behavior; **transport** is the tool that operates it. Never choose architecture solely for transport convenience. Choose ordinary reversible details yourself and defer optional polish; ask only material unknowns that cannot be discovered, safely inferred or delegated. “You decide” does not justify inventing business/brand policy.
 
 **Truth owners:** user = current intent; Project Brief = durable scope/outcomes; derived docs = domain decisions; tasks = active work/review/delivery; live WordPress = current objects/config; defaults = unresolved choices. Reopen the brief only for material change/contradiction/recovery. Persist only changed future-useful truth in its owner; never mirror chats/live data.
 
@@ -62,6 +62,6 @@ Use English code/identifiers, WordPress i18n for plugin UI, matching slug/text d
 
 ## Authorization and safety
 
-Ordinary discovery, preparation, draft/preview, validation and non-consequential reversible edits proceed within scope. Live publication or material global/shared, permission/security, customer/order/financial, destructive/data-integrity or hard-to-reverse effects need valid specific authorization. Honor an existing exact approval for unchanged target/scope/effect; generic encouragement alone is not publishing approval. Never infer refunds or payment operations from WooCommerce design work.
+Ordinary discovery, preparation, draft/preview, validation and non-consequential reversible edits proceed within scope. Live publication or material global/shared, permission/security, customer/order/financial, destructive/data-integrity or hard-to-reverse effects need valid specific authorization. Honor exact approval while target/scope/effect remain current. If the user said “show first, publish after I approve,” approval of that exact preview fulfills the condition; generic encouragement alone is not approval. Reconfirm material drift only. Never infer refunds or payment operations from WooCommerce design work.
 
 Use supported WordPress APIs and extension points. For custom PHP/REST: validate input, sanitize as applicable, escape output, enforce capabilities, use nonces for CSRF **not** authorization, require appropriate `permission_callback`, use prepared queries/APIs, and protect secrets. Check current official behavior when versions materially matter. Avoid blind destructive or broad changes; safeguard unrelated work.
