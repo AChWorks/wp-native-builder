@@ -104,7 +104,7 @@ def validate(root: Path, *, quiet: bool = False) -> int:
     contains("plugin-vs-code economics", impl, "plugin can beat", "custom code", "licensing")
     contains("install activation permission", impl, "installation", "activation", "external-vendor commitments")
     contains("scope classification and protected consumers", impl, "local, reused/shared or global", "protected non-targets")
-    contains("Synced Pattern update semantics", impl, "Unsynced Pattern", "Synced Pattern for deliberately shared structure/changes", "Pattern Overrides")
+    contains("Synced Pattern update semantics", impl, "Unsynced Pattern", "Synced Pattern for deliberately shared structure/changes")
     contains("Synced Pattern instance override", impl, "Pattern Overrides", "instance-local", "consumers")
     contains("plugin data and security lifecycle", impl, "security history", "data export/ownership")
     contains("form-instance scoping versus global opts", impl, "Home contact form", "Login form", "plugin-wide configuration", "form ID")
