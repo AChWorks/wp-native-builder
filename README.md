@@ -2,7 +2,7 @@
 
 **WP Native Builder** is a ChatGPT Skill for professional WordPress planning, design, implementation, review, troubleshooting, and lightweight project continuity.
 
-It is **stack-adaptive** and **WordPress-native-first**: it works with the site you actually have, establishes enough project truth before substantial builds, and decides which WordPress/theme/builder/plugin/data mechanism should own a change before falling back to custom markup/code.
+It is **vendor-neutral and WordPress-native-first**: use the site's current Core/theme/builder/plugin/data owners whenever suitable, comparing maintained plugins against bespoke code by actual feature quality and total lifecycle cost.
 
 ## What it does
 
@@ -10,14 +10,14 @@ WP Native Builder helps ChatGPT:
 
 - keep small bounded edits fast while establishing one Project Brief for substantial multi-step site work;
 - ask novice-friendly staged questions until material project gaps are actually resolved;
-- reuse canonical project artifacts instead of creating duplicate “master” documents;
+- organize durable project truth in distinct, linked canonical documents instead of duplicating “master” snapshots;
 - understand the relevant current WordPress architecture before changing it;
 - route headers, footers, templates, navigation, and reusable/global surfaces to their real Site Editor/theme/builder owner;
 - prefer suitable Core blocks, Patterns, theme/builder/plugin features, WooCommerce presentation, forms, CPT/ACF, and public WordPress capabilities before Custom HTML/custom code;
 - treat Gutenberg markup as a serialization contract and repair invalid blocks narrowly;
 - review material UI proportionally and consult Product Interface Designer only for materially unresolved interface judgment or when explicitly requested, without transferring WordPress mechanism/lifecycle/publication ownership;
 - perform static self-review even without a renderer, then add preview/editor/parser/live checks when available;
-- preserve human-readable names and discoverable edit ownership;
+- prefer English readable slugs for new objects, preserve existing URLs and use translation-ready ACh custom-plugin conventions;
 - resume multi-step work from persistent Workspace context when the runtime supports it;
 - avoid duplicate Workspace canonical documents through discover/reuse-before-create behavior;
 - reconcile stale/ambiguous Workspace writes instead of overwriting newer state;
@@ -76,7 +76,7 @@ REQUEST
   -> reconcile future-useful project state
 ```
 
-Preferred defaults such as Astra/Astra Pro, Gutenberg, Gravity Forms, and Code Snippets Pro are fallbacks for unspecified/new projects, never migration targets for an existing suitable stack.
+No fixed theme, builder, form, icon, plugin or permalink preset applies. Select existing/native/plugin/custom solutions based on feature fit, reliability, licensing, security, performance, editing quality, maintainability and reversibility—not habitual tools or slight hypothetical code speed gains.
 
 ## Project Brief and canonical artifacts
 
@@ -88,7 +88,7 @@ A project that requires a Project Brief keeps one canonical Project Brief contai
 - `Design Direction`
 - `Content/Data Model`
 
-Existing equivalent artifacts are reused rather than duplicated merely to match those names.
+Reuse existing semantically equivalent documents instead of duplicating them. Each owns one domain, links to active tasks and related canonical owners, and records accepted decisions/provenance when useful. Add an optional small index only when documents are otherwise hard to locate; do not mirror full site state.
 
 Once ready, Project Brief leaves the routine hot path. Current work normally uses the nearest authoritative task/document/live WordPress state.
 
@@ -151,7 +151,7 @@ Implementation/release history belongs to Git/GitHub Issues, Pull Requests, and 
 
 ## Validation and packaging
 
-Releases use OpenAI's standard Skill validation/package workflow. The public archive is named exactly **`skill.zip`** and must correspond to the tagged/integrated runtime revision.
+Releases use OpenAI's standard Skill validation/package workflow. The public archive is named exactly **`skill.zip`** and must match the tagged/integrated runtime revision. Run `python scripts/check_runtime_contract.py .` for structural invariants; the behavioral scenarios in `docs/BEHAVIOR-EVALS.md` still require representative model testing before claiming behavioral equivalence.
 
 ## License
 
