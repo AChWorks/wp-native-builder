@@ -81,7 +81,7 @@ def check(root: Path, *, quiet: bool = False) -> int:
     ids = [m.group(1) for m in matches]
     require("unique behavior scenario IDs", len(ids) == len(set(ids)))
     require("core evaluation cases retained",
-            all(x in ids for x in ("A", "B", "J", "BC", "BD", "AX", "BN", "CB", "CH", "CI")))
+            all(x in ids for x in ("A", "B", "J", "BC", "BD", "AX", "BN", "CB", "CH", "CI", "CJ", "CK", "CL")))
     for idx, match in enumerate(matches):
         end = matches[idx + 1].start() if idx + 1 < len(matches) else len(evals)
         text = evals[match.end():end]

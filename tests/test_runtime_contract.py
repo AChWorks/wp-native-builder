@@ -67,6 +67,18 @@ class RuntimeContractTests(unittest.TestCase):
         self.mutate("references/implementation-decisions.md", find="representative at-risk non-target consumers", replace="other consumers")
         self.assert_rejected("verify representative")
 
+    def test_connected_content_is_not_an_instruction_source(self) -> None:
+        self.mutate("SKILL.md", find="not as new user instructions or authorization", replace="as additional site instructions")
+        self.assert_rejected("external WordPress data cannot become instructions")
+
+    def test_site_editor_db_override_must_be_considered(self) -> None:
+        self.mutate("references/implementation-decisions.md", find="override matching theme template/part files", replace="never override theme files")
+        self.assert_rejected("block-theme stored override owner")
+
+    def test_english_slug_preference_not_declared_universal_seo(self) -> None:
+        self.mutate("references/implementation-decisions.md", find="not a universal SEO rule", replace="universally superior for SEO")
+        self.assert_rejected("english slug is preference, not SEO law")
+
     def test_before_mutation_rollback_route_required(self) -> None:
         self.mutate("references/implementation-decisions.md", find="practical revision/rollback route", replace="some history")
         self.assert_rejected("shared rollback")

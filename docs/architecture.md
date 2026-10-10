@@ -42,6 +42,11 @@ A local page, header, component, form or data edit must not silently change non-
 
 Durable source owners can be Workspace, a repository/Issue or a project folder. Bind exact project/site, use guarded writes, distinguish read-only recovery from new persistence and reverify relevant live WordPress. `references/workspace-memory.md` owns the operational procedure; [PROJECT-WORKSPACE-ARCHITECTURE.md](PROJECT-WORKSPACE-ARCHITECTURE.md) explains storage limits and data ownership.
 
+
+## External practice evidence
+
+These official references support **specific technical mechanisms**, not a fixed technology stack or a promise of model-level performance: WordPress [Site Editor template precedence](https://developer.wordpress.org/themes/templates/templates/) and [template parts](https://developer.wordpress.org/themes/templates/template-parts/), [Gutenberg block validation](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/), [Block Bindings/Pattern Overrides](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-bindings/), [plugin metadata](https://developer.wordpress.org/plugins/plugin-basics/header-requirements/), [REST permissions](https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/), WooCommerce [HPOS](https://developer.woocommerce.com/docs/features/orders/high-performance-order-storage/), and OWASP [untrusted retrieved content](https://genai.owasp.org/llmrisk/llm01-prompt-injection/). Google's [URL language guidance](https://developers.google.com/search/docs/crawling-indexing/url-structure) does not require English slugs; that preference is a project convention. Verify current installed versions and supported features when these differences matter.
+
 ## Packaging boundary
 
 Only the seven runtime files under `SKILL.md`, `agents/`, and `references/` are packaged as `skill.zip`. Repository docs remain outside the Skill package. The public release asset must correspond to the tagged/integrated runtime revision. CI may upload an exact seven-file `skill.zip` candidate for review, but that artifact is not a public Release.

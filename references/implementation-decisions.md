@@ -6,6 +6,8 @@ Load when ownership/mechanism, a shared/global surface, plugin/theme/builder, da
 
 Discover current classic/hybrid/block theme, editor/builder, installed capabilities and exact target ownership (local, global, reusable, data, form/commerce or lifecycle). Save recurring architecture in `Site Architecture Profile`; avoid unrelated inventory or stack-forcing.
 
+**Block-theme active precedence:** Site Editor customizations saved as `wp_template` / `wp_template_part` can override matching theme template/part files. Inspect the **active rendered version** and its edit owner/revision before modifying either; an overridden theme file edit may not change the live site.
+
 | Surface | Prefer when fit | Avoid |
 |---|---|---|
 | Block theme's global shell | Site Editor, templates/parts, Global Styles | Page-local duplicated header/footer |
@@ -52,7 +54,7 @@ For WooCommerce presentation preserve existing product/order authority; do not i
 
 Use human-readable maintainer-facing titles, e.g. `Home — Hero`, `Header — Main`, `Site — Mobile Navigation`, rather than `Section 1`, random hashes, or tool defaults. Name *new* slug-bearing pages/posts/CPTs/taxonomies/patterns/custom extensions in concise, descriptive **English ASCII `lowercase-kebab-case`**, even on Persian or multilingual sites unless an explicit requirement dictates otherwise. Use project-appropriate unique prefixes/namespaces for CSS, IDs, code and blocks, not WordPress/vendor-reserved prefixes. Record edit ownership when non-obvious.
 
-Don't silently change existing slugs, published URLs or permalinks: inspect inbound links, hierarchy, translation mapping and SEO; plan redirects and update references before an approved rename. Keep localized *display labels* free to use the site's language.
+Don't silently change existing slugs, published URLs or permalinks: inspect inbound links, hierarchy, translation mapping and SEO; plan redirects and update references before an approved rename. Keep localized *display labels* free to use the site's language. English ASCII new slugs are a **maintainer naming default**, not a universal SEO rule; accepted audience-language/URL strategy can override that preference. Do not imply Google requires English URLs.
 
 ## 6. Custom plugin engineering contract
 
