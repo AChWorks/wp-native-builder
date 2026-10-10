@@ -55,7 +55,7 @@ def main() -> None:
     check(has(refs['design-conventions.md'], 'standalone', 'composed', 'RTL', 'prefers-reduced-motion'), 'UI fallback/review requirements missing')
     runtime_bytes = sum(p.stat().st_size for p in [CORE, *REFS.glob('*.md')])
     baseline_bytes = 66387
-    print(f'PASS: 20 runtime structural checks; {runtime_bytes:,} bytes vs {baseline_bytes:,} baseline ({100 * (1 - runtime_bytes / baseline_bytes):.1f}% reduction).')
+    print(f'PASS: 21 runtime structural checks; {runtime_bytes:,} bytes vs {baseline_bytes:,} baseline ({100 * (1 - runtime_bytes / baseline_bytes):.1f}% reduction).')
     print('LIMIT: These checks cannot prove semantic LLM behavior or 95% quality retention; run documented regression prompts separately.')
 
 
