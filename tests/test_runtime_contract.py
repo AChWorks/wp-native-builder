@@ -131,7 +131,7 @@ class RuntimeContractTests(unittest.TestCase):
         self.assert_rejected("prepublish shared surface verification")
 
     def test_bounded_workspace_index_not_complete(self) -> None:
-        self.mutate("references/workspace-memory.md", find="bounded/truncated indexes do not prove absence", replace="any missing item is absent")
+        self.mutate("references/workspace-memory.md", find="avoid unbounded full-content lists", replace="load all full documents by default")
         self.assert_rejected("bounded summary not complete")
 
     def test_workspace_write_readback_required(self) -> None:
