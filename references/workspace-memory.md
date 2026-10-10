@@ -1,70 +1,36 @@
-# Workspace Memory and Recovery
+# Persistent Workspace: Organization, Safe Writes and Recovery
 
-Load this reference whenever the current runtime exposes persistent WordPress project-Workspace capabilities that are relevant to the current substantial/multi-step work, including both new project persistence and later resume. Project Brief and task semantics remain owned by `SKILL.md` and `project-workflow.md`; this file is the single owner of the exact Workspace persistence, progressive-resume, duplicate-avoidance, concurrency, and fallback procedure.
+Load for relevant persistent Workspace work/resume. `project-workflow.md` owns **what** documents mean; this file owns **how** to recover and safely write them. Never assume tool/storage names.
 
-## 1. Use only capabilities that exist
+## 1. Progressive resume (minimal reads)
 
-Treat `workspace-resume`, `workspace-document`, and `workspace-task` as logical capability roles, not names to invent. Discover the current runtime and use only exposed capabilities whose documented behavior safely matches the needed operation.
+1. Discover the actual available project-Workspace capabilities. Logical roles such as `workspace-resume`, `workspace-document`, `workspace-task` describe behavior, **not** callable names to invent. Without usable persistence work manually and state that cross-chat recovery is unavailable.
+2. Request compact project orientation first: exact project/site identity and target, current focus, open/review-blocked tasks, blockers, links to canonical docs, next safe action. Do **not** dump all site data or documents.
+3. Fetch only the active task and documents that resolve the next decision. Prefer active task / derived domain truth to the full Project Brief; open the brief for unresolved/changed intent, contradictions or launch reconciliation.
+4. For site-dependent operations, reverify the relevant live WordPress owner/object/revision. A saved note never proves current site configuration; a persisted last-used site is not by itself an authorized target. Reconcile changed data before writing.
+5. Resume the highest-value safe task and update future-useful state only if its owner actually changed.
 
-If no suitable Workspace capability is exposed, continue in manual mode. Do not claim persistence or fabricate objects.
+## 2. Find the canonical owner; avoid duplication
 
-## 2. Resume progressively
+Before creating a document or task: **discover -> reuse/update the semantic equivalent -> create only after reliable absence -> verify**. Incomplete or truncated discovery never establishes absence.
 
-When starting or resuming a connected multi-step project that uses Workspace:
+Stable singleton examples: `project-brief`, `site-architecture-profile`, `information-architecture`, `design-direction`, `content-data-model`. Treat legacy **`Project Foundation` / `project-foundation` as the existing Project Brief**; do not rename/delete or create another solely to normalize. Use stable keys only when the capability supports them; don't presume uniqueness without a documented guarantee. Task titles identify their actual purpose/surface, never the generic `Task` singleton.
 
-1. request compact orientation/resume before broad site rediscovery or questioning;
-2. orient from project identity, current focus, active/review-blocked work, blockers, and references to potentially relevant durable documents;
-3. fetch only task/document details needed for the next decision/action;
-4. prefer nearer current sources instead of automatically loading Project Brief;
-5. load Project Brief only when project-level intent is unresolved/changed or recovery/completion requires it;
-6. before changing a current WordPress target, read/verify live state when it matters;
-7. continue the next useful action rather than stopping after a recovery summary.
+Keep a connected **document graph, not a second database**: current tasks link to their governing docs and WordPress targets; derived docs point to their canonical Project Brief/related owner when useful. Persist a small index only if listing/findability is otherwise insufficient. Do not mirror live content, plugin inventory, site snapshots or statuses into multiple notes. Include scope, accepted decisions, provenance/verification context and known uncertainty when those facts matter for future recovery.
 
-A Workspace note is retained intent/state, not proof that a live WordPress object is unchanged.
+## 3. Safe mutation and concurrency
 
-## 3. Persist only future-useful context
+For overwrite-sensitive Workspace Document/Task updates:
 
-Persist only when later continuation materially benefits and a stronger current source does not already own the fact. Typical singleton documents use the canonical names from `project-workflow.md`, such as `Project Brief`, `Site Architecture Profile`, `Information Architecture`, `Design Direction`, and `Content/Data Model`.
+1. Read the current object with **Workspace-owned** identity (e.g., `version + state_hash`). WordPress post Revision IDs are unrelated to this protection.
+2. Require an update operation with an enforced expected-identity precondition. If unavailable, do **not** blind-overwrite; use a safe non-overwriting route or surface the precise blocker.
+3. Patch only the owning artifact with expected identity; preserve concurrent valid changes. Verify accepted state when possible.
+4. On version mismatch, re-read, reconcile and retry only if still justified. On ambiguous timeout/write result, **re-read before any retry**, never blindly duplicate an object.
 
-Do not persist full chats, hidden reasoning, routine worklogs, repeated checkpoints, copied live content, credentials/secrets, or unnecessary customer/order/payment/financial data.
+Don't rely on WordPress Revisions being enabled or retained. Backup/disaster recovery is a separate hosting concern, not proof supplied by Workspace notes.
 
-## 4. Discover/reuse before create
+## 4. Durable reconciliation and failures
 
-For canonical singleton documents, and for tasks where an equivalent work item may already exist, use:
+After material project progress, persist only the smallest future-useful changed truth: accepted decision, real site owner, active task/next action, blocker, review/delivery state or unresolved defect. Don't create a worklog on each turn, cache hidden reasoning, store secrets, or update every document merely because conversation progressed.
 
-```text
-DISCOVER -> REUSE/UPDATE -> CREATE ONLY IF ABSENT -> VERIFY
-```
-
-- Search/list the decision-relevant current objects before creating a canonical singleton document.
-- Reuse an existing semantically equivalent document even if its title differs.
-- When the capability exposes a stable document `key`, use a stable purpose key for singleton documents (for example `project-brief`, `site-architecture-profile`, `information-architecture`, `design-direction`, `content-data-model`) **after** confirming an equivalent object does not already exist. For the Project Brief singleton, treat legacy title `Project Foundation` and legacy key `project-foundation` as equivalent existing identity: reuse/update it, do not rename/delete it solely for normalization, and do not create a second `Project Brief` / `project-brief`. Do not assume the storage layer enforces key uniqueness unless its schema explicitly guarantees that.
-- Never treat an incomplete/truncated listing as proof of absence.
-
-## 5. Safe Workspace writes
-
-Workspace current-state/concurrency identity is independent of WordPress Revision IDs. For an overwrite-sensitive Document/Task update:
-
-1. read the current Workspace object and Workspace-owned identity such as `version + state_hash`;
-2. require the update capability to accept expected identity;
-3. if no guard exists, do not perform a blind overwrite;
-4. submit with expected identity;
-5. verify accepted resulting state when practical;
-6. on stale/mismatch/conflict, re-read, reconcile newer valid work, then retry only if still correct;
-7. on ambiguous write outcome, re-read authoritative state before any retry.
-
-Workspace continuity and stale-write protection must remain usable if WordPress Revisions are disabled/limited/pruned. WordPress Revisions may remain optional secondary history for ordinary WordPress content, but they are not the Workspace current-state/concurrency authority. Runtime- or connector-managed snapshots/history are implementation details unless the runtime exposes relevant behavior. Site/database disaster recovery remains the hosting/backup boundary.
-
-## 6. Continuity reconciliation
-
-After a material multi-step workflow change, update the smallest Workspace object that owns the changed future-useful truth before yielding when practical. Do not update Workspace merely because another conversational step occurred, and do not leave non-obvious active project state understandable only from the current chat when a suitable persistent capability exists.
-
-## 7. Transient Workspace/connector failure
-
-One timeout/unavailable/transport failure is not proof the logical capability disappeared.
-
-- Preserve recovered orientation/current state.
-- Continue independent work.
-- Re-discover/retry once when failure semantics or changed runtime evidence make a transient recovery plausible.
-- Do not blind-loop identical failures.
-- If still unavailable, continue manual/non-overwrite work and report a capability blocker only when required work truly cannot progress.
+For transient failures preserve recovered orientation, continue independent tasks, and make **at most one evidence-justified** route rediscovery/retry; no blind loop. If persistent writes remain unavailable, do safe manual/non-overwrite work and report the exact blocked action. Never claim a document was saved until the authoritative result verifies it.

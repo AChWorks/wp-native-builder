@@ -1,210 +1,69 @@
-# Project Brief and Multi-step Site Workflow
+# Project Brief, Documentation and Multi-step Workflow
 
-Load this reference for a new site, substantial redesign, multi-page/multi-surface build, or any project where durable project-level decisions will materially drive later work or continuation.
+Load for substantial new/redesigned/multi-surface sites, durable project decisions, or project documentation. Keep small edits on the main Skill's fast path.
 
-**Contents:** [Project Brief gate](#1-do-not-design-before-the-project-brief-is-ready) · [Project Brief](#2-canonical-project-brief) · [Readiness](#3-project-brief-readiness-coverage) · [Stability](#4-project-brief-stability-and-change-control) · [Derived artifacts](#5-derive-specialized-documents-instead-of-overloading-the-project-brief) · [Task state](#6-task-state) · [Execution](#7-plan-enough-to-act) · [Recovery](#8-resume-and-recovery) · [Continuity](#9-continuity-reconciliation-before-yielding) · [Launch](#10-complete-site-launch)
+## 1. Establish project intent once
 
-## 1. Do not design before the Project Brief is ready
+Before material build, discover existing evidence and resolve applicable brief domains as **known, delegated, safely inferred or N/A**. Ask gaps in short plain-language batches, never demand WordPress jargon, and don't invent a new `DRAFT/READY` state.
 
-For this class of work, use:
+Use the following headings for a new canonical Project Brief (combine adjacent headings only if meaning remains clear):
 
-```text
-DISCOVER EXISTING STATE
-  -> PROJECT BRIEF INTAKE
-  -> PROJECT BRIEF READY
-  -> RESOLVE ROUTED MATERIAL DECISIONS
-  -> DERIVE / REFRESH SPECIALIZED PROJECT DOCS / TASKS
-  -> PLAN ENOUGH TO ACT
-  -> BUILD / VERIFY / REVIEW
-  -> RECONCILE DURABLE STATE
-  -> CONTINUE
-```
-
-Do not begin material design/build merely because enough information exists to make a visually plausible first page. First make the project-level intent sufficiently complete to avoid predictable rework.
-
-Small bounded edits stay on the fast path and do not require this ceremony.
-
-## 2. Canonical Project Brief
-
-Project Brief readiness is required by the project class, not by persistence availability. Establish the same logical **Project Brief** before material design/build even when no durable location exists. When persistent project storage or another user-supplied durable project location exists, keep one canonical durable Project Brief there; otherwise keep the Project Brief coherent in the current session and do not claim cross-chat durability. If persistence becomes available later, reconcile into one canonical durable Project Brief rather than creating competing copies.
-
-It owns only stable project-level truth:
-
-- project/site purpose and primary outcomes;
-- intended audiences/users and their important needs;
-- scope and major deliverables/surfaces;
-- required capabilities and critical interactions;
-- brand/content/voice direction that materially constrains design;
-- durable technical constraints and supported environments/languages;
-- accessibility/RTL/LTR/localization requirements when material;
-- important business/content/SEO/legal/privacy constraints that affect the build;
-- explicit non-goals/out-of-scope boundaries;
-- success/completion criteria;
-- material owner decisions that would change the project if reversed.
-
-It is **not** a worklog, page-content mirror, active backlog, plugin inventory, current live-site snapshot, or per-task implementation record.
-
-Use one existing equivalent durable project brief/spec if it already owns these facts. Do not create a competing “master” document solely to satisfy naming. Legacy Workspace artifacts titled `Project Foundation` are valid equivalents: reuse/update them rather than renaming them or creating a second `Project Brief`. When stable document keys are exposed, `workspace-memory.md` owns the corresponding legacy-key compatibility procedure.
-
-## 3. Project Brief readiness coverage
-
-Before declaring the Project Brief ready, resolve every materially applicable domain below as **known**, **user delegated**, **safely inferred**, or **not applicable**:
-
-When creating a new Project Brief document, use these domain labels as the default section headings. Merge adjacent headings only when their meaning remains explicit. Readiness comes from resolved coverage below; do not create a separate Project Brief lifecycle/status enum merely to restate that coverage.
-
-| Domain | Examples of material questions |
+| Domain | Capture when material |
 |---|---|
-| Purpose & Outcomes | What is the site for? What must improve or become possible? |
-| Audience | Who uses it? What do they need/trust/understand/do? |
-| Scope & Non-goals | New site vs redesign; required pages/surfaces; launch boundary; excluded work |
-| Content & Primary Actions | Existing vs new content; content owners; key messages/CTA; multilingual/RTL needs |
-| Brand & Design | Existing identity; references; desired character; fidelity vs inspiration; prohibited styles |
-| Functional Requirements | Forms, search, memberships, booking, ecommerce, filtering, accounts, integrations, interactions |
-| Site Architecture | Existing site vs new; theme/editing model/builder; reusable/global ownership; data models |
-| Technical Constraints | hosting/runtime constraints when relevant; plugin/license restrictions; browser/device requirements |
-| Quality Constraints | accessibility target/needs; responsive behavior; performance-sensitive surfaces; SEO/indexing-facing needs |
-| Governance & Delivery | who reviews content/design; draft vs live workflow; launch/publish constraints; future maintainability expectations |
-| Success Criteria | observable acceptance/completion criteria |
+| Purpose & Outcomes | Why the site exists; desired changes |
+| Audience | Users, needs, trust and key journeys |
+| Scope & Non-goals | Deliverables, surfaces, exclusions, launch boundary |
+| Content & Actions | Messages, CTAs, content ownership, languages/RTL |
+| Brand & Design | Identity, references, fidelity, constraints |
+| Functionality | Forms, accounts, commerce, integration, interactions |
+| Site Architecture | Existing stack, content/data and global ownership |
+| Technical Constraints | Hosting, compatibility, licenses, dependencies |
+| Quality | Accessibility, responsive, SEO, relevant performance |
+| Governance & Delivery | Reviewers, draft/live gates, ongoing maintenance |
+| Success Criteria | Observable acceptance and completion signals |
 
-Do not ask every example literally. Discover what is already knowable from the live site/project context first, then ask only unresolved material items.
+Keep **one** canonical durable brief; reuse `Project Foundation` / `project-foundation` if equivalent. Without persistence use session context only; never claim cross-chat recovery. The brief is not a task log, inventory or live snapshot.
 
-### Novice-user intake
+Keep a settled brief out of routine work; reopen for material change, contradiction or recovery. Prefer nearest task/domain document/live state; don't churn it per page.
 
-A novice must not need to understand terms such as FSE, template part, CPT, taxonomy, or Synced Pattern.
+## 2. Documentation architecture: one owner per fact
 
-- Ask in plain language first, optionally explain the technical interpretation after the answer.
-- Offer sensible examples/options when that makes the question answerable.
-- Use compact staged batches rather than a giant questionnaire.
-- Keep asking across batches until material coverage is complete; do not stop after an arbitrary question quota.
-- Record delegated choices explicitly, e.g. “visual details delegated to builder,” rather than pretending the user supplied them.
+Use a **small, navigable set of canonical documents**; reuse equivalents and create only for recurring decisions/recovery. Each owns one domain and links, rather than duplicates, others:
 
-## 4. Project Brief stability and change control
+| Canonical document | Ownership and when useful |
+|---|---|
+| `Project Brief` | Stable project intent, scope, non-goals and success criteria (always for substantial work) |
+| `Site Architecture Profile` | Actual theme/builder/editor; global/template ownership; forms, content and code placement; key dependencies |
+| `Information Architecture` | Page hierarchy, navigation, URL strategy and content relationships across surfaces |
+| `Design Direction` | Accepted reusable layout, typography, tokens, interaction, responsive and RTL principles |
+| `Content/Data Model` | CPT, taxonomy, fields, relationships, editorial/data rules |
+| Scoped decision/operational note | Only for lasting cross-task rationale or non-obvious maintenance/rollback procedures not owned above |
+| Tasks | Current actionable goal, acceptance, owner/target, blocker, review and delivery state—not durable product doctrine |
 
-After acceptance/readiness, Project Brief leaves the routine hot path.
+For substantive docs record as relevant: **scope, accepted facts/decisions, evidence/verification freshness, target site/surface, dependencies/links, edit owner and constraints**. Distinguish confirmed facts from proposals/unknowns; never copy live data, secrets or customer/payment records.
 
-Do **not** reread or rewrite it for every page, block, task, chat, or implementation change. Routine work uses the nearest current authoritative source: derived docs, active tasks, live WordPress, code/config, preview/review state.
+**Navigation:** Use stable names/keys and task-to-doc links. Add one Project Map/index only when discovery is otherwise hard; link owners, never mirror content/backlog. De-emphasize obsolete drafts safely without erasing accepted decisions.
 
-Reopen/update Project Brief only when:
+**Update discipline:** Change only the owning artifact: scope -> Brief; technical ownership -> Architecture; shared tokens -> Design Direction; pending work -> task. Repair stale links/contradictions during recovery.
 
-- the user accepts a material change to project purpose, audience, scope, durable constraint, non-goal, or success criteria;
-- current authoritative evidence materially contradicts project-level intent and cannot be reconciled from a nearer source;
-- recovery/completion cannot be resolved safely without it.
+## 3. Task semantics and proportional execution
 
-A change to Project Brief is a material project-level change. Explain the impact and consult the user when the change is not already explicitly directed by the user. Implementation-only changes do not churn the Project Brief.
-
-## 5. Derive specialized documents instead of overloading the Project Brief
-
-Create only artifacts that pay for themselves. Derived artifacts persist accepted domain truth; they do not become alternate decision owners. When `SKILL.md` routes a material decision to another owner, resolve or reuse that decision first, then create/update only the artifact future work needs.
-
-Typical derived artifacts may include:
-
-### Site Architecture Profile
-
-Record durable ownership/mechanism facts needed repeatedly, such as:
-
-- active theme and editing model;
-- page builder ownership, if any;
-- global header/footer/navigation/template ownership;
-- page-content ownership;
-- reusable-section mechanism;
-- forms/commerce/data-model ownership;
-- approved custom-code placement/prefix conventions;
-- major plugin/theme capabilities intentionally relied on.
-
-Do not use it as a complete plugin inventory or a replacement for live discovery. Reverify live state when current configuration matters.
-
-### Information Architecture
-
-Create when page hierarchy/navigation/content relationships matter across multiple tasks.
-
-### Design Direction
-
-Create when recurring accepted visual decisions materially affect multiple surfaces: typography, tokens, spacing/layout language, imagery, interaction/motion, responsive/RTL principles.
-
-### Content/Data Model
-
-Create when CPT/taxonomy/ACF/product/content relationships affect implementation repeatedly.
-
-### Tasks
-
-Create only work that benefits from acceptance clarity, sequencing, dependency, review/delivery state, or later continuation.
-
-## 6. Task state
-
-Keep task state compact and independent:
+Create a task only when its acceptance, dependency, delivery/review state or future continuation makes it useful; not per block, trivial edit or chat. Give it a purpose/surface/outcome title and concise goal, acceptance when needed, target references, blocker/dependency and links to governing documents.
 
 | Dimension | Values |
 |---|---|
-| Progress | `todo` / `in_progress` / `blocked` / `done` |
-| Review | `not_required` / `pending` / `changes_requested` / `approved` |
-| Delivery | `not_applicable` / `draft_preview` / `live` |
+| Progress | `todo`, `in_progress`, `blocked`, `done` |
+| Review | `not_required`, `pending`, `changes_requested`, `approved` |
+| Delivery | `not_applicable`, `draft_preview`, `live` |
 
-`done` does not imply `approved`; `approved` does not imply `live`; `live` requires actual intended delivery, preferably verified.
+Dimensions are independent: `done` is not `approved`, and `approved` is not `live`. `not_applicable` means no established draft/live delivery state, **not** that publication is never intended. Capture intended delivery in the task's goal/acceptance; set `draft_preview` only for a real preview, `live` only for established/verified delivery.
 
-`Delivery=not_applicable` means no draft/live delivery state is currently established for that task; it may still be intended for later publication. Put intended delivery/launch requirements in the task goal, acceptance, target references, or notes. Use `draft_preview` only after a real draft/preview exists and `live` only after the intended live result is established/verified.
+After brief readiness, choose enough architecture and a coherent high-value slice to build; do not over-plan. For material visual review, fix clear local implementation defects before presenting a preview, set Review=`pending` if human review is needed, revise on `changes_requested`, and record approval/live state only on applicable evidence. Don't force this cycle on a small edit or create duplicate confirmation when an existing exact authorization suffices. UI specialist consultation is controlled by `SKILL.md`, never by a task-state transition.
 
-Useful task fields: title, concise goal, acceptance when needed, dependencies/blocker, target references, and short durable notes.
+## 4. Recovery, continuity and completion
 
-### Visual review inside a project
+Start from current task/target and the nearest canonical source, not the complete chat or every project document. If a persistent Workspace is available, [workspace-memory.md](workspace-memory.md) **exclusively owns** its exact retrieval, singleton-key compatibility and concurrency procedure. Verify live WordPress before state-dependent writes. Read the brief only if material intent is missing, changed or contradictory; then resume the next useful work instead of stopping at a status report.
 
-This section owns project task Review/Delivery transitions, not interface or implementation review criteria. Before user review, complete the applicable review already routed by `SKILL.md` and its direct domain references. If a current Product Interface Designer packet covers the interface question, treat it as the accepted interface intent rather than reopening art direction. Product Interface Designer consultation/re-consultation is owned only by `SKILL.md` section 1; this project workflow never triggers it by itself.
+After a meaningful step, ask internally whether a fresh chat can identify the **project/site, current task, accepted decisions, exact target, unresolved blocker, review/publish gate, and next action** from durable sources. If not, update only their existing owning artifacts when writable. Do not write conversational worklogs, session handoffs or repeated snapshots.
 
-When preview/rendering is available, manage the project review loop:
-
-1. build to a draft/preview when the mechanism supports it;
-2. correct clear defects identified by the applicable review owner before user review when safe;
-3. when human visual review is part of the workflow, set Review=`pending` and show the current result;
-4. requested revisions -> Review=`changes_requested`, revise, and preview again;
-5. clear approval of the current reviewed result -> Review=`approved`; do not request duplicate confirmation when the core approval condition already authorizes the next exact publish action;
-6. set Delivery=`live` only after the intended live result is established/verified.
-
-Do not force this loop onto tiny reversible changes or work the user already explicitly authorized to apply live.
-
-## 7. Plan enough to act
-
-After Project Brief readiness, derive only enough sequencing/architecture to prevent rework, then begin the highest-value implementable work.
-
-```text
-PROJECT BRIEF READY
-  -> DERIVE/REFRESH RELEVANT ARCHITECTURE + TASK
-  -> CHOOSE OWNER/MECHANISM
-  -> BUILD
-  -> VERIFY
-  -> REVIEW WHEN MATERIAL
-  -> REVISE/APPROVE
-  -> PUBLISH WHEN AUTHORIZED
-  -> VERIFY LIVE
-  -> RECONCILE DURABLE STATE
-  -> NEXT USEFUL WORK
-```
-
-Do not turn project setup into weeks of speculative documentation.
-
-## 8. Resume and recovery
-
-Project-level recovery uses the nearest current authoritative sources and reopens Project Brief only under the stability/change triggers above. When persistent Workspace capabilities are relevant, load `workspace-memory.md` and follow its single canonical progressive-resume procedure; this file does not redefine Workspace retrieval/concurrency mechanics. Re-read live WordPress targets before overwrite-sensitive/current-state-dependent work, then continue the next useful action instead of stopping at a recovery summary.
-
-## 9. Continuity reconciliation before yielding
-
-After a material project step, before yielding control, ask internally:
-
-> Could a fresh chat continue correctly from durable sources without this conversation?
-
-If no and a durable project location is writable, update the smallest authoritative artifact that owns the changed truth. If no durable location exists, keep the current-session project context coherent and do not imply that a future chat can recover it automatically.
-
-Examples:
-
-- project-level scope changed -> Project Brief;
-- header/footer ownership discovered/changed -> Site Architecture Profile;
-- design system choice accepted -> design doc;
-- task implemented but awaiting user visual review -> task Progress=`done`, Review=`pending`, Delivery=`draft_preview` as applicable;
-- user approved and live publish verified -> update Review/Delivery accordingly;
-- blocker discovered -> task blocker/dependency.
-
-Do not create a session log or duplicate live WordPress content.
-
-## 10. Complete-site launch
-
-For a complete/launch-ready site, task completion alone is not project completion. Synthesize only launch concerns that materially apply to the actual project, such as navigation/content completeness, responsive/RTL behavior, accessibility of key flows, forms/interactions, links/media, material performance impact introduced by the build, important indexing-facing configuration/presentation, publication, and live verification.
-
-Do not impose an unrelated giant launch checklist or pull external business/refund/payment/order operations into ordinary site-building scope. After verified launch, keep default resume focused on still-relevant durable context/unresolved work and archive or de-emphasize completed disposable fixtures so recovery does not become a history dump. Later maintenance reuses durable approved context without reopening settled intake, while re-reading live WordPress state when the current target matters.
+For full-site launch, verify only applicable end-to-end concerns (navigation/content, key flows/forms, links/assets, accessibility/RTL/responsive, indexing-facing setup, material performance, publication and live evidence); task completion alone does not prove launch. After delivery leave durable decisions and genuine open work discoverable, not a history dump.
