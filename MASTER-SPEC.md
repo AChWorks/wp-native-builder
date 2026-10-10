@@ -202,7 +202,7 @@ The enduring separation is: `SKILL.md` owns universal routing/authorization/spec
 
 For release readiness, validate the **exact distributable source and `skill.zip`** using required Skill packaging/provenance and integration/review gates. The evidence must cover:
 
-- **Scope and intent:** bounded edits stay fast, substantial work resolves material Brief gaps, and each distinct project retains its own canonical Brief rather than a separate Brief per chat or a site-global Brief
+- **Scope and intent:** bounded edits stay fast; novices answer staged, jargon-free questions without an arbitrary intake quota; substantial work resolves material Brief gaps; each distinct project retains its own canonical Brief, not one per chat or site; all applicable direct runtime references route additively and load at most once
 - **WordPress correctness:** adaptive owner/mechanism-first implementation, no named vendor preset, isolated effects across pages/headers/components/forms/data, safe Gutenberg serialization and supported editor mechanisms
 - **Connected continuity:** exact target-site binding, capability-neutral/manual fallback, optional project records, duplicate prevention, guarded concurrent writes, and honest truncated/ambiguous results
 - **Quality and authorization:** proportional static plus available rendered/editor/functional checks, UX/accessibility/RTL/performance, and consent for genuine consequential effects without unnecessary repeated prompts
