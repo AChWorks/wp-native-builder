@@ -148,6 +148,8 @@ def validate(root: Path, *, quiet: bool = False) -> int:
     contains("repository-backed fresh-chat recovery", ws, "GitHub repository", "assistant Memory", "next safe action")
     contains("sensitive data retention boundary", ws, "customer/order/payment/financial payloads", "secrets")
     contains("repository revision protection", ws, "file/commit version", "non-overwriting route")
+    contains("read-only recovery separated from missing source", ws, "Readable but not writable durable source", "No accessible durable source")
+    contains("multi-store canonical ownership", ws, "established authoritative owner per artifact", "unsanctioned parallel copies")
 
     size = sum((root / p).stat().st_size for p in ["SKILL.md", *("references/" + n for n in REFERENCES)])
     if not quiet:

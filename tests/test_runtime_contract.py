@@ -113,5 +113,14 @@ class RuntimeContractTests(unittest.TestCase):
         self.assert_rejected("Gutenberg full-page ownership conversion")
 
 
+    def test_read_only_durable_source_can_recover(self) -> None:
+        self.mutate("references/workspace-memory.md", find="Readable but not writable durable source", replace="No writable store")
+        self.assert_rejected("read-only recovery separated")
+
+    def test_canonical_owner_when_multiple_stores(self) -> None:
+        self.mutate("references/workspace-memory.md", find="established authoritative owner per artifact", replace="both stores always")
+        self.assert_rejected("multi-store canonical ownership")
+
+
 if __name__ == "__main__":
     unittest.main()

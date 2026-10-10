@@ -29,7 +29,7 @@ It must:
 | **Durable tasks** | unresolved outcome/acceptance, target, dependency/blocker, review/delivery gate, evidence and next action |
 | **Live WordPress** | actual current pages/posts/products/media/settings/theme/plugin/templates and other site objects/configuration |
 
-Any compatible runtime or connector may implement the storage/API/admin surface. The Skill remains capability-driven, assumes no named provider, and uses only behavior actually exposed by the current runtime.
+Any compatible runtime or connector may implement the storage/API/admin surface. A readable but non-writable source can support recovery but not state persistence. When Workspace and repository records coexist, preserve the established canonical owner per artifact; do not presume synchronization or duplicate project truth. The Skill stays capability-driven and uses only behavior exposed by the runtime.
 
 ## 3. Canonical documents
 

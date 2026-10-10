@@ -8,9 +8,10 @@ Load when durable project state or cross-chat recovery matters: connected Worksp
 |---|---|
 | Persistent Workspace | Discover its actual project capabilities. `workspace-resume`, `workspace-document` and `workspace-task` are logical roles, **not** callable names. |
 | User-provided GitHub repository / project folder / equivalent durable files | Reuse its established canonical docs and Issue/Task records at their actual paths/IDs and revision guards; do **not** require Workspace, duplicate task tracking or a new fixed directory. |
-| No verified writable durable source | Continue manual/session work. Explicitly state that cross-chat recovery is unavailable unless the user supplies the authoritative project source later; never claim persistence. |
+| Readable but not writable durable source | Recover its known project facts and verify live state, but do not claim to have saved new progress; surface a write blocker only when future continuity needs an update. |
+| No accessible durable source | Continue manual/session work. State that reliable cross-chat recovery is unavailable until the user supplies an accessible authoritative source; never invent persistence. |
 
-Persistence can exist even without a WordPress execution connector. Preserve one owner per fact and existing project conventions; never build a new storage platform for a small bounded edit.
+Persistence can exist even without a WordPress execution connector. If several stores exist, select the **established authoritative owner per artifact**, link only as needed and never create unsanctioned parallel copies or assume bidirectional synchronization. Preserve existing project conventions; never build a new storage platform for a small bounded edit.
 
 ## 2. Progressive fresh-chat recovery
 
