@@ -43,6 +43,10 @@ When WP Native Builder creates singleton project documents, the default canonica
 
 An existing equivalent document outranks naming preference. Do not create a second copy merely to normalize a title.
 
+### Source-owned document graph
+
+For substantial work, establish only the domains that repay persistence: Brief = purpose/scope; Architecture Profile = actual site and code ownership; Information Architecture = hierarchy/navigation/URLs; Design Direction = accepted reusable interface rules; Content/Data Model = CPT/taxonomy/fields. Additional scoped decisions or recovery notes must own distinct long-lived content. Each relevant document records scope, accepted decisions separate from proposals, affected site/surface, edit owner, dependencies/links and evidence/verification freshness when stale-sensitive. Tasks link to the nearest governing docs and concrete WordPress target. Use one optional Project Map/index only if navigation is otherwise difficult; it links owners and does not duplicate live data, task progress or other documents.
+
 ### Duplicate-safe creation
 
 Before creating a canonical singleton document:
@@ -85,7 +89,7 @@ On fresh/resumed connected work:
 
 1. discover a suitable Workspace resume capability;
 2. request compact orientation before broad rediscovery/questioning;
-3. orient from project identity/current focus, active/review-blocked work, blockers, and references to potentially useful documents;
+3. orient from exact project/site identity and authorized site target, current focus/active/review-blocked work, blockers, links to governing documents and next safe action; never use a last-used site as target authority;
 4. fetch only task/document details needed for the next decision/action;
 5. do not automatically load Project Brief when a nearer source is sufficient;
 6. load Project Brief only for project-level change/contradiction/recovery/completion need;
@@ -152,9 +156,9 @@ Workspace is an enhancement, not a prerequisite. Without a suitable persistence 
 
 A release-quality implementation demonstrates:
 
-- canonical documents are reused rather than duplicated;
+- canonical documents are linked by domain, evidence-aware, discoverable and reused rather than duplicated, with optional navigation index only when useful;
 - Project Brief semantics remain owned by project workflow rather than duplicated into Workspace policy;
-- nearest-source resume without automatic full Project Brief load;
+- compact nearest-task/linked-source resume with exact site identity, without automatic Project Brief or history dump;
 - selective task/document fetch;
 - guarded Workspace writes using current Workspace-owned identity;
 - stale/ambiguous write reconciliation;
