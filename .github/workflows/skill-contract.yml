@@ -30,3 +30,12 @@ jobs:
         run: python3 -B scripts/check_runtime_contract.py .
       - name: Adversarial mutation probes
         run: python3 -B -m unittest discover -s tests -v
+      - name: Build reproducible review candidate
+        run: python3 -B scripts/package_candidate.py . dist/skill.zip
+      - name: Upload unmerged candidate (not a Release)
+        uses: actions/upload-artifact@v4
+        with:
+          name: wp-native-builder-candidate-skill
+          path: dist/skill.zip
+          if-no-files-found: error
+          retention-days: 14

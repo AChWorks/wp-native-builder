@@ -27,7 +27,7 @@ WP Native Builder helps ChatGPT:
 
 ## Install
 
-Download the latest GitHub Release asset named **`skill.zip`**, then open ChatGPT Skills at **`/skills`** and upload the ZIP.
+Download the latest GitHub Release asset named **`skill.zip`**, then open ChatGPT Skills at **`/skills`** and upload the ZIP. For an unmerged PR, the `wp-native-builder-candidate-skill` GitHub Actions artifact is a **review-only candidate**, not the published Release.
 
 The packaged Skill contains only runtime files:
 

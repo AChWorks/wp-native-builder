@@ -75,4 +75,4 @@ Task delivery retains the current runtime-neutral enum: `not_applicable`, `draft
 
 ## Packaging boundary
 
-Only the seven runtime files under `SKILL.md`, `agents/`, and `references/` are packaged as `skill.zip`. Repository docs remain outside the Skill package. The public release asset must correspond to the tagged/integrated runtime revision.
+Only the seven runtime files under `SKILL.md`, `agents/`, and `references/` are packaged as `skill.zip`. Repository docs remain outside the Skill package. The public release asset must correspond to the tagged/integrated runtime revision. CI may upload an exact seven-file `skill.zip` candidate for review, but that artifact is not a public Release.
