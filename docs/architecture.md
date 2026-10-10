@@ -24,8 +24,8 @@ wp-native-builder/
 | Runtime source | Owns |
 |---|---|
 | `SKILL.md` | trigger/routing, universal control loop, source authority, optional Product Interface Designer consultation/re-consultation protocol, universal review/approval/safety invariants |
-| `references/project-workflow.md` | Project Brief, canonical project artifacts, task semantics, multi-step progression, and project-level recovery triggers |
-| `references/implementation-decisions.md` | WordPress owner/mechanism selection, native-vs-custom decisions, placement/naming, shared/global impact and rollback awareness |
+| `references/project-workflow.md` | Project Brief, linked domain documents, navigation, task state and recovery triggers |
+| `references/implementation-decisions.md` | Vendor-neutral native/plugin/custom choice, English slugs, ACh plugin i18n/author metadata, ownership and rollback |
 | `references/gutenberg-safety.md` | Gutenberg serialization contract, invalid-block diagnosis, block-specific validation |
 | `references/design-conventions.md` | WordPress-side interface realization quality and proportional standalone design fallback; it never becomes a second generic UI/UX owner when Product Interface Designer is active |
 | `references/workspace-memory.md` | Workspace persistence, exact progressive-resume procedure, duplicate avoidance, optimistic concurrency, transient Workspace failure |
@@ -43,7 +43,7 @@ Project Brief
   -> Live WordPress remains authoritative for current site state
 ```
 
-Project Brief is required only for substantial project classes. Readiness comes from resolved material coverage, not from a separate Project Brief lifecycle enum, and does not depend on persistence availability; persistence only determines whether that context survives across chats. Once ready, Project Brief leaves the normal hot path.
+Project Brief readiness derives from material coverage for substantial work, not a new status enum or availability of persistence. Once ready it leaves the hot path. Derived docs own separate lasting domains; active tasks own progress. Stable links and selective verification make project recovery navigable without copying live state, history or a parallel backlog.
 
 ## Mechanism-first architecture
 
@@ -52,7 +52,7 @@ Every implementation makes two independent decisions:
 1. **Owner/mechanism** — WordPress Core, Site Editor/template part, theme, builder, plugin, Pattern, form/commerce/data model, scoped frontend code, or custom extension.
 2. **Transport** — an actually exposed connected capability that can safely operate the selected owner.
 
-A connector does not become the architecture merely because it exposes an operation. Transport selection is capability-based and product-neutral. If one transport fronts multiple WordPress sites, fleet-level discovery may identify site identities, but site-scoped capability use is fail-closed until one exact target is unambiguously established; never infer it from a last-used site or conversational proximity, and keep the resolved identity explicit through the operation.
+No named theme/builder/plugin/form/icon/permalink preset exists. Compare native/existing/maintained-plugin/custom mechanisms on fit and lifetime cost, rather than favoring custom code's nominal speed. A connector does not become the architecture merely because it exposes an operation. Transport selection is capability-based and product-neutral. If one transport fronts multiple WordPress sites, fleet-level discovery may identify site identities, but site-scoped capability use is fail-closed until one exact target is unambiguously established; never infer it from a last-used site or conversational proximity, and keep the resolved identity explicit through the operation.
 
 ## Review architecture
 
@@ -69,7 +69,7 @@ Global/template/shared work inspects reuse/impact before mutation and captures c
 
 ## Workspace architecture
 
-Workspace is optional and capability-driven. When it is relevant to substantial/multi-step work, including a new project, it stores future-useful durable context, resumes progressively, reuses canonical singleton documents before create, guards overwrite-sensitive writes with Workspace-owned expected identity, and never replaces live WordPress as current-state authority. The exact Workspace resume/retrieval procedure is owned only by `references/workspace-memory.md`.
+Workspace is optional and capability-driven. It stores only useful decisions/tasks, links canonical owners, resumes from compact orientation and nearest linked source, reuses singleton docs, guards overwrite-sensitive updates with Workspace-owned expected identity, and never replaces live WordPress as current-state authority. The exact Workspace resume/retrieval procedure is owned only by `references/workspace-memory.md`.
 
 Task delivery retains the current runtime-neutral enum: `not_applicable`, `draft_preview`, `live`. `not_applicable` means no draft/live state is currently established; intended later publication is represented by task goal/acceptance/targets/notes rather than a new lifecycle value.
 
